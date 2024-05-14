@@ -30,7 +30,7 @@
 }
 
 .header-github-link {
-  background-image: url("/img/github.svg");
+  background-image: url("/img/github-light.svg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 24px;
@@ -39,4 +39,8 @@
   vertical-align: middle;
   text-indent: -9999px;
   margin-right: 1rem;
+}
+
+html[data-theme="dark"] .header-github-link {
+  background-image: url("/img/github-dark.svg");
 }
