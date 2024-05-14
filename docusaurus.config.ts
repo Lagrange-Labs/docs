@@ -53,8 +53,9 @@ const config: Config = {
       items: [
         {
           href: "https://github.com/Lagrange-Labs/lagrange-docs",
-          label: "GitHub",
+          className: "header-github-link",
           position: "right",
+          ariaLabel: "GitHub repository",
         },
       ],
     },

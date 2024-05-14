@@ -28,3 +28,15 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+.header-github-link {
+  background-image: url("/img/github.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  text-indent: -9999px;
+  margin-right: 1rem;
+}
