@@ -18,18 +18,3 @@ struct batch {
     var next_committee
 }
 ```
-
-Whenever a batch consisting of rollup blocks is considered either safe (OP stack) or has had its corresponding transaction batch settled on Ethereum (Mainnet), each node is required to attest to the batch of blocks using its BLS key.
-Broadly, each signature is executed on a tuple containing 3 essential elements:
-
-Whenever a batch consisting of rollup blocks is considered either safe (OP stack) or has had its corresponding transaction batch settled on Ethereum (Mainnet), each node is required to attest to the batch of blocks using its BLS key.
-Broadly, each signature is executed on a tuple containing 3 essential elements:
-
-Whenever a batch consisting of rollup blocks is considered either safe (OP stack) or has had its corresponding transaction batch settled on Ethereum (Mainnet), each node is required to attest to the batch of blocks using its BLS key.
-Broadly, each signature is executed on a tuple containing 3 essential elements:
-
-Whenever a batch consisting of rollup blocks is considered either safe (OP stack) or has had its corresponding transaction batch settled on Ethereum (Mainnet), each node is required to attest to the batch of blocks using its BLS key.
-Broadly, each signature is executed on a tuple containing 3 essential elements:
-
-Whenever a batch consisting of rollup blocks is considered either safe (OP stack) or has had its corresponding transaction batch settled on Ethereum (Mainnet), each node is required to attest to the batch of blocks using its BLS key.
-Broadly, each signature is executed on a tuple containing 3 essential elements:
