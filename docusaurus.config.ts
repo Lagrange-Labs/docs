@@ -66,11 +66,40 @@ const config: Config = {
       style: "light",
       links: [
         {
-          title: "Docs",
+          title: "About",
           items: [
             {
-              label: "Tutorial",
-              to: "./docs/getting-started",
+              label: "Careers",
+              to: "https://boards.greenhouse.io/lagrange",
+            },
+            {
+              label: "Privacy Policy",
+              to: "https://www.iubenda.com/privacy-policy/32733074/full-legal",
+            },
+            {
+              label: "Terms and Conditions",
+              to: "https://www.iubenda.com/terms-and-conditions/32733074",
+            },
+          ],
+        },
+        {
+          title: "Social",
+          items: [
+            {
+              label: "GitHub",
+              to: "https://github.com/Lagrange-Labs",
+            },
+            {
+              label: "X",
+              to: "https://x.com/lagrangedev",
+            },
+            {
+              label: "Discord",
+              to: "https://discord.gg/Jkxvhmq2",
+            },
+            {
+              label: "Medium Blog",
+              to: "https://medium.com/@lagrangelabs",
             },
           ],
         },
