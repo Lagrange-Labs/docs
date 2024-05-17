@@ -7,6 +7,28 @@ const sidebars: SidebarsConfig = {
       label: "Getting Started",
       id: "getting-started",
     },
+    {
+      type: "category",
+      label: "Operator Guide",
+      collapsed: false,
+      items: [
+        {
+          type: "doc",
+          label: "Overview",
+          id: "lsc-operator-guide/overview",
+        },
+        {
+          type: "doc",
+          label: "Supported Chains",
+          id: "lsc-operator-guide/supported-chains",
+        },
+        {
+          type: "doc",
+          label: "System Requirements",
+          id: "lsc-operator-guide/system-requirements",
+        },
+      ],
+    },
   ],
 };
 
