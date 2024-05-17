@@ -35,7 +35,9 @@ const config: Config = {
           path: "./docs",
           routeBasePath: "/",
           sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/Lagrange-Labs/lagrange-docs",
+          editUrl: ({ docPath }) => {
+            return `https://github.com/Lagrange-Labs/lagrange-docs/tree/main/docs/${docPath}`;
+          },
           showLastUpdateTime: true,
         },
         theme: {
