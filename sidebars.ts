@@ -15,17 +15,27 @@ const sidebars: SidebarsConfig = {
         {
           type: "doc",
           label: "Overview",
-          id: "lsc-operator-guide/overview",
+          id: "state-committee-operator-guide/overview",
         },
         {
           type: "doc",
           label: "Supported Chains",
-          id: "lsc-operator-guide/supported-chains",
+          id: "state-committee-operator-guide/supported-chains",
         },
         {
           type: "doc",
           label: "System Requirements",
-          id: "lsc-operator-guide/system-requirements",
+          id: "state-committee-operator-guide/system-requirements",
+        },
+        {
+          type: "doc",
+          label: "Configuration File",
+          id: "state-committee-operator-guide/configuration-file",
+        },
+        {
+          type: "doc",
+          label: "Commands",
+          id: "state-committee-operator-guide/commands",
         },
       ],
     },
