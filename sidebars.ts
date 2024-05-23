@@ -21,12 +21,12 @@ const sidebars: SidebarsConfig = {
         {
           type: "doc",
           label: "Supported Chains",
-          id: "state-committee-operator-guide/supported-chains",
+          id: "operator-guide/supported-chains",
         },
         {
           type: "doc",
           label: "System Requirements",
-          id: "state-committee-operator-guide/system-requirements",
+          id: "operator-guide/system-requirements",
         },
         {
           type: "category",
