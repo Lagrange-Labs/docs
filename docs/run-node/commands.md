@@ -101,7 +101,7 @@ lagrange-cli remove-bls-pub-key -c <Config File Path> -n <Network Name> -i <Key 
 
 ### subscribe-chain
 
-Subscribes the operator to the given chain. The network name can be either `mainnet` or `holesky`. The supported chains can be found [here](/state-committee-operator-guide/supported-chains).
+- Subscribes the operator to the given chain. The network name can be either `mainnet` or `holesky`. The supported chains can be found [here](/state-committee-operator-guide/supported-chains).
 
 ```bash
 lagrange-cli subscribe-chain -c <Config File Path> -n <Network Name> -r <Chain Name>
@@ -136,16 +136,26 @@ lagrange-cli generate-config -c <Config File Path> -n <Network Name> -r <Chain N
 # i.e. ./dist/lagrange-cli generate-config -c ./config.toml -n mainnet -r optimism
 ```
 
+### generate-docker-compose
+
+- Generates a docker-compose file for the attestation node. This command can be useful if you want to manually set up your docker-compose.
+
+```bash
+lagrange-cli generate-docker-compose -c <Config File Path> -i <Docker Image Name>
+
+# i.e. ./dist/lagrange-cli generate-docker-compose -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.3.1
+```
+
 :::info
 You can check client config files at` ~/.lagrange/config/client_<network_name>_<chain_name>_<bls_pub_key_prefix>.toml` and docker-compose files in the `~/.lagrange/docker-compose_<network_name>_<chain_name>_<bls_pub_key_prefix>.yml`.
 :::
 
 ### deploy
 
-- Creates a docker-compose file and deploys the docker container for the attestation node. The network name can be either `mainnet` or `holesky`.
+- Generates a docker-compose file and deploys the docker container for the attestation node. The network name can be either `mainnet` or `holesky`.
 
 ```bash
 lagrange-cli deploy -c <Client Config File Path> -i <Docker Image Name>
 
-# i.e. ./dist/lagrange-cli deploy -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.3.15
+# i.e. ./dist/lagrange-cli deploy -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.3.17
 ```
