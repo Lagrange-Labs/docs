@@ -1,12 +1,12 @@
 ---
 id: configuration-file
 title: "Configuration File"
-description: The description of config.toml fields for attestation node
+description: The description of fields in config.toml file
 author: kashish
 ---
 
 :::info
-Please provide absolute path in KeystorePath and PasswordPath fields in the configuration file.
+Please provide correct relative/absolute path in KeystorePath and PasswordPath fields in the configuration file. The KeystorePath field should have file with `.key` extension.
 :::
 
 ### Variable Description
