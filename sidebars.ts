@@ -4,8 +4,23 @@ const sidebars: SidebarsConfig = {
   docsSidebar: [
     {
       type: "doc",
-      label: "Getting Started",
-      id: "getting-started",
+      label: "Overview",
+      id: "overview",
+    },
+    {
+      type: "doc",
+      label: "Architecture",
+      id: "architecture",
+    },
+    {
+      type: "doc",
+      label: "Inductive State Proofs",
+      id: "inductive-state-proofs",
+    },
+    {
+      type: "doc",
+      label: "Slashing Conditions",
+      id: "slashing",
     },
     {
       type: "category",
