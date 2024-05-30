@@ -4,6 +4,8 @@ title: "Storage Database"
 description: A detailed overview of Storage database
 ---
 
+import ThemedImage from "@site/src/components/ThemedImage";
+
 The Storage Database is a proveably equivalent data structure that contains the subset of data that the original contract’s storage trie.
 
 **The key difference between the original storage trie and the storage database is the usage of a different encoding function, a different hash function and a different design of the tree. These changes make the new database much more friendly to "ZK queries".**
@@ -14,6 +16,12 @@ Let’s see a concrete example for a small Merkle Paricia Trie (MPT) and the equ
 
 In essence, a MPT looks like the following diagram. Note we are only proving a subset (we do not need to prove the whole storage trie yet).
 For example, the following diagram shows in red the entries of a Solidity mapping that we are processing.
+
+<ThemedImage
+  lightSrc="/img/storage-mpt.png"
+  darkSrc="/img/storage-mpt.png"
+  alt="Storage Merkle Patricia Trie Diagram"
+/>
 
 ## Recursive Proving
 
@@ -32,6 +40,11 @@ The Coprocessor extracts the key/values pairs of interest from the storage trie 
 ### Accumulator of the subset
 
 Since we are using the same subset, the accumulator’s final value is the same between the storage’s MPT and the ZK Coprocessor database. Note that both the accumulator and the Merkle root “represent” the same leaves, but accumulator is a special construction specifically used to prove equivalence with the MPT tree. The storage database is used in any and all subsequent queries by the ZK Coprocessor.
+
+<ThemedImage
+  lightSrc="/img/accumulator-subset.png"
+  darkSrc="/img/accumulator-subset.png"
+/>
 
 ## Structure of the ZK Coprocessor storage database
 
