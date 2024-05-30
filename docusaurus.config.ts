@@ -33,13 +33,12 @@ const config: Config = {
       "classic",
       {
         docs: {
-          path: "docs/state-committee",
-          routeBasePath: "state-committee",
-          sidebarPath: require.resolve("./sidebars-state-committee.ts"),
-          editUrl: ({ docPath }) => {
-            return `https://github.com/Lagrange-Labs/docs-state-committee/tree/main/docs/${docPath}`;
-          },
-          id: "state-committee",
+          id: "zk-coprocessor",
+          path: "docs/zk-coprocessor",
+          routeBasePath: "zk-coprocessor",
+          sidebarPath: require.resolve("./sidebars-zk-coprocessor.ts"),
+          editUrl: ({ docPath }) =>
+            `https://github.com/Lagrange-Labs/docs-zk-coprocessor/tree/main/docs/${docPath}`,
           showLastUpdateTime: true,
         },
         theme: {
@@ -52,12 +51,13 @@ const config: Config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "zk-coprocessor",
-        path: "docs/zk-coprocessor",
-        routeBasePath: "zk-coprocessor",
-        sidebarPath: require.resolve("./sidebars-zk-coprocessor.ts"),
-        editUrl: ({ docPath }) =>
-          `https://github.com/Lagrange-Labs/docs-zk-coprocessor/tree/main/docs/${docPath}`,
+        path: "docs/state-committee",
+        routeBasePath: "state-committee",
+        sidebarPath: require.resolve("./sidebars-state-committee.ts"),
+        editUrl: ({ docPath }) => {
+          return `https://github.com/Lagrange-Labs/docs-state-committee/tree/main/docs/${docPath}`;
+        },
+        id: "state-committee",
         showLastUpdateTime: true,
       },
     ],
@@ -70,13 +70,13 @@ const config: Config = {
       },
       items: [
         {
-          to: "/state-committee/overview",
-          label: "State Committee",
+          to: "zk-coprocessor/overview",
+          label: "ZK Coprocessor",
           position: "left",
         },
         {
-          to: "zk-coprocessor/overview",
-          label: "ZK Coprocessor",
+          to: "/state-committee/overview",
+          label: "State Committee",
           position: "left",
         },
         {
