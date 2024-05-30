@@ -1,0 +1,33 @@
+---
+id: overview
+title: "Overview of Verifiable Database Architecure"
+description: A detailed overview of Verifiable Database architecture
+---
+
+import ThemedImage from "@site/src/components/ThemedImage";
+
+Lagrange's network can be thought as an indexer that looks at a contract's storage and process it into a verifiable database.
+
+Lagrange's network is in essence, re-creating the target blockchain's database (storage, state and blocks) but in a format amenable to run efficient and distributed queries.
+
+More precisely, the ZK Coprocessor is producing for each block a new equivalent version (in blue) of the original storage trie (in red), but which is supporting efficient queries. In the above diagram, we generate a proof that this new database contains the same data as the original red blockchain data structure.
+
+<ThemedImage
+  lightSrc="/img/verifiable-db-architecture.png"
+  darkSrc="/img/verifiable-db-architecture.png"
+  alt="Verifiable Database Architecture Diagram"
+/>
+
+> Note: From this section onwards, the explanation is deeply technical and requires knowledge of data structures such as Merkle Patricia Trie.
+
+For each new block, we have to create and maintain different databases containing only a subset of the blockchain information relevant to the ZK Coprocessor. The database architecture is as follow:
+
+**Storage Database**: A new data structure containing the subset of leaves that the user wants us to index from the contract’s storage trie. We maintain one such database for each user's contract.
+
+**State Database**: A new data structure containing the subset of leaves for the referenced contracts in the state trie. Each leaf/entry of the state database is linked with the corresponding storage database.
+
+**Block Database**: Update an existing data structure linking the above state database to a given block of the chain, and that contains all state databases for blocks previously processed by the ZK Coprocessor.
+
+The following sections go into more details about these different but related databases.
+
+The next subsections are going deeper in the technicals of the storage, state and blocks transformation.

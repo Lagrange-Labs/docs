@@ -15,6 +15,7 @@ const config: Config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   markdown: {
+    format: "detect",
     mermaid: true,
   },
   themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],
@@ -32,12 +33,12 @@ const config: Config = {
       "classic",
       {
         docs: {
-          path: "./docs",
-          routeBasePath: "/",
-          sidebarPath: "./sidebars.ts",
-          editUrl: ({ docPath }) => {
-            return `https://github.com/Lagrange-Labs/docs-state-committee/tree/main/docs/${docPath}`;
-          },
+          id: "zk-coprocessor",
+          path: "docs/zk-coprocessor",
+          routeBasePath: "zk-coprocessor",
+          sidebarPath: require.resolve("./sidebars-zk-coprocessor.ts"),
+          editUrl: ({ docPath }) =>
+            `https://github.com/Lagrange-Labs/docs-zk-coprocessor/tree/main/docs/${docPath}`,
           showLastUpdateTime: true,
         },
         theme: {
@@ -46,7 +47,21 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        path: "docs/state-committee",
+        routeBasePath: "state-committee",
+        sidebarPath: require.resolve("./sidebars-state-committee.ts"),
+        editUrl: ({ docPath }) => {
+          return `https://github.com/Lagrange-Labs/docs-state-committee/tree/main/docs/${docPath}`;
+        },
+        id: "state-committee",
+        showLastUpdateTime: true,
+      },
+    ],
+  ],
   themeConfig: {
     navbar: {
       logo: {
@@ -54,6 +69,16 @@ const config: Config = {
         srcDark: "img/logo-dark.svg",
       },
       items: [
+        {
+          to: "zk-coprocessor/overview",
+          label: "ZK Coprocessor",
+          position: "left",
+        },
+        {
+          to: "/state-committee/overview",
+          label: "State Committee",
+          position: "left",
+        },
         {
           href: "https://github.com/Lagrange-Labs/docs-state-committee",
           className: "header-github-link",
