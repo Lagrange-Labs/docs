@@ -15,6 +15,7 @@ const config: Config = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "throw",
   markdown: {
+    format: "detect",
     mermaid: true,
   },
   themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],

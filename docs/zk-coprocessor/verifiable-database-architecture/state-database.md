@@ -1,0 +1,11 @@
+---
+id: state-database
+title: "State Database"
+description: A detailed overview of State database
+---
+
+This state database’s goal is to unify multiple storage databases belonging to different contracts for the same structure. This is similar to how state tries works on Ethereum.
+
+## Leaf Structure
+
+Each leaf maintains some information about a smart contract that the ZK Coprocessor is indexing. In this case, we only need the address of the contract (the EVM address), and the root of the corresponding storage database computed in the previous section.
