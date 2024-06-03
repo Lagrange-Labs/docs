@@ -63,6 +63,10 @@ const config: Config = {
     ],
   ],
   themeConfig: {
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+    },
     navbar: {
       logo: {
         src: "img/logo-light.svg",
@@ -120,7 +124,7 @@ const config: Config = {
             },
             {
               label: "Discord",
-              to: "https://discord.gg/Jkxvhmq2",
+              to: "https://discord.lagrange.dev",
             },
             {
               label: "Medium Blog",

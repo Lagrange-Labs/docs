@@ -21,3 +21,81 @@
   align-items: center;
   justify-content: center;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.overview {
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card {
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  width: calc(50% - 2rem);
+  text-align: left;
+  transition: border var(--ifm-transition-fast) ease,
+    box-shadow var(--ifm-transition-fast) ease;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 1.5px 3px 0 rgb(0 0 0 / 15%);
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-color: var(--ifm-color-emphasis-300);
+  text-decoration: none;
+  color: inherit;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.cardTitle:hover {
+  color: var(--ifm-color-emphasis-700);
+  text-decoration: none;
+}
+
+.card p {
+  margin: 0.5rem 0 0;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: calc(100% - 2rem);
+  }
+}
