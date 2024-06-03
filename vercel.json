@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/state-committees",
+      "destination": "/state-committees/overview",
+      "permanent": true
+    },
+    {
+      "source": "/zk-coprocessor",
+      "destination": "/zk-coprocessor/overview",
+      "permanent": true
+    }
+  ]
+}

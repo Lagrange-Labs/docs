@@ -3,8 +3,8 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Lagrange State Committee Docs",
-  tagline: "State Committee Docs",
+  title: "Lagrange State Committees Docs",
+  tagline: "State Committees Docs",
   favicon: "img/favicon.svg",
 
   // Set the production url of your site here
@@ -51,18 +51,22 @@ const config: Config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        path: "docs/state-committee",
-        routeBasePath: "state-committee",
-        sidebarPath: require.resolve("./sidebars-state-committee.ts"),
+        path: "docs/state-committees",
+        routeBasePath: "state-committees",
+        sidebarPath: require.resolve("./sidebars-state-committees.ts"),
         editUrl: ({ docPath }) => {
-          return `https://github.com/Lagrange-Labs/docs-state-committee/tree/main/docs/${docPath}`;
+          return `https://github.com/Lagrange-Labs/docs/tree/main/docs/${docPath}`;
         },
-        id: "state-committee",
+        id: "state-committees",
         showLastUpdateTime: true,
       },
     ],
   ],
   themeConfig: {
+    colorMode: {
+      defaultMode: "light",
+      disableSwitch: true,
+    },
     navbar: {
       logo: {
         src: "img/logo-light.svg",
@@ -75,12 +79,12 @@ const config: Config = {
           position: "left",
         },
         {
-          to: "/state-committee/overview",
-          label: "State Committee",
+          to: "/state-committees/overview",
+          label: "State Committees",
           position: "left",
         },
         {
-          href: "https://github.com/Lagrange-Labs/docs-state-committee",
+          href: "https://github.com/Lagrange-Labs/docs",
           className: "header-github-link",
           position: "right",
           ariaLabel: "GitHub repository",
@@ -120,11 +124,11 @@ const config: Config = {
             },
             {
               label: "Discord",
-              to: "https://discord.gg/Jkxvhmq2",
+              to: "https://discord.lagrange.dev",
             },
             {
-              label: "Medium Blog",
-              to: "https://medium.com/@lagrangelabs",
+              label: "Blog",
+              to: "https://lagrange.dev/blog",
             },
           ],
         },

@@ -1,7 +1,7 @@
 ---
 id: system-requirements
 title: "System Requirements"
-description: Recommended hardware for running State Committee attestation node
+description: Recommended hardware for running State Committees attestation node
 author: kashish
 ---
 
