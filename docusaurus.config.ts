@@ -38,7 +38,7 @@ const config: Config = {
           routeBasePath: "zk-coprocessor",
           sidebarPath: require.resolve("./sidebars-zk-coprocessor.ts"),
           editUrl: ({ docPath }) =>
-            `https://github.com/Lagrange-Labs/docs-zk-coprocessor/tree/main/docs/zk-coprocessor/${docPath}`,
+            `https://github.com/Lagrange-Labs/docs/tree/main/docs/zk-coprocessor/${docPath}`,
           showLastUpdateTime: true,
         },
         theme: {
