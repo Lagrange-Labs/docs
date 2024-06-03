@@ -51,14 +51,14 @@ The sample Prometheus/Grafana setup template for monitoring the Optimism attesta
 
 The default configuration can be found in `prometheus.yml` file.
 
-**The scrape target is set to localhost:8080. Modify this to match the IP address of the machine and port where the metrics are exposed.**
+**The scrape target is set to `localhost:8080`. Modify this to match the IP address of the machine and port where the metrics are exposed.**
 
 #### Alert Configuration
 
 The alert is set to trigger if the `gap` field, which is computed by taking the difference between `client_current_batch_number` and `client_commit_batch_number`, exceeds `5`.
 
 :::info
-If you are running multiple attestation nodes on the same machine, update the prometheus.yml file to include all relevant targets.
+If you are running multiple attestation nodes on the same machine, update the `prometheus.yml` file to include all relevant targets.
 :::
 
 #### Setup Instructions
