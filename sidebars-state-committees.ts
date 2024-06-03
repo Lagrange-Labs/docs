@@ -89,6 +89,11 @@ const sidebars: SidebarsConfig = {
             },
           ],
         },
+        {
+          type: "doc",
+          label: "Contract Addresses",
+          id: "operator-guide/contract-addresses",
+        },
       ],
     },
   ],
