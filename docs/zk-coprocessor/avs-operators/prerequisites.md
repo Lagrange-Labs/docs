@@ -16,7 +16,7 @@ There is a main ecdsa key associated with that operator which we will call `avs_
 
 ## Hardware
 
-**We recommend setting up the worker on a dedicated instance because of the ratio price / performance. **
+**We recommend setting up the worker on a dedicated instance because of the ratio price / performance.**
 
 The baseline hardware is 8c / 16 threads with 40+GB RAM. We recommend setting these up for example:
 
@@ -34,8 +34,8 @@ We are also running different workers on the cloud. The following table is repre
 | medium (sp) | 40   | 80  |
 | large       | 90   | 180 |
 
-:::info
-Note that given the parallism of the current proof system is not optimal yet (plonky2), it is possible to run 2 worker binaries in the same instance for the moment.
+:::note
+Given the parallism of current proof system is not optimal yet (plonky2), it is possible to run 2 worker binaries in the same instance for the moment.
 :::
 
 ## Installation
