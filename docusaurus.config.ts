@@ -128,7 +128,7 @@ const config: Config = {
             },
             {
               label: "Blog",
-              to: "http://lagrange.dev/blog",
+              to: "https://lagrange.dev/blog",
             },
           ],
         },
