@@ -1,7 +1,7 @@
 ---
 id: commands
 title: "Commands"
-description: CLI commands for State Committee attestation nodes
+description: CLI commands for State Committees attestation nodes
 author: kashish
 ---
 
@@ -41,7 +41,7 @@ lagrange-cli export-keystore -t <Key Type> -p <Password> -f <Keystore File Path>
 
 ### register-operator
 
-- Registers an operator to the Lagrange State Committee. The network name can be either `mainnet` or `holesky`. The BLS key and Signer address are referenced from the config file.
+- Registers an operator to the Lagrange State Committees. The network name can be either `mainnet` or `holesky`. The BLS key and Signer address are referenced from the config file.
 
 ```bash
 lagrange-cli register-operator -c <Config File Path> -n <Network Name>
@@ -51,7 +51,7 @@ lagrange-cli register-operator -c <Config File Path> -n <Network Name>
 
 ### deregister-operator
 
-- Deregisters an operator from the Lagrange State Committee. The network name can be either `mainnet` or `holesky`.
+- Deregisters an operator from the Lagrange State Committees. The network name can be either `mainnet` or `holesky`.
 
 ```bash
 lagrange-cli deregister-operator -c <Config File Path> -n <Network Name>
@@ -101,7 +101,7 @@ lagrange-cli remove-bls-pub-key -c <Config File Path> -n <Network Name> -i <Key 
 
 ### subscribe-chain
 
-- Subscribes the operator to the given chain. The network name can be either `mainnet` or `holesky`. ([Supported Chains](/state-committee/operator-guide/supported-chains))
+- Subscribes the operator to the given chain. The network name can be either `mainnet` or `holesky`. ([Supported Chains](/state-committees/operator-guide/supported-chains))
 
 ```bash
 lagrange-cli subscribe-chain -c <Config File Path> -n <Network Name> -r <Chain Name>
@@ -111,7 +111,7 @@ lagrange-cli subscribe-chain -c <Config File Path> -n <Network Name> -r <Chain N
 
 ### unsubscribe-chain
 
-- Unsubscribes the operator from the given chain. The network name can be either `mainnet` or `holesky`. ([Supported Chains](/state-committee/operator-guide/supported-chains))
+- Unsubscribes the operator from the given chain. The network name can be either `mainnet` or `holesky`. ([Supported Chains](/state-committees/operator-guide/supported-chains))
 
 ```bash
 lagrange-cli unsubscribe-chain -c <Config File Path> -n <Network Name> -r <Chain Name>
@@ -121,7 +121,7 @@ lagrange-cli unsubscribe-chain -c <Config File Path> -n <Network Name> -r <Chain
 
 ### generate-config
 
-- Generates an attestation node config file. The network name can be either `mainnet` or `holesky`. ([Supported Chains](/state-committee/operator-guide/supported-chains))
+- Generates an attestation node config file. The network name can be either `mainnet` or `holesky`. ([Supported Chains](/state-committees/operator-guide/supported-chains))
   - The L1 RPC endpoint is the Ethereum mainnet RPC endpoint for both mainnet and Holesky testnet.
   - The L2 (Optimism or Base) RPC endpoint is the rollup chain's mainnet RPC endpoint for both mainnet and holesky testnet.
   - The Beacon RPC endpoint is the Beacon mainnet RPC endpoint for both mainnet and holesky testnet.

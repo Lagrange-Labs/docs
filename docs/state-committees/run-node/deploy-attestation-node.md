@@ -1,7 +1,7 @@
 ---
 id: deploy
 title: "Deploy Attestation Node"
-description: The steps to deploy State Committee attestation node
+description: The steps to deploy State Committees attestation node
 author: kashish
 ---
 

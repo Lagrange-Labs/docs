@@ -1,7 +1,7 @@
 ---
 id: inductive-state-proofs
 title: "Inductive State Proofs"
-description: An overview of generation indcutive state proofs for the blocks attested by State Committee
+description: An overview of generation indcutive state proofs for the blocks attested by State Committees
 author: kashish
 ---
 

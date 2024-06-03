@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/state-committee",
-      "destination": "/state-committee/overview",
+      "source": "/state-committees",
+      "destination": "/state-committees/overview",
       "permanent": true
     },
     {

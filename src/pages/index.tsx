@@ -28,7 +28,7 @@ export default function Home() {
               </p>
             </div>
           </Link>
-          <Link to="/state-committee/overview" className={styles.card}>
+          <Link to="/state-committees/overview" className={styles.card}>
             <div className={styles.cardContent}>
               <h3 className={styles.cardTitle}>State Committees</h3>
               <p>
