@@ -3,8 +3,8 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Lagrange State Committees Docs",
-  tagline: "State Committees Docs",
+  title: "Lagrange Docs",
+  tagline: "Lagrange Docs",
   favicon: "img/favicon.svg",
 
   // Set the production url of your site here
