@@ -69,6 +69,11 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: "doc",
+              label: "Scripts",
+              id: "run-node/scripts",
+            },
+            {
+              type: "doc",
               label: "Set up Keystore",
               id: "run-node/setup-keystore",
             },
