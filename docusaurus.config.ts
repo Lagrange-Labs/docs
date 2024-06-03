@@ -3,12 +3,12 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Lagrange State Committees Docs",
-  tagline: "State Committees Docs",
+  title: "Lagrange Docs",
+  tagline: "Lagrange Docs",
   favicon: "img/favicon.svg",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://docs.lagrange.com",
   baseUrl: "/",
   organizationName: "Lagrange-Labs",
   projectName: "lagrange-docs",
@@ -38,7 +38,7 @@ const config: Config = {
           routeBasePath: "zk-coprocessor",
           sidebarPath: require.resolve("./sidebars-zk-coprocessor.ts"),
           editUrl: ({ docPath }) =>
-            `https://github.com/Lagrange-Labs/docs-zk-coprocessor/tree/main/docs/${docPath}`,
+            `https://github.com/Lagrange-Labs/docs-zk-coprocessor/tree/main/docs/zk-coprocessor/${docPath}`,
           showLastUpdateTime: true,
         },
         theme: {
@@ -55,7 +55,7 @@ const config: Config = {
         routeBasePath: "state-committees",
         sidebarPath: require.resolve("./sidebars-state-committees.ts"),
         editUrl: ({ docPath }) => {
-          return `https://github.com/Lagrange-Labs/docs/tree/main/docs/${docPath}`;
+          return `https://github.com/Lagrange-Labs/docs/tree/main/docs/state-committees/${docPath}`;
         },
         id: "state-committees",
         showLastUpdateTime: true,
