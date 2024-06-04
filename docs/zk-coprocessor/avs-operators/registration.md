@@ -32,7 +32,7 @@ Now that there is an operator key, the operator needs to register is to the Lagr
 
 For this, the operator needs to gather both:
 
-- The main ECDSA AVS key generated during the [first EigenLayer registration](https://lagrange-labs.gitbook.io/lagrange-v2-1/zk-coprocessor/avs-operators/pre-requisites#operator-on-eigenlayer) as encrypted keystore
+- The main ECDSA AVS key generated during the [first EigenLayer registration](https://lagrange-labs.gitbook.io/lagrange-v2-1/zk-coprocessor/avs-operators/prerequisites#operator-on-eigenlayer) as encrypted keystore
 
 - The Lagrange specific ECDSA key generated just above
 

@@ -1,6 +1,6 @@
 ---
-id: pre-requisites
-title: "Pre-requisites"
+id: prerequisites
+title: "Prerequisites"
 description: A detailed description on the relation between the stake of an operator and the proof generation tasks it must fulfill
 ---
 
@@ -40,7 +40,7 @@ Given the parallism of current proof system is not optimal yet (plonky2), it is 
 
 ## Installation
 
-### Pre-requisite
+### Prerequisites
 
 For ease of use, the worker binary is delivered via Docker and we provide docker-compose scripts to automate some common operations.
 

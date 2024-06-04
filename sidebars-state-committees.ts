@@ -54,7 +54,7 @@ const sidebars: SidebarsConfig = {
           items: [
             {
               type: "doc",
-              label: "Pre-requisite Installations",
+              label: "Prerequisite Installations",
               id: "run-node/prerequisite-installation",
             },
             {

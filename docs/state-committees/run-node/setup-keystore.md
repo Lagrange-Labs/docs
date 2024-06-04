@@ -7,7 +7,7 @@ author: kashish
 
 :::info
 
-1. Before setting up the keystore, it is mandatory to finish the [pre-requisite installations](/state-committees/run-node/prerequisite-installation).
+1. Before setting up the keystore, it is mandatory to finish the [prerequisite installations](/state-committees/run-node/prerequisite-installation).
 2. Please refer to the CLI [commands](/state-committees/run-node/commands) page for more information on each command.
    :::
 
