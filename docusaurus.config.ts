@@ -8,7 +8,7 @@ const config: Config = {
   favicon: "img/favicon.svg",
 
   // Set the production url of your site here
-  url: "https://docs.lagrange.com",
+  url: "https://docs.lagrange.dev",
   baseUrl: "/",
   organizationName: "Lagrange-Labs",
   projectName: "lagrange-docs",

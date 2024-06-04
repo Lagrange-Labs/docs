@@ -155,7 +155,17 @@ You can check client config files at` ~/.lagrange/config/client_<network_name>_<
 - Generates a docker-compose file and deploys the docker container for the attestation node. The network name can be either `mainnet` or `holesky`.
 
 ```bash
-lagrange-cli deploy -c <Client Config File Path> -i <Docker Image Name>
+lagrange-cli deploy -c <Client Config File Path> -i <Docker Image Name> -p <Prometheus Port>
 
-# i.e. ./dist/lagrange-cli deploy -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.3.17
+# i.e. ./dist/lagrange-cli deploy -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.4.0 -p 8080
+```
+
+### generate-config-deploy
+
+- Generates a client config file and deploys the docker container for the attestation node. It combines the generate-config and deploy commands.
+
+```bash
+lagrange-cli generate-config-deploy -c <Config File Path> -n <Network Name> -r <Chain Name> -i <Docker Image Name> -p <Prometheus Port>
+
+# i.e. ./dist/lagrange-cli generate-config-deploy -c ./config.toml -n mainnet -r optimism -i lagrangelabs/lagrange-node:v0.4.0 -p 8080
 ```

@@ -39,9 +39,9 @@ Lagrange Attestation Nodes exposes prometheus metrics that can be utilized by th
 - `client_current_batch_number`: the `batch_number` of the batch that is fetched for attesting. The attestation performance of the node can be monitored by combining this metric with `client_commit_batch_number`.
 - `client_commit_batch_number`: the batch_number which is attested by the node and committed to the network.
 - `client_commit_batch_number_sample`: the number of committed batches by the node. This metric can provide the full summary of the number of committed batches by the attestation node.
-- `rpc_optimism_fetch_l1_blocks`: the time of fetching L1 blocks. This metric can be useful to check the performance of the L1 RPC Provider.
-- `rpc_optimism_fetch_l2_blocks`: the time of fetching L2 blocks. This metric can be useful to check the performance of the L2 RPC Provider.
-- `rpc_optimism_fetch_beacon_blobs`: the time of fetching beacon blobs. This metric can be useful to check the performance of the beacon RPC Provider.
+- `rpc_fetch_l1_blocks`: the time of fetching L1 blocks. This metric can be useful to check the performance of the L1 RPC Provider.
+- `rpc_fetch_l2_blocks`: the time of fetching L2 blocks. This metric can be useful to check the performance of the L2 RPC Provider.
+- `rpc_fetch_beacon_blobs`: the time of fetching beacon blobs. This metric can be useful to check the performance of the beacon RPC Provider.
 
 ### Attestation Node Monitoring Setup
 
@@ -52,6 +52,10 @@ The sample Prometheus/Grafana setup template for monitoring the Optimism attesta
 The default configuration can be found in `prometheus.yml` file.
 
 **The scrape target is set to `localhost:8080`. Modify this to match the IP address of the machine and port where the metrics are exposed.**
+
+:::info
+The default service name (`MetricsServiceName` field in `config.toml`) used in the metrics is `lagrange-node`. If you choose to use a different service name, modify the `service` label in the `expr` field of `/monitoring/dashboards/lagrange-metrics.json` and `/monitoring/alerting/lagrange-alerts.json` accordingly in [CLI](https://github.com/Lagrange-Labs/client-cli).
+:::
 
 #### Alert Configuration
 
