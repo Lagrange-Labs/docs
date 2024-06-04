@@ -1,7 +1,7 @@
 ---
 id: prerequisite-installation
-title: "Pre-requisite Installations"
-description: The pre-requisite installation scripts to run a state committee attestation node
+title: "Prerequisite Installations"
+description: The prerequisite installation scripts to run a state committee attestation node
 author: kashish
 ---
 
@@ -12,7 +12,7 @@ The installation commands provided on this page are for reference. If you use an
 2. Install [Docker](https://docs.docker.com/engine/install/)
 3. Install [Docker Compose](https://docs.docker.com/compose/install/)
 
-   :::
+:::
 
 1. Golang
 

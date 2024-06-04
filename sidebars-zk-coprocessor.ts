@@ -91,8 +91,8 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "avs-operators/pre-requisites",
-          label: "Pre-requisites",
+          id: "avs-operators/prerequisites",
+          label: "Prerequisites",
         },
         {
           type: "doc",
