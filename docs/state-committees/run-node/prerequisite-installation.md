@@ -46,7 +46,7 @@ sudo systemctl restart docker
 3. Clone and setup the latest version of [Lagrange CLI repository](https://github.com/Lagrange-Labs/client-cli) on your machine.
 
 ```bash
-# Latest CLI Version: v0.2.2
+# Latest CLI Version: v0.2.3
 git clone https://github.com/Lagrange-Labs/client-cli.git
 export CGO_CFLAGS="-O -D__BLST_PORTABLE__"
 export CGO_CFLAGS_ALLOW="-O -D__BLST_PORTABLE__"
