@@ -143,7 +143,7 @@ lagrange-cli generate-config -c <Config File Path> -n <Network Name> -r <Chain N
 ```bash
 lagrange-cli generate-docker-compose -c <Config File Path> -i <Docker Image Name>
 
-# i.e. ./dist/lagrange-cli generate-docker-compose -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.3.1
+# i.e. ./dist/lagrange-cli generate-docker-compose -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.4.0
 ```
 
 :::info
