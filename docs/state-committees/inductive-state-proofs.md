@@ -1,7 +1,7 @@
 ---
 id: inductive-state-proofs
 title: "Inductive State Proofs"
-description: An overview of generation indcutive state proofs for the blocks attested by State Committees
+description: An overview of generation inductive state proofs for the blocks attested by State Committees
 author: kashish
 ---
 
@@ -17,7 +17,7 @@ For a state proof of a single block to be valid, the following recursive propert
 
 3. Block b-1 is either the genesis block or is valid with respect to these three conditions.
 
-This recursive relationship allows any block to be proven as valid via an inductive proof, starting with the base case of an initial hardcoded genesis attestor set. To prove an arbitrary block, a contract requires an inductive zero-knowledge proof of the validity of the previous block with respect to genesis and an aggregated BLS signature of the current_commitee of the present block:
+This recursive relationship allows any block to be proven as valid via inductive proof, starting with the base case of an initial hardcoded genesis attestor set. To prove an arbitrary block, a contract requires an inductive zero-knowledge proof of the validity of the previous block with respect to genesis and an aggregated BLS signature of the current_commitee of the present block:
 
 ```
 struct block {
