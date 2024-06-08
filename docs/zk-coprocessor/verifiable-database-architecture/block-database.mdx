@@ -14,7 +14,7 @@ The solution is to re-create a structure of consecutive blocks in another proof-
 
 ## Leaf Structure
 
-The leaves of this tree are SNARK-friendly block headers (SFBH). These headers includes
+The leaves of this tree are SNARK-friendly block headers (SFBH). These headers include
 
 - The block number
 
@@ -24,7 +24,7 @@ The leaves of this tree are SNARK-friendly block headers (SFBH). These headers i
 
 ## Block Tree Creation & Structure
 
-**Initialisation**: The tree is set to a fixed size, for example with $n = 2^{26}$ leaves set to “0”. This creates a root $U_0$ that any one can recompute, and that the verifier (smart contract) will have.
+**Initialisation**: The tree is set to a fixed size, for example with $n = 2^{26}$ leaves set to “0”. This creates a root $U_0$ that anyone can recompute, and that the verifier (smart contract) will have.
 
 > With 2^26, assuming a block rate of 12s, that gives more than 25 years of usage
 
