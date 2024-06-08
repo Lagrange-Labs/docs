@@ -26,7 +26,7 @@ The baseline hardware is 8c / 16 threads with 40+GB RAM. We recommend setting th
 
 ### Cloud based instances
 
-We are also running different workers on the cloud. The following table is representing the type of machine that we run on the three categories:
+We are also running different workers on the cloud. The following table represents the type of machine that we run on the three categories:
 
 | Category    | vCPU | RAM |
 | ----------- | ---- | --- |
@@ -35,7 +35,7 @@ We are also running different workers on the cloud. The following table is repre
 | large       | 90   | 180 |
 
 :::note
-Given the parallism of current proof system is not optimal yet (plonky2), it is possible to run 2 worker binaries in the same instance for the moment.
+Given the parallelism of current proof system is not optimal yet (plonky2), it is possible to run 2 worker binaries in the same instance for the moment.
 :::
 
 ## Installation
@@ -52,7 +52,7 @@ For ease of use, the worker binary is delivered via Docker and we provide docker
 
 For [the registration](https://lagrange-labs.gitbook.io/lagrange-v2-1/zk-coprocessor/avs-operators/registration), the operator needs to access a working Eth JSON-RPC endpoints to submit his registration transaction.
 
-- For mainnet, this should point to a Eth mainnet node
+- For mainnet, this should point to an Eth mainnet node
 
 - For testnet, this should point to Holesky testnet node (testnet network ran by Eigen)
 
