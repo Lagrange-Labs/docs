@@ -29,7 +29,7 @@ The `config.toml` file in the repository contains various fields that should be 
 
 - `OperatorKeystorePasswordPath` = EigenLayer operator keystore password file path
 
-- `SignerECDSAKeystorePath` = ECDSA singner keystore file path
+- `SignerECDSAKeystorePath` = ECDSA signer keystore file path
 
 - `SignerECDSAKeystorePasswordPath` = ECDSA signer keystore password file path
 
@@ -39,4 +39,4 @@ The `config.toml` file in the repository contains various fields that should be 
 
 - `MetricsServiceName` = The service name used for the metrics. Default is `lagrange-node`.
 
-- `PrometheusRetentionTime` = Rentention time for Prometheus metrics data. Default is `60s`.
+- `PrometheusRetentionTime` = Retention time for Prometheus metrics data. Default is `60s`.
