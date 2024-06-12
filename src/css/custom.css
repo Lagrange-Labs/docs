@@ -118,3 +118,9 @@ td {
   background-color: var(--navbar-background-color) !important;
   border-bottom: var(--border-bottom);
 }
+
+@media (max-width: 768px) {
+  .header-github-link {
+    margin-right: 2rem;
+  }
+}
