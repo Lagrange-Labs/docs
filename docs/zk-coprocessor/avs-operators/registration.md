@@ -47,7 +47,7 @@ docker compose run --rm worker avs register
 ```
 
 :::info
-The is the only time where Lagrange binary needs to read the main ECDSA operator key. It does not store it and can be safely kept away after this step!
+This is the only time where Lagrange binary needs to read the main ECDSA operator key. It does not store it and can be safely kept away after this step!
 
 You can remove the key from the config/ folder!
 :::

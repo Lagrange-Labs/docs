@@ -1,6 +1,6 @@
 ---
 id: overview
-title: "Overview of Verifiable Database Architecure"
+title: "Overview of Verifiable Database Architecture"
 description: A detailed overview of Verifiable Database architecture
 ---
 
@@ -20,7 +20,7 @@ More precisely, the ZK Coprocessor is producing for each block a new equivalent 
 
 > Note: From this section onwards, the explanation is deeply technical and requires knowledge of data structures such as Merkle Patricia Trie.
 
-For each new block, we have to create and maintain different databases containing only a subset of the blockchain information relevant to the ZK Coprocessor. The database architecture is as follow:
+For each new block, we have to create and maintain different databases containing only a subset of the blockchain information relevant to the ZK Coprocessor. The database architecture is as follows:
 
 **Storage Database**: A new data structure containing the subset of leaves that the user wants us to index from the contract’s storage trie. We maintain one such database for each user's contract.
 
@@ -28,6 +28,6 @@ For each new block, we have to create and maintain different databases containin
 
 **Block Database**: Update an existing data structure linking the above state database to a given block of the chain, and that contains all state databases for blocks previously processed by the ZK Coprocessor.
 
-The following sections go into more details about these different but related databases.
+The following sections go into more detail about these different but related databases.
 
 The next subsections are going deeper in the technicals of the storage, state and blocks transformation.

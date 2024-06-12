@@ -18,7 +18,7 @@ mapping(uint256 tokenId => address owner) private _owners;
 
 The reason the ZK Coprocessor requires ERC721Enumerable instead of the first ERC721, is that since we are not proving the entirety of the storage trie, then our proofs need to show that the subset it is processing belongs to this mapping. Natively exposing the full list as public inputs is impossible, thus we require to have a separate variable keeping track of the count of such entries in the mapping.
 
-ERC721Enumerable naturally provides that count via an keeping track of [all NFT ids minted](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721Enumerable.sol#L21) so far.
+ERC721Enumerable naturally provides that count via keeping track of [all NFT ids minted](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721Enumerable.sol#L21) so far.
 
 ## Installing Dependencies
 
