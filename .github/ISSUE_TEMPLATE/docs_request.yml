@@ -1,0 +1,25 @@
+name: Documentation Request
+description: Template to request new documents or updates to existing ones.
+title: "[Docs]: Add title"
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Document Request
+
+        Please fill out the information below to help us understand your document request.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Brief Document Description
+      description: Provide a brief description of the document you would like to see added or updated.
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Provide any additional context or information that will help us understand your request.
