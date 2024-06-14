@@ -59,8 +59,8 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: "doc",
-              label: "Configuration File",
-              id: "run-node/configuration-file",
+              label: "Configuration",
+              id: "run-node/configuration",
             },
             {
               type: "doc",

@@ -39,6 +39,16 @@ lagrange-cli export-keystore -t <Key Type> -p <Password> -f <Keystore File Path>
 # i.e. ./dist/lagrange-cli export-keystore -t ecdsa -p 'password@123!' -f ~/.lagrange/keystore/bls_.key
 ```
 
+### export-public-key
+
+- Exports a public key from the keystore file for the given key type.
+
+```bash
+  lagrange-cli export-public-key -t <Key Type> -f <Keystore File Path>
+
+  # i.e. ./dist/lagrange-cli export-public-key -t ecdsa -f ~/.lagrange/keystore/ecdsa_.key
+```
+
 ### register-operator
 
 - Registers an operator to the Lagrange State Committees. The network name can be either `mainnet` or `holesky`. The BLS key and Signer address are referenced from the config file.

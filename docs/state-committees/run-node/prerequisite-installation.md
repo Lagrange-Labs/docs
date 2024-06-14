@@ -14,7 +14,7 @@ The installation commands provided on this page are for reference. If you use an
 
 :::
 
-1. Golang
+## Golang
 
 ```bash
 sudo apt-get update
@@ -27,7 +27,7 @@ source ~/.profile
 go version
 ```
 
-2. Docker and Docker Compose
+## Docker and Docker Compose
 
 ```bash
 sudo apt-get update
@@ -43,7 +43,7 @@ newgrp docker
 sudo systemctl restart docker
 ```
 
-3. Clone and setup the latest version of [Lagrange CLI repository](https://github.com/Lagrange-Labs/client-cli) on your machine.
+## Install [Lagrange CLI](https://github.com/Lagrange-Labs/client-cli) from source
 
 ```bash
 # Latest CLI Version: v0.2.3
