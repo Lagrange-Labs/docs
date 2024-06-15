@@ -137,7 +137,7 @@ lagrange-cli unsubscribe-chain -c <Config File Path> -n <Network Name> -r <Chain
   - The Beacon RPC endpoint is the Beacon mainnet RPC endpoint for both mainnet and holesky testnet.
 
 :::info
-We recommend using performant providers such Alchemy, Quicknode, Infura, in the case that you do not run your own nodes. Please use appropriate rate limits. For the Beacon RPC endpoint, you should check if the given RPC provider supports the Beacon RPC API like `/eth/v1/beacon/genesis`. Quicknode supports this API.
+We recommend using performant providers such as Alchemy, Quicknode, Infura, in the case that you do not run your own nodes. Please use appropriate rate limits. For the Beacon RPC endpoint, you should check if the given RPC provider supports the Beacon RPC API like `/eth/v1/beacon/genesis`. Quicknode supports this API.
 :::
 
 ```bash
