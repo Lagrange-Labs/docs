@@ -35,7 +35,7 @@ We are also running different workers on the cloud. The following table represen
 | large       | 90   | 180 |
 
 :::note
-Given the parallelism of current proof system is not optimal yet (plonky2), it is possible to run 2 worker binaries in the same instance for the moment.
+Given the parallelism of the current proof system is not optimal yet (plonky2), it is possible to run 2 worker binaries in the same instance for the moment.
 :::
 
 ## Installation
