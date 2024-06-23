@@ -135,6 +135,7 @@ const config: Config = {
             },
             {
               label: "Blog",
+              img: "",
               to: "https://lagrange.dev/blog",
             },
           ],

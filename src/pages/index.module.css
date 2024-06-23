@@ -60,7 +60,7 @@
   width: calc(50% - 2rem);
   text-align: left;
   transition: border var(--ifm-transition-fast) ease,
-    box-shadow var(--ifm-transition-fast) ease;
+  box-shadow var(--ifm-transition-fast) ease;
   text-decoration: none;
   color: inherit;
   box-shadow: 0 1.5px 3px 0 rgb(0 0 0 / 15%);

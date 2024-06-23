@@ -124,3 +124,35 @@ td {
     margin-right: 2rem;
   }
 }
+
+.footer__links {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer__col {
+  flex: none;
+  width: fit-content;
+}
+
+.footer__items {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: fit-content;
+}
+
+.menu__link {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.menu__caret:before {
+  width: 12px;
+}
+
+@media screen and (min-width: 997px) {
+  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+    overflow-x: auto;
+  }
+}
