@@ -94,7 +94,7 @@ const config: Config = {
           href: "https://github.com/Lagrange-Labs/docs",
           className: "header-github-link",
           position: "right",
-          ariaLabel: "GitHub repository",
+          "aria-label": "GitHub repository",
         },
       ],
     },

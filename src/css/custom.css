@@ -95,8 +95,6 @@ footer.footer a:hover {
 }
 
 table {
-  display: table;
-  width: 100%;
   margin: 0 auto;
 }
 
@@ -123,4 +121,29 @@ td {
   .header-github-link {
     margin-right: 2rem;
   }
+}
+
+.footer__links {
+  justify-content: center;
+  gap: 25%;
+  width: 100%;
+}
+
+.footer__col {
+  flex: none;
+  width: fit-content;
+}
+
+.footer__items {
+  font-size: 12px;
+  width: fit-content;
+}
+
+.menu__link {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.menu__caret:before {
+  width: 12px;
 }
