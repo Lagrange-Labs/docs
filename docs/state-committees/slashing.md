@@ -5,7 +5,7 @@ description: Slashing conditions for State Committees operators
 author: kashish
 ---
 
-If a cross-chain state attestor executes a signature on an incorrect header or State Committees root for a given block, other network actors must be able to trigger slashing of that node’s collateral. For slashing to occur in a trustless fashion, there must be a deterministic set of conditions under which a signature can be considered incorrect. Verifying the object that a node signed with its BLS key is trivial to do on-chain with a cost of ~110,000 gas.
+If a cross-chain state attestor executes a signature on an incorrect header or State Committee's root for a given block, other network actors must be able to trigger slashing of that node’s collateral. For slashing to occur in a trustless fashion, there must be a deterministic set of conditions under which a signature can be considered incorrect. Verifying the object that a node signed with its BLS key is trivial to do on-chain with a cost of ~110,000 gas.
 
 To prove that a node attested to an incorrect committee root, a proof must show that the root signed by a given node incorrectly includes or excludes a specific public key. As committees are stored in contracts on Ethereum, the required leaf nodes can easily be referenced on-chain as part of proving inclusion or exclusion within a committee root for slashing.
 

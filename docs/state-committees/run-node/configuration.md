@@ -6,7 +6,7 @@ author: kashish
 ---
 
 :::info
-Please provide correct relative/absolute path in KeystorePath and PasswordPath fields in the configuration file. The KeystorePath field should have file with `.key` extension.
+Please provide the correct relative/absolute path in KeystorePath and PasswordPath fields in the configuration file. The KeystorePath field should have file with `.key` extension.
 :::
 
 ### Variable Description

@@ -28,7 +28,7 @@ new Lagrange keystore stored under config/lagr_keystore.json
 
 ## Registration on Lagrange AVS Contract
 
-Now that there is an operator key, the operator needs to register is to the Lagrange Network contracts.
+Now that there is an operator key, the operator needs to register it to the Lagrange Network contracts.
 
 For this, the operator needs to gather both:
 

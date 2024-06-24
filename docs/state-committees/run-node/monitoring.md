@@ -29,7 +29,7 @@ cd $HOME/.lagrange && docker compose -f <docker-compose-file> down --remove-orph
 
 ## Prometheus Metrics
 
-Lagrange Attestation Nodes exposes prometheus metrics that can be utilized by the operators to monitor the performance of their node. Prometheus metrics client is running on port 8080. There are various labels available which can be used to filter the metrics for a granular view.
+Lagrange Attestation Nodes exposes prometheus metrics that can be utilized by the operators to monitor the performance of their node. Prometheus metrics client is running on port 8080. There are various labels available that can be used to filter the metrics for a granular view.
 
 ### Metrics Description
 
