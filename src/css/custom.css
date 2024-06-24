@@ -95,8 +95,6 @@ footer.footer a:hover {
 }
 
 table {
-  display: table;
-  width: 100%;
   margin: 0 auto;
 }
 
@@ -126,7 +124,8 @@ td {
 }
 
 .footer__links {
-  justify-content: space-between;
+  justify-content: center;
+  gap: 25%;
   width: 100%;
 }
 
@@ -136,9 +135,7 @@ td {
 }
 
 .footer__items {
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
+  font-size: 12px;
   width: fit-content;
 }
 
@@ -149,10 +146,4 @@ td {
 
 .menu__caret:before {
   width: 12px;
-}
-
-@media screen and (min-width: 997px) {
-  .docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
-    overflow-x: auto;
-  }
 }
