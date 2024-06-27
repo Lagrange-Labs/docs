@@ -7,7 +7,7 @@ author: kashish
 
 **How can i check if my operator is registered to State Committees AVS and subscribed to the chain/s?**
 
-You can check if your operator is present in the list of operators registered to State Committees AVS on [EigenLayer Dashboard](https://app.eigenlayer.xyz/avs/0x35f4f28a8d3ff20eed10e087e8f96ea2641e6aa2).
+You can check if your operator is present in the list of operators registered to State Committees AVS on [holesky](https://holesky.eigenlayer.xyz/avs/0x18a74e66cc90f0b1744da27e72df338cea0a542b) or [mainnet](https://app.eigenlayer.xyz/avs/0x35f4f28a8d3ff20eed10e087e8f96ea2641e6aa2) EigenLayer dashboard.
 
 You'd also receive transaction ids upon successfully registering to AVS and subscribing to the chains. You can check the transaction on Etherscan for our [Service contract](https://docs.lagrange.dev/state-committees/operator-guide/contract-addresses).
 
@@ -17,7 +17,7 @@ The rollup chain is locked for new subscriptions during the next committee compu
 
 **How can I check if my operator is attesting to the batches of rollup blocks?**
 
-You can search for _"uploaded the signature up to block xxxx"_ in the [docker container logs](https://docs.lagrange.dev/state-committees/run-node/monitoring#docker-logs) or check on our [dashboard](https://dashboard.lagrange.dev/operators/).
+You can search for _"uploaded the signature up to block xxxx"_ in the [docker container logs](https://docs.lagrange.dev/state-committees/run-node/monitoring#docker-logs) or check on State Committee [holesky](https://holesky-dashboard.lagrange.dev/operators/) or [mainnet](https://dashboard.lagrange.dev/operators) dashboard.
 
 **failed to join the network: the given operator is not a member of the current committee**
 
