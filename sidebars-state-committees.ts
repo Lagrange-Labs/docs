@@ -92,6 +92,11 @@ const sidebars: SidebarsConfig = {
               label: "Monitoring",
               id: "run-node/monitoring",
             },
+            {
+              type: "doc",
+              label: "Troubleshooting",
+              id: "run-node/troubleshooting",
+            },
           ],
         },
         {
