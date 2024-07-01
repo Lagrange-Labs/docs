@@ -4,7 +4,7 @@ title: "Euclid Testnet Contract Addresses"
 description: The contract addresses of Euclid testnet
 ---
 
-## Testnet Euclid Registry
+## Testnet Euclid Registry (LPNRegistryV0)
 
 Ethereum - [0x2584665Beff871534118aAbAE781BC267Af142f9](https://etherscan.io/address/0x2584665Beff871534118aAbAE781BC267Af142f9)
 
@@ -12,13 +12,17 @@ Base - [0x2584665Beff871534118aAbAE781BC267Af142f9](https://basescan.org/address
 
 Fraxtal - [0x2584665Beff871534118aAbAE781BC267Af142f9](https://fraxscan.com/address/0x2584665beff871534118aabae781bc267af142f9)
 
-## Query Client example for Pudgy Penguins
+Mantle - [0x2584665Beff871534118aAbAE781BC267Af142f9](https://mantlescan.xyz/address/0x2584665Beff871534118aAbAE781BC267Af142f9)
+
+## Query Client example (LPNQueryV0)
 
 Ethereum - [0x80c0a42f808d6f35e83f4939482a485cae536e6a](https://etherscan.io/address/0x80c0a42f808d6f35e83f4939482a485cae536e6a)
 
-Base - [0x80c0a42f808d6f35e83f4939482a485cae536e6a](https://basescan.org/address/0x80c0a42f808d6f35e83f4939482a485cae536e6a)
+Base - [0xE95DDf60aBBB6B5b3fBacDA8E2bc76927cb9a83a](https://basescan.org/address/0xE95DDf60aBBB6B5b3fBacDA8E2bc76927cb9a83a)
 
-Fraxtal - [0x9EfeaC259c4D22Dd79305897563c5d30782C972b](https://fraxscan.com/address/0x9EfeaC259c4D22Dd79305897563c5d30782C972b)
+Fraxtal - [0xdedf9475D447fC9a6B74F0F93F7Ac20e8F400d2F](https://fraxscan.com/address/0xdedf9475D447fC9a6B74F0F93F7Ac20e8F400d2F)
+
+Mantle - [0xdedf9475D447fC9a6B74F0F93F7Ac20e8F400d2F](https://mantlescan.xyz/address/0xdedf9475D447fC9a6B74F0F93F7Ac20e8F400d2F)
 
 ## Smart Contract Repository
 
