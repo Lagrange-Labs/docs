@@ -16,7 +16,7 @@ After deploying an attestation node docker container, it is imperative for an op
 
 ## Deploy using template
 
-The templates for attestation node's config file and the docker-compose can be found in the [CLI](https://github.com/Lagrange-Labs/client-cli/tree/develop/templates) repository.
+The templates for attestation node's config file and the docker-compose can be found in the [CLI](https://github.com/Lagrange-Labs/lsc-client-cli/tree/develop/templates) repository.
 
 :::info
 Please review the [configuration](/state-committees/run-node/configuration) description.
