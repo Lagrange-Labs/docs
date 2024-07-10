@@ -153,7 +153,7 @@ lagrange-cli generate-config -c <Config File Path> -n <Network Name> -r <Chain N
 ```bash
 lagrange-cli generate-docker-compose -c <Config File Path> -i <Docker Image Name>
 
-# i.e. ./dist/lagrange-cli generate-docker-compose -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.4.0
+# i.e. ./dist/lagrange-cli generate-docker-compose -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.4.3
 ```
 
 :::info
@@ -167,7 +167,7 @@ You can check client config files at` ~/.lagrange/config/client_<network_name>_<
 ```bash
 lagrange-cli deploy -c <Client Config File Path> -i <Docker Image Name> -p <Prometheus Port>
 
-# i.e. ./dist/lagrange-cli deploy -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.4.0 -p 8080
+# i.e. ./dist/lagrange-cli deploy -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.4.3 -p 8080
 ```
 
 ### generate-config-deploy
@@ -177,5 +177,5 @@ lagrange-cli deploy -c <Client Config File Path> -i <Docker Image Name> -p <Prom
 ```bash
 lagrange-cli generate-config-deploy -c <Config File Path> -n <Network Name> -r <Chain Name> -i <Docker Image Name> -p <Prometheus Port>
 
-# i.e. ./dist/lagrange-cli generate-config-deploy -c ./config.toml -n mainnet -r optimism -i lagrangelabs/lagrange-node:v0.4.0 -p 8080
+# i.e. ./dist/lagrange-cli generate-config-deploy -c ./config.toml -n mainnet -r optimism -i lagrangelabs/lagrange-node:v0.4.3 -p 8080
 ```
