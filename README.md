@@ -16,4 +16,4 @@ This command starts a local development server and opens up a browser window. Ma
 
 ## LICENSE
 
-This project is licensed under https://github.com/Lagrange-Labs/lagrange-node/blob/develop/LICENSE
+This project is licensed under https://github.com/Lagrange-Labs/lsc-node/blob/develop/LICENSE

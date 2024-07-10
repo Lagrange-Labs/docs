@@ -45,7 +45,7 @@ Lagrange Attestation Nodes exposes prometheus metrics that can be utilized by th
 
 ### Attestation Node Monitoring Setup
 
-The sample Prometheus/Grafana setup template for monitoring the Optimism attestation node can be found in the [CLI](https://github.com/Lagrange-Labs/client-cli/blob/develop/monitoring) repository. The template assumes the attestation node is running on its own machine, and Prometheus metrics are exposed on port `8080`. Operators running multiple attestation nodes on the same machine can modify this template as needed.
+The sample Prometheus/Grafana setup template for monitoring the Optimism attestation node can be found in the [CLI](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/monitoring) repository. The template assumes the attestation node is running on its own machine, and Prometheus metrics are exposed on port `8080`. Operators running multiple attestation nodes on the same machine can modify this template as needed.
 
 #### Prometheus Configuration
 
@@ -54,7 +54,7 @@ The default configuration can be found in `prometheus.yml` file.
 **The scrape target is set to `localhost:8080`. Modify this to match the IP address of the machine and port where the metrics are exposed.**
 
 :::info
-The default service name (`MetricsServiceName` field in `config.toml`) used in the metrics is `lagrange-node`. If you choose to use a different service name, modify the `service` label in the `expr` field of `/monitoring/dashboards/lagrange-metrics.json` and `/monitoring/alerting/lagrange-alerts.json` accordingly in [CLI](https://github.com/Lagrange-Labs/client-cli).
+The default service name (`MetricsServiceName` field in `config.toml`) used in the metrics is `lagrange-node`. If you choose to use a different service name, modify the `service` label in the `expr` field of `/monitoring/dashboards/lagrange-metrics.json` and `/monitoring/alerting/lagrange-alerts.json` accordingly in [CLI](https://github.com/Lagrange-Labs/lsc-client-cli).
 :::
 
 #### Alert Configuration

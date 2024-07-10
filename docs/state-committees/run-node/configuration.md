@@ -11,7 +11,7 @@ Please provide the correct relative/absolute path in KeystorePath and PasswordPa
 
 ### Variable Description
 
-The `config.toml` file in the repository contains various fields that should be configured in order to run various [CLI](https://github.com/Lagrange-Labs/client-cli) commands.
+The `config.toml` file in the repository contains various fields that should be configured in order to run various [CLI](https://github.com/Lagrange-Labs/lsc-client-cli) commands.
 
 - `EthereumRPCURL`: Ethereum mainnet RPC endpoint for mainnet, and Holesky RPC endpoint for testnet.
 
