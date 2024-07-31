@@ -54,7 +54,7 @@ lagrange-cli export-keystore -t <Key Type> -p <Password> -f <Keystore File Path>
 - Registers an operator to the Lagrange State Committees. The network name can be either `mainnet` or `holesky`. The BLS key and Signer address are referenced from the config file.
 
 ```bash
-lagrange-cli register-operator -c <Config File Path> -n <Network Name>
+lagrange-cli register-operator -c <CLI Config File Path>  -n <Network Name>
 
 # i.e. ./dist/lagrange-cli register-operator -c ./config.toml -n mainnet
 ```
@@ -64,7 +64,7 @@ lagrange-cli register-operator -c <Config File Path> -n <Network Name>
 - Deregisters an operator from the Lagrange State Committees. The network name can be either `mainnet` or `holesky`.
 
 ```bash
-lagrange-cli deregister-operator -c <Config File Path> -n <Network Name>
+lagrange-cli deregister-operator -c <CLI Config File Path>  -n <Network Name>
 
 # i.e. ./dist/lagrange-cli deregister-operator -c ./config.toml -n mainnet
 ```
@@ -74,7 +74,7 @@ lagrange-cli deregister-operator -c <Config File Path> -n <Network Name>
 - Updates the BLS public key for the operator at the given index. The network name can be either `mainnet` or `holesky`. New BLS key is referenced from the config file.
 
 ```bash
-lagrange-cli update-bls-pub-key -c <Config File Path> -n <Network Name> -i <Key Index>
+lagrange-cli update-bls-pub-key -c <CLI Config File Path>  -n <Network Name> -i <Key Index>
 
 # i.e. ./dist/lagrange-cli update-bls-pub-key -c ./config.toml -n mainnet -i 0
 ```
@@ -84,7 +84,7 @@ lagrange-cli update-bls-pub-key -c <Config File Path> -n <Network Name> -i <Key 
 - Updates the signer address for the operator. The network name can be either `mainnet` or `holesky`. New signer address is referenced from the config file.
 
 ```bash
-lagrange-cli update-signer-address -c <Config File Path> -n <Network Name>
+lagrange-cli update-signer-address -c <CLI Config File Path>  -n <Network Name>
 
 # i.e. ./dist/lagrange-cli update-signer-address -c ./config.toml -n mainnet
 ```
@@ -94,7 +94,7 @@ lagrange-cli update-signer-address -c <Config File Path> -n <Network Name>
 - Adds a new BLS public key for the operator. The network name can be either `mainnet` or `holesky`. New BLS key is referenced from the config file.
 
 ```bash
-lagrange-cli add-bls-pub-key -c <Config File Path> -n <Network Name>
+lagrange-cli add-bls-pub-key -c <CLI Config File Path>  -n <Network Name>
 
 # i.e. ./dist/lagrange-cli add-bls-pub-key -c ./config.toml -n mainnet
 ```
@@ -104,7 +104,7 @@ lagrange-cli add-bls-pub-key -c <Config File Path> -n <Network Name>
 - Removes the BLS public key for the operator at the given index. The network name can be either `mainnet` or `holesky`.
 
 ```bash
-lagrange-cli remove-bls-pub-key -c <Config File Path> -n <Network Name> -i <Key Index>
+lagrange-cli remove-bls-pub-key -c <CLI Config File Path>  -n <Network Name> -i <Key Index>
 
 # i.e. ./dist/lagrange-cli remove-bls-pub-key -c ./config.toml -n mainnet -i 0
 ```
@@ -114,7 +114,7 @@ lagrange-cli remove-bls-pub-key -c <Config File Path> -n <Network Name> -i <Key 
 - Subscribes the operator to the given chain. The network name can be either `mainnet` or `holesky`. ([Supported Chains](/state-committees/operator-guide/supported-chains))
 
 ```bash
-lagrange-cli subscribe-chain -c <Config File Path> -n <Network Name> -r <Chain Name>
+lagrange-cli subscribe-chain -c <CLI Config File Path>  -n <Network Name> -r <Chain Name>
 
 # i.e. ./dist/lagrange-cli subscribe-chain -c ./config.toml -n mainnet -r optimism
 ```
@@ -124,7 +124,7 @@ lagrange-cli subscribe-chain -c <Config File Path> -n <Network Name> -r <Chain N
 - Unsubscribes the operator from the given chain. The network name can be either `mainnet` or `holesky`. ([Supported Chains](/state-committees/operator-guide/supported-chains))
 
 ```bash
-lagrange-cli unsubscribe-chain -c <Config File Path> -n <Network Name> -r <Chain Name>
+lagrange-cli unsubscribe-chain -c <CLI Config File Path>  -n <Network Name> -r <Chain Name>
 
 # i.e. ./dist/lagrange-cli unsubscribe-chain -c ./config.toml -n mainnet -r optimism
 ```
@@ -141,7 +141,7 @@ We recommend using performant providers such as Alchemy, Quicknode, Infura, in t
 :::
 
 ```bash
-lagrange-cli generate-config -c <Config File Path> -n <Network Name> -r <Chain Name>
+lagrange-cli generate-config -c <CLI Config File Path>  -n <Network Name> -r <Chain Name>
 
 # i.e. ./dist/lagrange-cli generate-config -c ./config.toml -n mainnet -r optimism
 ```
@@ -151,9 +151,9 @@ lagrange-cli generate-config -c <Config File Path> -n <Network Name> -r <Chain N
 - Generates a docker-compose file for the attestation node. This command can be useful if you want to manually set up your docker-compose.
 
 ```bash
-lagrange-cli generate-docker-compose -c <Config File Path> -i <Docker Image Name>
+lagrange-cli generate-docker-compose -c <CLI Config File Path>  -i <Docker Image Name> -n <Node Config File Path>
 
-# i.e. ./dist/lagrange-cli generate-docker-compose -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.4.3
+# i.e. ./dist/lagrange-cli generate-docker-compose -c ./config.toml -i lagrangelabs/lagrange-node:v1.0.0 -n ~/.lagrange/config/client_mainnet_optimism_.toml
 ```
 
 :::info
@@ -165,9 +165,9 @@ You can check client config files at` ~/.lagrange/config/client_<network_name>_<
 - Generates a docker-compose file and deploys the docker container for the attestation node. The network name can be either `mainnet` or `holesky`.
 
 ```bash
-lagrange-cli deploy -c <Client Config File Path> -i <Docker Image Name> -p <Prometheus Port>
+lagrange-cli deploy -c <CLI Config File Path>  -i <Docker Image Name> -n <Node Config File Path>
 
-# i.e. ./dist/lagrange-cli deploy -c ~/.lagrange/config/client_mainnet_optimism_.toml -i lagrangelabs/lagrange-node:v0.4.3 -p 8080
+# i.e. ./dist/lagrange-cli deploy -c ./config.toml -i lagrangelabs/lagrange-node:v1.0.0 -n ~/.lagrange/config/client_mainnet_optimism_.toml
 ```
 
 ### generate-config-deploy
@@ -175,7 +175,7 @@ lagrange-cli deploy -c <Client Config File Path> -i <Docker Image Name> -p <Prom
 - Generates a client config file and deploys the docker container for the attestation node. It combines the generate-config and deploy commands.
 
 ```bash
-lagrange-cli generate-config-deploy -c <Config File Path> -n <Network Name> -r <Chain Name> -i <Docker Image Name> -p <Prometheus Port>
+lagrange-cli generate-config-deploy -c <CLI Config File Path>  -n <Network Name> -r <Chain Name> -i <Docker Image Name>
 
-# i.e. ./dist/lagrange-cli generate-config-deploy -c ./config.toml -n mainnet -r optimism -i lagrangelabs/lagrange-node:v0.4.3 -p 8080
+# i.e. ./dist/lagrange-cli generate-config-deploy -c ./config.toml -n mainnet -r optimism -i lagrangelabs/lagrange-node:v1.0.0
 ```

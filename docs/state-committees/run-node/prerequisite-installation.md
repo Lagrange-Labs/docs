@@ -46,7 +46,7 @@ sudo systemctl restart docker
 ## Install [LSC CLI](https://github.com/Lagrange-Labs/lsc-client-cli) from source
 
 ```bash
-# Latest CLI Version: v0.2.3
+# Latest CLI Version: v1.0.0
 git clone https://github.com/Lagrange-Labs/lsc-client-cli.git
 export CGO_CFLAGS="-O -D__BLST_PORTABLE__"
 export CGO_CFLAGS_ALLOW="-O -D__BLST_PORTABLE__"
