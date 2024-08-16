@@ -17,4 +17,5 @@ Lagrange ZK Coprocessor is currently deployed on both Holesky and Mainnet networ
 
 | Contract          | Address                                                                                                                       |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| ZKMRServiceManager | [0xf98D5De1014110C65c51b85Ea55f73863215CC10](https://etherscan.io/address/0xf98D5De1014110C65c51b85Ea55f73863215CC10#writeProxyContract) |
 | ZKMRStakeRegistry | [0xf724cDC7C40fd6B59590C624E8F0E5E3843b4BE4](https://holesky.etherscan.io/address/0xf724cDC7C40fd6B59590C624E8F0E5E3843b4BE4) |
