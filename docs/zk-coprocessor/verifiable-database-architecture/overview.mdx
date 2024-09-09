@@ -6,11 +6,18 @@ description: A detailed overview of Verifiable Database architecture
 
 import ThemedImage from "@site/src/components/ThemedImage";
 
-Lagrange's network can be thought as an indexer that looks at a contract's storage and process it into a verifiable database.
+# Overview
 
-Lagrange's network is in essence, re-creating the target blockchain's database (storage, state and blocks) but in a format amenable to run efficient and distributed queries.
+Lagrange's network can be thought as an indexer that looks at a contract's storage and process it
+into a verifiable database.
 
-More precisely, the ZK Coprocessor is producing for each block a new equivalent version (in blue) of the original storage trie (in red), but which is supporting efficient queries. In the above diagram, we generate a proof that this new database contains the same data as the original red blockchain data structure.
+Lagrange's network is in essence, re-creating the target blockchain's database (storage, state and
+blocks) but in a format amenable to run efficient and distributed queries.
+
+More precisely, the ZK Coprocessor is producing for each block a new equivalent version (in blue) of
+the original storage trie (in red), but which is supporting efficient queries. In the above diagram,
+we generate a proof that this new database contains the same data as the original red blockchain
+data structure.
 
 <ThemedImage
   lightSrc="/img/verifiable-db-architecture.png"
@@ -18,16 +25,84 @@ More precisely, the ZK Coprocessor is producing for each block a new equivalent 
   alt="Verifiable Database Architecture Diagram"
 />
 
-> Note: From this section onwards, the explanation is deeply technical and requires knowledge of data structures such as Merkle Patricia Trie.
+> Note: From this section onwards, the explanation is deeply technical and requires knowledge of
+> data structures such as Merkle Patricia Trie.
 
-For each new block, we have to create and maintain different databases containing only a subset of the blockchain information relevant to the ZK Coprocessor. The database architecture is as follows:
+# Onchain's storage
 
-**Storage Database**: A new data structure containing the subset of leaves that the user wants us to index from the contract’s storage trie. We maintain one such database for each user's contract.
+## Contract Storage 
 
-**State Database**: A new data structure containing the subset of leaves for the referenced contracts in the state trie. Each leaf/entry of the state database is linked with the corresponding storage database.
+**Storage**: Each contract on EVM chain has storage trie that contains the values of the variables it holds. For
+example, if a contract has the following:
+```solidity
+uint256 price;
+mapping(address => uin256) balances;
+```
 
-**Block Database**: Update an existing data structure linking the above state database to a given block of the chain, and that contains all state databases for blocks previously processed by the ZK Coprocessor.
+Then the price value and all the pairs `(address,uint256)` of the mapping are stored in the storage
+trie of the contract. 
+
+:::tip
+At each block, **a new trie** is created containing all the values of the variables _for this specific
+block_. The root of the storage is stored in the contract information for that block.
+:::
+
+## Historical Values as Table
+
+The zkCoprocessor exposes the data of the contract in a very well known form: an SQL table.
+More specifically, the zkCoprocessor keeps historical valuess for each block. **In a nutshell, it is a
+time serie database that keeps appending the values of all variables tracked for each block.**
+
+Let's take the previous example with the two variables `price` and `balances`. The zkCoprocessor
+exposes these two variables as two separated tables:
+
+### Table for single variables
+
+The zkCoprocessor exposes a single table for all the different "single" variables (uint256, etc),
+**not** arrays or mappings.
+
+| Block | Price |
+| ----- | ----- |
+| b1    | p1    |
+| b2    | p2    |
+
+### Table for Aggregate Variables
+
+The zkCoprocessor exposes a single table _per_ "aggregate" variable such as a mapping and arrays.
+
+| Block | Key   | Balance |
+| ----- | ----- | ------- |
+| b1    | k1    | 10      |
+| b1    | k2    | 20      |
+| b2    | k1    | 15      |
+| b2    | k2    | 20      |
+
+As you can see, this table contains multiple rows **for the same block**, one for each entry in the
+mapping!
+
+
+
+:::info
+The reason the tables are exposed in this way is because it is the most sensible way to expose the
+historical values of a contract inside the rigid structure of SQL tables. Indeed, if one had all the
+variables inside a single  table, it would look like the following:
+
+| Block | Key   | Balance | Price |
+| ----- | ----- | ------- | ----- |
+| b1    | k1    | 10      | p1    |
+| b1    | k2    | 20      | p1 (same)   |
+| b2    | k1    | 15      | p2    |
+| b2    | k2    | 20      | p2 (same) |
+
+There would be useless and sometimes large repetition of elements. This is because contracts have
+variables have have only one dimension (uint256) or two dimensions (arrays) or more !
+:::
+
+
+
+
 
 The following sections go into more detail about these different but related databases.
 
-The next subsections are going deeper in the technicals of the storage, state and blocks transformation.
+The next subsections are going deeper in the technicals of the storage, state and blocks
+transformation.

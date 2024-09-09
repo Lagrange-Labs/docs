@@ -76,7 +76,7 @@ const config: Config = {
     }),
     colorMode: {
       defaultMode: "light",
-      disableSwitch: true,
+      disableSwitch: false,
     },
     navbar: {
       logo: {

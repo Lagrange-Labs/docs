@@ -59,22 +59,22 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Euclid Testnet Developer Docs",
-      link: { type: "doc", id: "euclid-testnet/overview" },
+      label: "Themis Testnet Developer Docs",
+      link: { type: "doc", id: "themis-testnet/overview" },
       items: [
         {
           type: "doc",
-          id: "euclid-testnet/solidity",
+          id: "themis-testnet/solidity",
           label: "Solidity Documentation",
         },
         {
           type: "doc",
-          id: "euclid-testnet/example-pudgy-penguins",
+          id: "themis-testnet/example-pudgy-penguins",
           label: "Example: NFT Mint Whitelist on L2 with Pudgy Penguins",
         },
         {
           type: "doc",
-          id: "euclid-testnet/contract-addresses",
+          id: "themis-testnet/contract-addresses",
           label: "Contract Addresses",
         },
       ],
