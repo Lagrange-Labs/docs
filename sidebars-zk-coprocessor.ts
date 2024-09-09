@@ -8,6 +8,11 @@ const sidebars: SidebarsConfig = {
       id: "overview",
     },
     {
+      type: "doc",
+      label: "Quickstart",
+      id: "quickstart",
+    },
+    {
       type: "category",
       label: "Verifable Database Architecture",
       link: { type: "doc", id: "verifiable-database-architecture/overview" },
