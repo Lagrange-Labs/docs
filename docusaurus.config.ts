@@ -64,16 +64,18 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    algolia: {
-      apiKey: process.env.ALGOLIA_API_KEY,
-      appId: process.env.ALGOLIA_APP_ID,
-      indexName: process.env.ALGOLIA_INDEX_NAME,
-      contextualSearch: true,
-    },
+    ///algolia: {
+      ///apiKey: process.env.ALGOLIA_API_KEY,
+      ///appId: process.env.ALGOLIA_APP_ID,
+      ///indexName: process.env.ALGOLIA_INDEX_NAME,
+      ///contextualSearch: true,
+    ///},
+    
     colorMode: {
       defaultMode: "light",
       disableSwitch: true,
     },
+
     navbar: {
       logo: {
         src: "img/logo-light.svg",

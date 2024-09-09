@@ -14,6 +14,11 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: "doc",
+          id: "verifiable-database-architecture/onchain-storage",
+          label: "Onchain's Storage",
+        },
+        {
+          type: "doc",
           id: "verifiable-database-architecture/storage-database",
           label: "Storage Database",
         },
