@@ -24,7 +24,7 @@ To follow this tutorial, you should have:
 
 3. A local repo setup with [Foundry](https://github.com/foundry-rs/foundry).
 
-4. Installation of the [zkMapReduce Solidity SDK](https://github.com/lagrange-labs/lagrange-lpn-contracts).
+4. Installation of the [ZK Coprocessor Solidity SDK](https://github.com/lagrange-labs/lagrange-lpn-contracts).
 
 ## High Level Concept
 
@@ -127,14 +127,14 @@ See other examples and source code in our [GitHub repo](https://github.com/lagra
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.25;
 
-import {LPNClientV1} from "../client/LPNClientV1.sol";
-import {ILPNRegistryV1} from "../interfaces/ILPNRegistryV1.sol";
+import {LPNClientV1} from "lagrange-lpn-contracts/src/v1/client/LPNClientV1.sol";
+import {ILPNRegistryV1} from "lagrange-lpn-contracts/src/v1/interfaces/ILPNRegistryV1.sol";
 import {
     ERC721Enumerable,
     ERC721
 } from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import {L1BlockNumber} from "../../utils/L1Block.sol";
-import {QueryOutput} from "../Groth16VerifierExtensions.sol";
+import {L1BlockNumber} from "lagrange-lpn-contracts/src/utils/L1Block.sol";
+import {QueryOutput} from "lagrange-lpn-contracts/src/v1/Groth16VerifierExtensions.sol";
 
 /// @notice Refer to docs page https://lagrange-labs.gitbook.io/lagrange-v2-1/zk-coprocessor/testnet-euclid-developer-docs/example-nft-mint-whitelist-on-l2-with-pudgy-penguins
 contract LayeredPenguins is LPNClientV1, ERC721Enumerable {

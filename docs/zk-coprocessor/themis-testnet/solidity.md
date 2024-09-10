@@ -4,65 +4,22 @@ title: "Solidity Documentation"
 description: Solidity Documentation for developers to run queries on Themis Testnet
 ---
 
-## Proving ERC721Enumerable NFT ownership
-
-The goal of Testnet Themis is to run computations on historical values of a given mapping in a smart contract. Initially, we focus on proving historical values of mappings with “simple” keys and values (where “simple” means native type).
-
-In particular, we focus on processing the following key-values pairs in the [ERC721Enumerable contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol#L28):
-
-```solidity
-mapping(uint256 tokenId => address owner) private _owners;
-```
-
-## Technical Note:
-
-The reason the ZK Coprocessor requires ERC721Enumerable instead of the first ERC721, is that since we are not proving the entirety of the storage trie, then our proofs need to show that the subset it is processing belongs to this mapping. Natively exposing the full list as public inputs is impossible, thus we require to have a separate variable keeping track of the count of such entries in the mapping.
-
-ERC721Enumerable naturally provides that count via keeping track of [all NFT ids minted](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/extensions/ERC721Enumerable.sol#L21) so far.
-
 ## Installing Dependencies
 
 You can install our [Solidity SDK](https://github.com/Lagrange-Labs/lagrange-lpn-contracts) via [foundry](https://github.com/foundry-rs/foundry)
 
 ```solidity
-forge install lagrange-labs/lagrange-lpn-contracts@euclid-base-v0.1
+forge install lagrange-labs/lagrange-lpn-contracts
 forge remappings > remappings.txt
 ```
 
-## Registering to Lagrange for Indexing Storage
+## Register Storage Variables of Smart Contracts as SQL Tables for Indexing Storage
 
-The contract needs to tell Lagrange to start indexing / proving the mapping he wants. Lagrange holds some sets of smart contracts that are publicly accessible and callable for indexing and querying.
+You can [register tables using our Web UI](https://app.lagrange.dev/zk-coprocessor/register-table)
 
-The developer knows the layout of its contract and can directly indicates this to Lagrange contracts. You can use `solc` to determine the storage slots of the mapping and size variables:
+## Register Queries as SQL SELECT Statements
 
-```solidity
-solc --storage-layout MyContract.sol -o MyContract.json
-```
-
-You can use the storage slot values in the call to `register` below:
-
-```solidity
- // this call may revert for reasons internal to Lagrange:
- //  * not supported, client contract not whitelisted etc
- // First argument is the mapping slot in the contract,
- // in this case 0. Second is the slot of the variable
- // that keeps track of the total number of entries in
- // the mapping.
-function lpnRegister(address storageContract) external {
-    LPNRegistryV1 registry =
-        LPNRegistryV1(0x2584665Beff871534118aAbAE781BC267Af142f9);
-
-    // Registration is currently supported for whitelisted storage contracts on Ethereum
-    if (isEthereum()) {
-        if (!registry.whitelist(storageContract)) {
-            registry.toggleWhitelist(storageContract);
-        }
-        registry.register(
-            storageContract, OWNERS_STORAGE_SLOT, OWNERS_SIZE_SLOT
-        );
-    }
-}
-```
+You can [register queries using our Web UI](https://app.lagrange.dev/zk-coprocessor/register-query)
 
 ## Querying the database
 
@@ -71,24 +28,17 @@ Once Lagrange is indexing the requested storage slots, the smart contract can st
 For Testnet Themis, we will support only a very limited set of computations. Specifically, we focus on computing SELECT statements over historical data.
 
 ```solidity
-function queryHolder(
-    address storageContract,
-    address holder,
-    uint256 startBlock,
-    uint256 endBlock,
-    uint256 offset
-) external payable {
-    uint256 requestId = lpnRegistry.request{value: lpnRegistry.gasFee()}(
-        storageContract,
-        bytes32(uint256(uint160(holder))),
-        startBlock,
-        endBlock,
-        offset
-    );
+    function query() private returns (uint256) {
+        bytes32[] memory placeholders = new bytes32[](1);
+        placeholders[0] = bytes32(bytes20(msg.sender));
 
-    // We can store the requestID if we need to access other data in the callback
-    requests[requestId] = RequestMetadata({sender: msg.sender, holder: holder});
-}
+        return lpnRegistry.request{value: lpnRegistry.gasFee()}(
+            YOUR_REGISTERED_QUERY_HASH,
+            placeholders,
+            L1BlockNumber(),
+            L1BlockNumber()
+        );
+    }
 ```
 
 ## Receiving the result
@@ -100,7 +50,7 @@ abstract contract LPNClientV1 is ILPNClientV1 {
     /// @notice Callback function called by the LPNRegistry contract.
     /// @param requestId The ID of the request.
     /// @param results The result of the request.
-    function processCallback(uint256 requestId, uint256[] calldata results)
+    function processCallback(uint256 requestId, QueryOutput memory result)
         internal
         virtual;
 }
@@ -112,9 +62,9 @@ Refer to the below code snippet for a complete sample implementation of a zkMapR
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-import {LPNClientV1} from "./LPNClientV1.sol";
-import {ILPNRegistryV1} from "../interfaces/ILPNRegistryV1.sol";
-import {QueryOutput} from "../Groth16VerifierExtensions.sol";
+import {LPNClientV1} from "lagrange-lpn-contracts/src/v1/client/LPNClientV1.sol";
+import {ILPNRegistryV1} from "lagrange-lpn-contracts/src/v1/interfaces/ILPNRegistryV1.sol";
+import {QueryOutput} from "lagrange-lpn-contracts/src/v1/Groth16VerifierExtensions.sol";
 import {Initializable} from
     "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
