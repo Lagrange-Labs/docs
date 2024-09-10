@@ -136,6 +136,7 @@ import {
 import {L1BlockNumber} from "../../utils/L1Block.sol";
 import {QueryOutput} from "../Groth16VerifierExtensions.sol";
 
+/// @notice Refer to docs page https://lagrange-labs.gitbook.io/lagrange-v2-1/zk-coprocessor/testnet-euclid-developer-docs/example-nft-mint-whitelist-on-l2-with-pudgy-penguins
 contract LayeredPenguins is LPNClientV1, ERC721Enumerable {
     /// SELECT AVG(key) FROM pudgy_penguins_owners WHERE value = $1;
     bytes32 public constant SELECT_PUDGY_PENGUINS_QUERY_HASH =
