@@ -3,6 +3,8 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 require("dotenv").config();
 
+const isDevelopment = process.env.ENVIRONMENT === "development";
+
 const config: Config = {
   title: "Lagrange Docs",
   tagline: "Lagrange Docs",
@@ -64,13 +66,14 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    ///algolia: {
-      ///apiKey: process.env.ALGOLIA_API_KEY,
-      ///appId: process.env.ALGOLIA_APP_ID,
-      ///indexName: process.env.ALGOLIA_INDEX_NAME,
-      ///contextualSearch: true,
-    ///},
-    
+    ...(isDevelopment ? {} : {
+      algolia: {
+        apiKey: process.env.ALGOLIA_API_KEY,
+        appId: process.env.ALGOLIA_APP_ID,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+        contextualSearch: true,
+      },
+    }),
     colorMode: {
       defaultMode: "light",
       disableSwitch: true,

@@ -8,6 +8,8 @@ $ yarn
 
 ## Local Development
 
+Create `.env` file and set `ENVIRONMENT=development` to locally start the development server without Algolia search. 
+
 ```
 $ yarn start
 ```
