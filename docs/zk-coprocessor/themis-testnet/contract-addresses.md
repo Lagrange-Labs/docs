@@ -1,10 +1,10 @@
 ---
 id: contract-addresses
-title: "Euclid Testnet Contract Addresses"
-description: The contract addresses of Euclid testnet
+title: "Themis Testnet Contract Addresses"
+description: The contract addresses of Themis testnet
 ---
 
-## Testnet Euclid Registry (LPNRegistryV0)
+## Testnet Themis Registry (LPNRegistryV1)
 
 Ethereum - [0x2584665Beff871534118aAbAE781BC267Af142f9](https://etherscan.io/address/0x2584665Beff871534118aAbAE781BC267Af142f9)
 
@@ -14,7 +14,7 @@ Fraxtal - [0x2584665Beff871534118aAbAE781BC267Af142f9](https://fraxscan.com/addr
 
 Mantle - [0x2584665Beff871534118aAbAE781BC267Af142f9](https://mantlescan.xyz/address/0x2584665Beff871534118aAbAE781BC267Af142f9)
 
-## Query Client example (LPNQueryV0)
+## Query Client example (LPNQueryV1)
 
 Ethereum - [0x80c0a42f808d6f35e83f4939482a485cae536e6a](https://etherscan.io/address/0x80c0a42f808d6f35e83f4939482a485cae536e6a)
 

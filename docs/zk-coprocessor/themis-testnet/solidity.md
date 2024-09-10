@@ -1,12 +1,12 @@
 ---
 id: solidity
 title: "Solidity Documentation"
-description: Solidity Documentation for developers to run queries on Euclid Testnet
+description: Solidity Documentation for developers to run queries on Themis Testnet
 ---
 
 ## Proving ERC721Enumerable NFT ownership
 
-The goal of Testnet Euclid is to run computations on historical values of a given mapping in a smart contract. Initially, we focus on proving historical values of mappings with “simple” keys and values (where “simple” means native type).
+The goal of Testnet Themis is to run computations on historical values of a given mapping in a smart contract. Initially, we focus on proving historical values of mappings with “simple” keys and values (where “simple” means native type).
 
 In particular, we focus on processing the following key-values pairs in the [ERC721Enumerable contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol#L28):
 
@@ -68,7 +68,7 @@ function lpnRegister(address storageContract) external {
 
 Once Lagrange is indexing the requested storage slots, the smart contract can start doing queries over the verifiable databases that are created.
 
-For Testnet Euclid, we will support only a very limited set of computations. Specifically, we focus on computing SELECT statements over historical data.
+For Testnet Themis, we will support only a very limited set of computations. Specifically, we focus on computing SELECT statements over historical data.
 
 ```solidity
 function queryHolder(
@@ -96,7 +96,7 @@ function queryHolder(
 The dapp contract should satisfy an interface to receive the reply:
 
 ```solidity
-abstract contract LPNClientV0 is ILPNClient {
+abstract contract LPNClientV1 is ILPNClientV1 {
     /// @notice Callback function called by the LPNRegistry contract.
     /// @param requestId The ID of the request.
     /// @param results The result of the request.

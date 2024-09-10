@@ -70,7 +70,7 @@ Visit the [dashboard](https://staging-zkmr-dashboard.lagrange.dev/dashboard/) to
   alt="Register Query"
 />
 
-The result is a unique Hash that we will be using to execute our lending smart contract. 
+The result is a 'query hash' that we will be using to execute our lending smart contract. 
 
 ## Step 4: Deploy your application
 
@@ -93,6 +93,6 @@ Congratulations, you have now successfully built a Lending Application with Azuk
 ## Next steps
 
 - Continue learning by going to the hello-world dapp tutorial
-- Join the Lagrange **Developer Community in Discord** where you can ask any questions about this tutorial in the channel
-- Tag us on Twitter to help other devs building on Lagrange ZK Coprocessor or share your project.
+- Join the Lagrange **Developer Community in [Discord](https://discord.com/invite/lagrange)** where you can ask any questions about this tutorial in the channel
+- Tag us on [X](https://x.com/lagrangedev) to help other devs building on Lagrange ZK Coprocessor or share your project.
 :::

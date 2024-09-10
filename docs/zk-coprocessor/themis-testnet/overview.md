@@ -1,12 +1,12 @@
 ---
 id: overview
-title: "Euclid Testnet Developer Docs"
-description: Overview of Euclid Testnet Developer Docs
+title: "Themis Testnet Developer Docs"
+description: Overview of Themis Testnet Developer Docs
 ---
 
 ## Testnet Goals
 
-The goals of Testnet Euclid are twofold:
+The goals of Testnet Themis are twofold:
 
 - Self-serving: Any users can indicate any contracts and variables they wish the ZK Coprocessor to preprocess
 
@@ -14,7 +14,7 @@ The goals of Testnet Euclid are twofold:
 
 ## Overview
 
-Lagrange's ZK Coprocessor and Verifiable Database is the first solution enabling developers to express complex queries on-chain and we're building this from scratch. We decided to release Testnet Euclid with a reduced feature set to start getting feedback from developers using our tech. In particular, Testnet Euclid is
+Lagrange's ZK Coprocessor and Verifiable Database is the first solution enabling developers to express complex queries on-chain and we're building this from scratch. We decided to release Testnet Themis with a reduced feature set to start getting feedback from developers using our tech. In particular, Testnet Themis is
 
 - Focused on proving mapping entries, and in particular ERC721Enumerable entries of NFT ID -> owners entries. That allows us to showcase our early tech to a cool and trendy application!
 
@@ -24,4 +24,4 @@ Lagrange's ZK Coprocessor and Verifiable Database is the first solution enabling
 
 - Deterministic query: To start, Testnet Euclid allows you to query the NFT ownership of a particular user address in an arbitrary block range, for ERC721Enumerable contracts. The query parameters that can be changed are the owner address and the block range.
 
-The next section goes into more detail about the API to interact with Testnet Euclid.
+The next section goes into more detail about the API to interact with Testnet Themis.
