@@ -34,7 +34,7 @@ The ZK Coprocessor enables you to leverage the state of Ethereum's mainnet (Laye
 
 ### Contract Explanation
 
-The `LayeredPenguins` contract integrates with the `LPNRegistryV1` contract on supported L2s to submit a query to the zkMapReduce proving network to check ownership of Pudgy Penguins NFTs before minting. It implements `LPNClientV1` to receive the verified query result and subsequently mint the user a LayeredPenguin NFT.
+The `LayeredPenguins` contract integrates with the `LPNRegistryV1` contract on supported L2s to submit a query to Lagrange's proving network to check ownership of Pudgy Penguins NFTs before minting. It implements `LPNClientV1` to receive the verified query result and subsequently mint the user a LayeredPenguin NFT.
 
 The `SELECT_PUDGY_PENGUINS_QUERY_HASH` comes from the query registration phase on the UI dashboard after successfully submitting your query. The process generates a unique query hash necessary for the contract.
 
@@ -117,7 +117,7 @@ Deploying and setting up the contract involves several steps:
 
 ### Security Considerations
 
-**Important:** The zkMapReduce codebase is unaudited and is currently an alpha release. It is meant for experimentation purposes. Use it at your own risk.
+**Important:** The ZK Coprocessor codebase is unaudited and is currently an alpha release. It is meant for experimentation purposes. Use it at your own risk.
 
 ## Full Code Example
 
