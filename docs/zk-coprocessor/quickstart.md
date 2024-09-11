@@ -172,7 +172,7 @@ contract YourContract is LPNClientV1 {
 
 ## Next steps
 
-- Continue learning by [querying the PudgyPenguins contract from L2](/zk-coprocessor/themis-testnet/example-pudgy-penguins.md)
+- Continue learning by [querying the Pudgy Penguins contract from L2](./themis-testnet/example-pudgy-penguins.md)
 - Join the Lagrange **Developer Community in [Discord](https://discord.com/invite/lagrange)** where you can ask any questions about this tutorial in the channel
 - Tag us on [X](https://x.com/lagrangedev) to help other devs building on Lagrange ZK Coprocessor or share your project.
 :::
