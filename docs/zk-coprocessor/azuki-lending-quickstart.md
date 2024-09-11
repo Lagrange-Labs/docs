@@ -1,5 +1,5 @@
 ---
-id: quickstart
+id: azuki-lending-quickstart
 title: "Building a Lending Application with Azuki Price Data and Lagrange ZK Coprocessor"
 description: Quickstart guide to get you started with ZK Coprocessor
 ---
