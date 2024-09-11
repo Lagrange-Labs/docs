@@ -13,9 +13,11 @@ forge install lagrange-labs/lagrange-lpn-contracts
 forge remappings > remappings.txt
 ```
 
-## Register Storage Variables of Smart Contracts as SQL Tables for Indexing Storage
+## Register Storage Variables of Smart Contracts as SQL Tables
 
-You can [register tables using our Web UI](https://app.lagrange.dev/zk-coprocessor/register-table)
+Permission to begin table registration is coming soon via our Web UI. Currently, you can complete this step by [filling out this form](https://docs.google.com/forms/d/e/1FAIpQLScg11zjGKiHrxlzT8fTUDtQmzpI2OFIHtlrSKVFnvvQV_XnJA/viewform). 
+
+This step allows you to register the relevant contract that you would like Lagrange to index. After a contract is indexed, one can register and execute SQL queries on the historical data of this contract. 
 
 ## Register Queries as SQL SELECT Statements
 
@@ -23,9 +25,9 @@ You can [register queries using our Web UI](https://app.lagrange.dev/zk-coproces
 
 ## Querying the database
 
-Once Lagrange is indexing the requested storage slots, the smart contract can start doing queries over the verifiable databases that are created.
+After registering a table, Lagrange's proving network will starting indexing and proving the associated storage slots. This allows you to query over the registered tables in our verifiable database from your smart contract.
 
-For Testnet Themis, we will support only a very limited set of computations. Specifically, we focus on computing SELECT statements over historical data.
+For Testnet Themis, we will support a subset of SQL expressions. Specifically, we focus on computing SELECT statements over historical data.
 
 ```solidity
     function query() private returns (uint256) {
@@ -56,7 +58,73 @@ abstract contract LPNClientV1 is ILPNClientV1 {
 }
 ```
 
-Refer to the below code snippet for a complete sample implementation of a zkMapReduce client:
+## Barebones Snippet
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.25;
+
+import {LPNClientV1} from "lagrange-lpn-contracts/src/v1/client/LPNClientV1.sol";
+import {ILPNRegistryV1} from
+    "lagrange-lpn-contracts/src/v1/interfaces/ILPNRegistryV1.sol";
+import {L1BlockNumber} from "lagrange-lpn-contracts/src/utils/L1Block.sol";
+import {QueryOutput} from
+    "lagrange-lpn-contracts/src/v1/Groth16VerifierExtensions.sol";
+
+contract YourContract is LPNClientV1 {
+    // Include the query hash obtained from registering your query
+    // This can be a constant, a storage variable, or passed in via calldata
+    bytes32 public constant YOUR_QUERY_HASH =
+        0x1231231231231231231231231231231231231231231231231231231231231231
+
+    struct YourExpectedRow {
+        uint256 someColumnName;
+    }
+
+    mapping(uint256 requestId => bool contextForCallback) public requests;
+
+    constructor(ILPNRegistryV1 lpnRegistry_) {
+        LPNClientV1._initialize(lpnRegistry_);
+    }
+
+    function query() external {
+        // In this case, we assume a query with one placeholder `$1` where the value is some address.
+        // Modify this to match your query.
+        bytes32[] memory placeholders = new bytes32[](1);
+        placeholders[0] = bytes32(bytes20(msg.sender));
+
+        uint256 requestId = lpnRegistry.request{value: lpnRegistry.gasFee()}(
+            YOUR_QUERY_HASH, placeholders, L1BlockNumber(), L1BlockNumber()
+        );
+
+        requests[requestId] = true;
+    }
+
+    function processCallback(uint256 requestId, QueryOutput memory result)
+        internal
+        override
+    {
+        bool context = requests[requestId];
+
+        uint256 someResult;
+        for (uint256 i = 0; i < result.rows.length; i++) {
+            YourExpectedRow memory row =
+                abi.decode(result.rows[i], (YourExpectedRow));
+
+            // Do something with the values in your result
+            if (context) {
+                someResult = row.someColumnName + 1;
+            }
+        }
+
+        delete requests[requestId];
+    }
+}
+```
+
+## Complete example
+
+Refer below for a complete implementation of a ZK Coprocessor client:
 
 ```solidity
 // SPDX-License-Identifier: MIT
