@@ -10,7 +10,7 @@ Implement an NFT mint whitelist on L2s like Base and Fraxtal using the Pudgy Pen
 
 Welcome to our step-by-step guide on how to implement one of the many use cases of Lagrange's ZK Coprocessor: a whitelisting mechanism for minting NFTs on L2s using verifiable queries of Pudgy Penguins holders on Ethereum.
 
-This guide will cover the L2 -> L1 `SELECT` query capability of Testnet Euclid for the ZK Coprocessor.
+This guide will cover the L2 -> L1 `SELECT` query capability of Testnet Themis for the ZK Coprocessor.
 
 We will leverage L2s' cheap transactions and Ethereum's rich state to enable Pudgy Penguins holders to mint a new NFT collection, Layered Penguins. Our ZK Coprocessor gives you a powerful tool to simplify the whitelisting process, which traditionally involves trusted, off-chain logic like Merkle proofs.
 
@@ -24,7 +24,7 @@ To follow this tutorial, you should have:
 
 3. A local repo setup with [Foundry](https://github.com/foundry-rs/foundry).
 
-4. Installation of the [zkMapReduce Solidity SDK](https://github.com/lagrange-labs/lagrange-lpn-contracts).
+4. Installation of the [ZK Coprocessor Solidity SDK](https://github.com/lagrange-labs/lagrange-lpn-contracts).
 
 ## High Level Concept
 
@@ -34,7 +34,14 @@ The ZK Coprocessor enables you to leverage the state of Ethereum's mainnet (Laye
 
 ### Contract Explanation
 
-The `LayeredPenguins` contract integrates with the `LPNRegistryV0` contract on supported L2s to submit a query to the zkMapReduce proving network to check ownership of Pudgy Penguins NFTs before minting. It implements `LPNClientV0` to receive the verified query result and subsequently mint the user a LayeredPenguin NFT.
+The `LayeredPenguins` contract integrates with the `LPNRegistryV1` contract on supported L2s to submit a query to Lagrange's proving network to check ownership of Pudgy Penguins NFTs before minting. It implements `LPNClientV1` to receive the verified query result and subsequently mint the user a LayeredPenguin NFT.
+
+The `SELECT_PUDGY_PENGUINS_QUERY_HASH` comes from the query registration phase on the UI dashboard after successfully submitting your query. The process generates a unique query hash necessary for the contract.
+
+```solidity
+   bytes32 public constant SELECT_PUDGY_PENGUINS_QUERY_HASH =
+        0xb4ae7462039ec325e1fc805a91fb35c9505f350e609d4d53e1c6e4f3dbfe8997;
+```
 
 ### Key Functions
 
@@ -51,18 +58,20 @@ function requestMint() external payable {
 
 `queryPudgyPenguins()`
 
-This function initiates the query of the Pudgy Penguins contract by calling `LPNRegistryV0.request()` to verify ownership based on the user's address. It queries the most recent block on Ethereum, which is provided by an [OP Stack precompile](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/L2/L1Block.sol#L18).
+This function initiates the query of the Pudgy Penguins contract by calling `LPNRegistryV1.request()` to verify ownership based on the user's address. It queries the most recent block on Ethereum, which is provided by an [OP Stack precompile](https://github.com/ethereum-optimism/optimism/blob/develop/packages/contracts-bedrock/src/L2/L1Block.sol#L18).
 
 ```solidity
 function queryPudgyPenguins() private returns (uint256) {
-    return lpnRegistry.request{value: lpnRegistry.gasFee()}(
-        PUDGY_PENGUINS,
-        bytes32(uint256(uint160(msg.sender))),
-        L1BlockNumber(),
-        L1BlockNumber(),
-        0
-    );
-}
+        bytes32[] memory placeholders = new bytes32[](1);
+        placeholders[0] = bytes32(bytes20(msg.sender));
+
+        return lpnRegistry.request{value: lpnRegistry.gasFee()}(
+            SELECT_PUDGY_PENGUINS_QUERY_HASH,
+            placeholders,
+            L1BlockNumber(),
+            L1BlockNumber()
+        );
+    }
 ```
 
 `processCallback()`
@@ -70,18 +79,22 @@ function queryPudgyPenguins() private returns (uint256) {
 Upon receiving the callback, this function checks if the query result contains 1 or more Pudgy Penguin token ids. If true, it mints a LayeredPenguin NFT to the user's wallet.
 
 ```solidity
-function processCallback(uint256 requestId, uint256[] calldata results)
-    internal
-    override
-{
-    bool isPudgyHolder = results.length > 0;
+ function processCallback(uint256 requestId, QueryOutput memory result)
+        internal
+        override
+    {
+        MintRequest memory req = mintRequests[requestId];
 
-    MintRequest memory req = mintRequests[requestId];
-    if (isPudgyHolder) {
-        _mint(req.sender, id);
-        id++;
+        for (uint256 i = 0; i < result.rows.length; i++) {
+            Row memory row = abi.decode(result.rows[i], (Row));
+
+            if (ownerOf(row.tokenId) == address(0)) {
+                _mint(req.sender, row.tokenId);
+            }
+        }
+
+        delete mintRequests[requestId];
     }
-}
 ```
 
 ### Integration Points
@@ -104,7 +117,7 @@ Deploying and setting up the contract involves several steps:
 
 ### Security Considerations
 
-**Important:** The zkMapReduce codebase is unaudited and is currently an alpha release. It is meant for experimentation purposes. Use it at your own risk.
+**Important:** The ZK Coprocessor codebase is unaudited and is currently an alpha release. It is meant for experimentation purposes. Use it at your own risk.
 
 ## Full Code Example
 
@@ -114,32 +127,38 @@ See other examples and source code in our [GitHub repo](https://github.com/lagra
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.25;
 
-import {LPNClientV0} from "lagrange-lpn-contracts/client/LPNClientV0.sol";
-import {ILPNRegistry} from "lagrange-lpn-contracts/interfaces/ILPNRegistry.sol";
+import {LPNClientV1} from "lagrange-lpn-contracts/src/v1/client/LPNClientV1.sol";
+import {ILPNRegistryV1} from "lagrange-lpn-contracts/src/v1/interfaces/ILPNRegistryV1.sol";
 import {
     ERC721Enumerable,
     ERC721
 } from "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import {L1BlockNumber} from "lagrange-lpn-contracts/utils/L1Block.sol";
+import {L1BlockNumber} from "lagrange-lpn-contracts/src/utils/L1Block.sol";
+import {QueryOutput} from "lagrange-lpn-contracts/src/v1/Groth16VerifierExtensions.sol";
 
-contract LayeredPenguins is LPNClientV0, ERC721Enumerable {
-    address public constant PUDGY_PENGUINS =
-        0xBd3531dA5CF5857e7CfAA92426877b022e612cf8;
+/// @notice Refer to docs page https://lagrange-labs.gitbook.io/lagrange-v2-1/zk-coprocessor/testnet-euclid-developer-docs/example-nft-mint-whitelist-on-l2-with-pudgy-penguins
+contract LayeredPenguins is LPNClientV1, ERC721Enumerable {
+    /// SELECT AVG(key) FROM pudgy_penguins_owners WHERE value = $1;
+    bytes32 public constant SELECT_PUDGY_PENGUINS_QUERY_HASH =
+        0xb4ae7462039ec325e1fc805a91fb35c9505f350e609d4d53e1c6e4f3dbfe8997;
     string public constant PUDGY_METADATA_URI =
         "ipfs://bafybeibc5sgo2plmjkq2tzmhrn54bk3crhnc23zd2msg4ea7a4pxrkgfna/";
-
-    uint256 id;
 
     struct MintRequest {
         address sender;
     }
 
+    struct Row {
+        uint256 tokenId;
+    }
+
     mapping(uint256 requestId => MintRequest request) public mintRequests;
 
-    constructor(ILPNRegistry lpnRegistry_)
+    constructor(ILPNRegistryV1 lpnRegistry_)
         ERC721("Layered Penguins", "LPDGY")
-        LPNClientV0(lpnRegistry_)
-    {}
+    {
+        LPNClientV1._initialize(lpnRegistry_);
+    }
 
     function _baseURI() internal pure override returns (string memory) {
         return PUDGY_METADATA_URI;
@@ -151,29 +170,34 @@ contract LayeredPenguins is LPNClientV0, ERC721Enumerable {
     }
 
     function queryPudgyPenguins() private returns (uint256) {
+        bytes32[] memory placeholders = new bytes32[](1);
+        placeholders[0] = bytes32(bytes20(msg.sender));
+
         return lpnRegistry.request{value: lpnRegistry.gasFee()}(
-            PUDGY_PENGUINS,
-            bytes32(uint256(uint160(msg.sender))),
+            SELECT_PUDGY_PENGUINS_QUERY_HASH,
+            placeholders,
             L1BlockNumber(),
-            L1BlockNumber(),
-            0
+            L1BlockNumber()
         );
     }
 
-    function processCallback(uint256 requestId, uint256[] calldata results)
+    function processCallback(uint256 requestId, QueryOutput memory result)
         internal
         override
     {
-        bool isPudgyHolder = results.length > 0;
+        MintRequest memory req = mintRequests[requestId];
 
-        if (isPudgyHolder) {
-            MintRequest memory req = mintRequests[requestId];
-            _mint(req.sender, id);
+        for (uint256 i = 0; i < result.rows.length; i++) {
+            Row memory row = abi.decode(result.rows[i], (Row));
 
-            id++;
+            if (ownerOf(row.tokenId) == address(0)) {
+                _mint(req.sender, row.tokenId);
+            }
         }
 
         delete mintRequests[requestId];
     }
 }
 ```
+
+Congratulations! You've successfully implemented an NFT mint whitelist on L2s like Base and Fraxtal using the Pudgy Penguins contract from Ethereum.    

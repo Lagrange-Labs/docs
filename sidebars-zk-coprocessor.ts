@@ -8,10 +8,20 @@ const sidebars: SidebarsConfig = {
       id: "overview",
     },
     {
+      type: "doc",
+      label: "Quickstart",
+      id: "quickstart",
+    },
+    {
       type: "category",
       label: "Verifable Database Architecture",
       link: { type: "doc", id: "verifiable-database-architecture/overview" },
       items: [
+        {
+          type: "doc",
+          id: "verifiable-database-architecture/onchain-storage",
+          label: "Onchain's Storage",
+        },
         {
           type: "doc",
           id: "verifiable-database-architecture/storage-database",
@@ -59,22 +69,28 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Euclid Testnet Developer Docs",
-      link: { type: "doc", id: "euclid-testnet/overview" },
+      label: "Themis Testnet Developer Docs",
+      link: { type: "doc", id: "themis-testnet/overview" },
       items: [
         {
           type: "doc",
-          id: "euclid-testnet/solidity",
+          id: "themis-testnet/solidity",
           label: "Solidity Documentation",
         },
         {
-          type: "doc",
-          id: "euclid-testnet/example-pudgy-penguins",
-          label: "Example: NFT Mint Whitelist on L2 with Pudgy Penguins",
+          type: "category",
+          label: "Examples",
+          items: [
+            {
+              type: "doc",
+              id: "themis-testnet/example-pudgy-penguins",
+              label: "Example: NFT Mint Whitelist on L2 with Pudgy Penguins",
+            },
+          ],
         },
         {
           type: "doc",
-          id: "euclid-testnet/contract-addresses",
+          id: "themis-testnet/contract-addresses",
           label: "Contract Addresses",
         },
       ],

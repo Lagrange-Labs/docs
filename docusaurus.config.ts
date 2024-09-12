@@ -78,6 +78,7 @@ const config: Config = {
       defaultMode: "light",
       disableSwitch: true,
     },
+
     navbar: {
       logo: {
         src: "img/logo-light.svg",
