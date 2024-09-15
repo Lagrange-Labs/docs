@@ -153,7 +153,7 @@ lagrange-cli generate-config -c <CLI Config File Path>  -n <Network Name> -r <Ch
 ```bash
 lagrange-cli generate-docker-compose -c <CLI Config File Path>  -i <Docker Image Name> -n <Node Config File Path>
 
-# i.e. ./dist/lagrange-cli generate-docker-compose -c ./config.toml -i lagrangelabs/lagrange-node:v1.0.0 -n ~/.lagrange/config/client_mainnet_optimism_.toml
+# i.e. ./dist/lagrange-cli generate-docker-compose -c ./config.toml -i lagrangelabs/lagrange-node:v1.1.4 -n ~/.lagrange/config/client_mainnet_optimism_.toml
 ```
 
 :::info
@@ -167,7 +167,17 @@ You can check client config files at` ~/.lagrange/config/client_<network_name>_<
 ```bash
 lagrange-cli deploy -c <CLI Config File Path>  -i <Docker Image Name> -n <Node Config File Path>
 
-# i.e. ./dist/lagrange-cli deploy -c ./config.toml -i lagrangelabs/lagrange-node:v1.0.0 -n ~/.lagrange/config/client_mainnet_optimism_.toml
+# i.e. ./dist/lagrange-cli deploy -c ./config.toml -i lagrangelabs/lagrange-node:v1.1.4 -n ~/.lagrange/config/client_mainnet_optimism_.toml
+```
+
+### deploy-signer
+
+- Generates a signer config file, docker-compose file and then deploys the container to start a signer gRPC server that can be utilized by the operators for secured key management.
+
+```bash
+lagrange-cli deploy-signer -c <Signer Config File Path> -i <Docker Image Name>
+
+# i.e. ./dist/lagrange-cli deploy-signer -c ./config_signer.toml -i lagrangelabs/lagrange-node:v1.1.4
 ```
 
 ### generate-config-deploy
@@ -177,5 +187,15 @@ lagrange-cli deploy -c <CLI Config File Path>  -i <Docker Image Name> -n <Node C
 ```bash
 lagrange-cli generate-config-deploy -c <CLI Config File Path>  -n <Network Name> -r <Chain Name> -i <Docker Image Name>
 
-# i.e. ./dist/lagrange-cli generate-config-deploy -c ./config.toml -n mainnet -r optimism -i lagrangelabs/lagrange-node:v1.0.0
+# i.e. ./dist/lagrange-cli generate-config-deploy -c ./config.toml -n mainnet -r optimism -i lagrangelabs/lagrange-node:v1.1.4
+```
+
+### bulk-generate-config-deploy
+
+- Generates multiple client config files and deploys the docker containers for the configured attestation nodes.
+
+```bash
+lagrange-cli bulk-generate-config-deploy -b <CLI Bulk Config File Path> -n <Network Name> -i <Docker Image Name>
+
+# i.e. ./dist/lagrange-cli bulk-generate-config-deploy -b ./config_bulk.toml -n mainnet -i lagrangelabs/lagrange-node:v1.1.4
 ```
