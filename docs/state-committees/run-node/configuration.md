@@ -11,7 +11,9 @@ Please provide the correct relative/absolute path in KeystorePath and PasswordPa
 
 ### Variable Description
 
-The `config.toml` file in the repository contains various fields that should be configured in order to run various [CLI](https://github.com/Lagrange-Labs/lsc-client-cli) commands.
+#### Attestation Node Config
+
+The [config.toml](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/config.toml) file in the repository contains various fields that should be configured in order to run various CLI commands.
 
 - `EthereumRPCURL`: Ethereum mainnet RPC endpoint for mainnet, and Holesky RPC endpoint for testnet.
 
@@ -28,14 +30,6 @@ The `config.toml` file in the repository contains various fields that should be 
 - `SignerServerURL`: This is the gRPC server URL for signer for secure key management.
 
 - `OperatorAddress`: EigenLayer operator address
-
-- `AccountID`: Account ID for setting up signer for your keys. The operator can choose the account id of their choice.
-
-- `KeyType`: `BN254` or `ECDSA`
-
-- `PrivateKeyPath`: File path for the ECDSA or BLS private key with extension `.key`
-
-- `PasswordKeyPath`: Password file for the private key
 
 - `OperatorKeyAccountID`: Account ID provided for storing EigenLayer operator ECDSA key in the signer
 
@@ -68,6 +62,20 @@ The `config.toml` file in the repository contains various fields that should be 
 - `BLSKeystorePath` = BLS keystore file path (Deprecated from v1.1.x of CLI)
 
 - `BLSKeystorePasswordPath` = BLS keystore password file path (Deprecated from v1.1.x of CLI)
+
+#### Signer Config
+
+The [config_signer.toml](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/config_signer.toml) file in the repository contains various fields that should be configured in order to run the signer.
+
+- `AccountID`: Account ID for setting up signer for your keys. The operator can choose the account id of their choice.
+
+- `KeyType`: `BN254` or `ECDSA`
+
+- `PrivateKeyPath`: File path for the ECDSA or BLS private key with extension `.key`
+
+- `PasswordKeyPath`: Password file for the private key
+
+
 
 ### Mainnet Config
 
