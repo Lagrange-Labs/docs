@@ -32,7 +32,7 @@ For secure communication between the signer server and attestation nodes, TLS en
 - Run `deploy-signer` command to generate a config and deploy a docker container for the signer server.
 
 :::info
-The operators should be able to add their private keys to the signer by modifying this [config_signer.toml](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/config_signer.toml) file.
+The operators should be able to add all the private keys to the signer by modifying this [config_signer.toml](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/config_signer.toml) file.
 :::
 
 ### Attestation Node
