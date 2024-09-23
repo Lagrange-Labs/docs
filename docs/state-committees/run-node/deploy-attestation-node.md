@@ -37,7 +37,9 @@ The operators should be able to add all the private keys to the signer by modify
 
 ### Attestation Node
 
-- Run `generate-config` command to generate a config specific to the chain and network for which you want to run an attestation node. Then run `deploy` command to deploy the docker container of your attestation node. Alternately, run `generate-config-deploy` which combines the `generate-config` and `deploy` commands.
+- Configure the `config.toml` file. If you are setting up the signer, `OperatorKeyAccountID`, `SignerKeyAccountID` & `BLSKeyAccountID` should be configured as per the `AccountID` field set in the `config_signer.toml`
+- Run `generate-config` command to generate a config specific to the chain and network for which you want to run an attestation node.
+- Run `deploy` command to deploy the docker container of your attestation node. Alternately, run `generate-config-deploy` which combines the `generate-config` and `deploy` commands.
 
 
 If you choose to run multiple attestation nodes on the same machine for the same or different chains, then the deployment can be simplified using the `bulk-generate-config-deploy` command.
@@ -50,7 +52,7 @@ After deploying an attestation node docker container, it is imperative for an op
 
 ## Deploy using template
 
-The templates for attestation node's config file and the docker-compose can be found in the [CLI](https://github.com/Lagrange-Labs/lsc-client-cli/tree/develop/templates) repository.
+The templates for signer and attestation node's config file and their respective docker-compose can be found in the [CLI](https://github.com/Lagrange-Labs/lsc-client-cli/tree/develop/templates) repository.
 
 :::info
 Please review the [configuration](/state-committees/run-node/configuration) description.
