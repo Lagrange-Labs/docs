@@ -19,8 +19,8 @@ For secure communication between the signer server and attestation nodes, TLS en
 
 #### Generate Certificates and Keys
 
-- Use the script available in lsc-node repository ([here](https://github.com/Lagrange-Labs/lsc-node/blob/develop/testutil/vector/generator.sh)) to generate necessary  certificates. 
-- Before running the script, specify the signer server’s IP or DNS in this [file](https://github.com/Lagrange-Labs/lsc-node/blob/develop/testutil/vector/ext.conf).
+- Use the script available in the lsc-client-cli repository ([here](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/script/generate-cert.sh)) to generate necessary  certificates. 
+- Before running the script, specify the signer server’s IP or DNS in this [file](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/script/ext.conf).
 
 #### Setting up Remote Signer
 
