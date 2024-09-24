@@ -148,7 +148,7 @@ lagrange-cli generate-config -c <CLI Config File Path>  -n <Network Name> -r <Ch
 
 ### generate-signer-config
 
-- Generates config file for signer. The configuration information can be found [here](/state-committees/run-node/configuration).
+- Generates config file and docker compose file for signer. The configuration information can be found [here](/state-committees/run-node/configuration).
 ```bash
 lagrange-cli generate-signer-config -c <Signer Config File Path> -i <Docker Image Name>
 
