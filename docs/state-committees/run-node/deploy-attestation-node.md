@@ -35,6 +35,45 @@ For secure communication between the signer server and attestation nodes, TLS en
 The operators should be able to add all the private keys to the signer by modifying this [config_signer.toml](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/config_signer.toml) file.
 :::
 
+#### Sample Signer Config Setup
+
+```toml
+# GRPC_PORT_SIGNER
+GRPCPort = "9092"
+
+# TLSConfig is optional
+[TLSConfig]
+        CACertPath = ""
+        NodeKeyPath = ""
+        NodeCertPath = ""
+
+# LSC BLS Key
+[[ProviderConfigs]]
+        Type = "local"
+        [ProviderConfigs.LocalConfig]
+                AccountID = "lsc-bls-key-1"
+                KeyType = "BN254"
+                PrivateKeyPath = "--- Path to BLS Private Key ---" # Absolute path of $HOME/.lagrange/keystore/bls_xxx.key
+		        PasswordKeyPath = "--- Path to BLS Keystore Password ---" # Absolute path of password file
+
+# LSC specific ECDSA key
+[[ProviderConfigs]]
+        Type = "local"
+        [ProviderConfigs.LocalConfig]
+                AccountID = "lsc-ecdsa"
+                KeyType = "ECDSA"
+                PrivateKeyPath = "--- Path to ECDSA Private Key ---" # Absolute path of $HOME/.lagrange/keystore/ecdsa_xxx.key
+                PasswordKeyPath = "--- Path to ECDSA Keystore Password ---" # Absolute path of password file
+
+[[ProviderConfigs]]
+        Type = "local"
+        [ProviderConfigs.LocalConfig]
+                AccountID = "eigenlayer-operator-ecdsa"
+                KeyType = "ECDSA"
+                PrivateKeyPath = "--- Path to ECDSA Private Key ---" # Absolute path of $HOME/.lagrange/keystore/ecdsa_xxx.key
+                PasswordKeyPath = "--- Path to ECDSA Keystore Password ---" # Absolute path of password file
+```
+
 ### Attestation Node
 
 - Configure the `config.toml` file. If you are setting up the signer, `OperatorKeyAccountID`, `SignerKeyAccountID` & `BLSKeyAccountID` should be configured as per the `AccountID` field set in the `config_signer.toml`
@@ -49,6 +88,32 @@ The information about the State Committee CLI commands can be found on the [Comm
 :::
 
 After deploying an attestation node docker container, it is imperative for an operator to monitor its status to check if it is running and attesting successfully.
+
+#### Sample Attestation Node Config Setup
+
+```toml
+SignerServerURL = "lagrange_signer:<GRPC_PORT_SIGNER>"
+OperatorAddress = "--- Operator Address ---"
+OperatorKeyAccountID = "eigenlayer-operator-ecdsa"
+SignerKeyAccountID = "lsc-ecdsa"
+BLSKeyAccountID = "lsc-bls-key-1"
+BLSCurve = "BN254"
+ConcurrentFetchers = 8
+MetricsEnabled = true
+MetricsServerPort = "8080"
+HostBindingPort = "8080"
+MetricsServiceName = "lagrange-node"
+PrometheusRetentionTime = "60s"
+EthereumRPCURL = "--- Ethereum RPC URL (mainnet / holesky) ---"
+L1RPCEndpoint = "--- L1 RPC Endpoint (mainnet) ---"
+BeaconURL = "--- Beacon Endpoint (mainnet) ---"
+L2RPCEndpoint = "--- L2 RPC Endpoint (optimism / base) ---"
+# The following fields should be same as that of TLSConfig in config_signer.toml
+[CertConfig]
+    CACertPath = ""
+    NodeKeyPath = ""
+    NodeCertPath = ""
+```
 
 ## Deploy using template
 
