@@ -27,7 +27,7 @@ The [config.toml](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/c
 
 - `ConcurrentFetchers`: This parameter can be used to control the number of parallel fetchers that are responsible to fetch a block. Default value is `8`.
 
-- `SignerServerURL`: This is the gRPC server URL for signer for secure key management.
+- `SignerServerURL`: This is the gRPC server URL for signer for secure key management. Value: `lagrange_signer:<GRPC_PORT_SIGNER>`
 
 - `OperatorAddress`: EigenLayer operator address
 
@@ -66,8 +66,9 @@ The [config.toml](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/c
 #### Signer Config
 
 The [config_signer.toml](https://github.com/Lagrange-Labs/lsc-client-cli/blob/develop/config_signer.toml) file in the repository contains various fields that should be configured in order to run the signer.
+- `GRPCPort` - The port to expose GRPC server for signer.
 
-- `AccountID`: Account ID for setting up signer for your keys. The operator can choose the account id of their choice.
+- `AccountID`: Account ID for setting up signer for your keys. The operator can enter the string of their choice to set this parameter. This same string should be used for setting up `OperatorKeyAccountID`, `SignerKeyAccountID` & `BLSKeyAccountID` based on your key type. 
 
 - `KeyType`: `BN254` or `ECDSA`
 

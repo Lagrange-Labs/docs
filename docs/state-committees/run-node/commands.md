@@ -146,6 +146,15 @@ lagrange-cli generate-config -c <CLI Config File Path>  -n <Network Name> -r <Ch
 # i.e. ./dist/lagrange-cli generate-config -c ./config.toml -n mainnet -r optimism
 ```
 
+### generate-signer-config
+
+- Generates config file and docker compose file for signer. The configuration information can be found [here](/state-committees/run-node/configuration).
+```bash
+lagrange-cli generate-signer-config -c <Signer Config File Path> -i <Docker Image Name>
+
+# i.e. ./dist/lagrange-cli generate-signer-config -c ./config_signer.toml -i lagrangelabs/lagrange-node:v1.1.5
+```
+
 ### generate-docker-compose
 
 - Generates a docker-compose file for the attestation node. This command can be useful if you want to manually set up your docker-compose.
