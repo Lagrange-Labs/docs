@@ -92,7 +92,8 @@ After deploying an attestation node docker container, it is imperative for an op
 #### Sample Attestation Node Config Setup
 
 ```toml
-SignerServerURL = "lagrange_signer:<GRPC_PORT_SIGNER>"
+# GRPC_PORT_SIGNER
+SignerServerURL = "lagrange_signer:9092"
 OperatorAddress = "--- Operator Address ---"
 OperatorKeyAccountID = "eigenlayer-operator-ecdsa"
 SignerKeyAccountID = "lsc-ecdsa"
