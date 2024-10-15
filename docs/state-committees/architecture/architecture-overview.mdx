@@ -11,7 +11,15 @@ The Lagrange State Committee (LSC) network are conceptually similar to Ethereum'
 
 ## Ethereum Light Client vs Lagrange State Committee Light Client
 
-The Ethereum Light Client utilizes a sync committee of 512 randomly chosen validators that sign new block headers every 27 hours. This system enables light clients to verify chain state without knowledge of the entire validator set. However, its security is limited by the fixed committee size, with an estimated economic security threshold of about $18 million. This cap on security becomes problematic as the value secured by light client bridges increases, potentially making attacks economically viable when the secured assets exceed the security threshold.
+The Ethereum Light Client utilizes a sync committee of 512 randomly chosen validators that sign new block headers every 27 hours. This system enables light clients to verify chain state without knowledge of the entire validator set. However, its security is limited by the fixed committee size, with an estimated economic security threshold of about $26 million. 
+
+:::Info
+**Economic Security of Sync Committee** = 512 nodes * 32 Eth * $2400 USD/ETH = $39,321,600
+
+**Threshold to Compromise Sync Committee** = $39,321,600 * 2/3 = $26,214,400
+:::
+
+This cap on security becomes problematic as the value secured by light client bridges increases, potentially making attacks economically viable when the secured assets exceed the security threshold.
 
 The Lagrange State Committee light client implements a scalable approach to address these limitations. It employs an unbounded set of nodes with leveraged rehypothecated collateral, either restaked with EigenLayer or staked with liquid staking derivatives. This architecture allows for dynamic scaling of security as required, accommodating an expanding set of validators. The Lagrange system features a flexible attestation period and supports state proofs for EVM-based chains beyond Ethereum. By enabling dynamic scaling of collateral behind each attestation, the Lagrange State Committee facilitates generalizable state proofs of arbitrary chains with super-linear security, overcoming the constraints of the fixed-size Ethereum sync committee.
 
@@ -37,7 +45,7 @@ The key components of the Lagrange State Committee protocol are the ***sequencer
   alt="State Committees Architecture Diagram"
 />
 
-**State Committee Contracts** - The Lagrange service and Lagrange committee smart contract is deployed on the Ethereum mainnet. The smart contract manages epoch updates,voting power updates and calculates the Merkle tree. 
+**State Committee Contracts** - The Lagrange service and Lagrange committee smart contract is deployed on the Ethereum mainnet. The smart contract manages epoch updates, voting power updates and calculates the Merkle tree.  A Merkle tree is computed by hashing individual data blocks to form leaf nodes, then iteratively hashing pairs of nodes to form parent nodes until a single hash, the Merkle root, is obtained. This root summarizes the data, allowing efficient and secure verification of the data’s integrity with minimal information.
 
 The attestation nodes can easily verify the given committee root is correct or not based on on-chain data through the smart contract.
 
@@ -51,21 +59,44 @@ Every node in the network must run a containerized validator or watcher of a rel
 
 ## Responsibilities of a Cross-Chain State Attester
 
-Each cross-chain state attester is responsible for executing a signature with its BLS (BN254)key on every finalized batch during the attestation periods that it is active for. Each signature is executed on a tuple containing a block header, a Merkle root of the public keys of the current committee and a Merkle root of the public keys of the next committee.
+Each cross-chain state attester is responsible for executing a signature with its BLS (BN254) key on every finalized batch during the attestation periods that it is active for. Each signature is executed on a tuple containing a `batchHeader`, `committeeHeader`. Merkle root of public keys, operators, and aggregated signatures of the `batch`. 
 
 ```
-struct block {
-    var block_header,
-    var current_committee,
-    var next_committee,
+//BatchHeader holds information about a batch of Layer 2 blocks and their corresponding Layer 1 anchor
+
+struct BatchHeader {
+			BatchNumber (uint64)
+			ChainId (uint32)
+			L2Blocks ([]*BlockHeader)
+			L1BlockNumber (uint64)
+			L1TxHash (string)
+			L1TxIndex (uint32)
+			L2FromBlockNumber (uint64)
+			L2ToBlockNumber (uint64)
+}
+
+//CommitteeHeader contains committee information for the batch.
+struct CommitteeHeader {
+			CurrentCommittee (string)
+			NextCommittee (string)
+			TotalVotingPower (uint64) 
+}
+
+// Batch combines both headers and includes cryptographic data like public keys and signatures for verifying the batch 
+struct Batch {
+			BatchHeader (*BatchHeader)
+			CommitteeHeader (*CommitteeHeader)
+			PubKeys ([]string)
+			Operators ([]string)
+			AggSignature (string)
 }
 ```
 
 The signature executed on the tuple creates slashable conditions for fraud proofs on malicious nodes. Before executing each signature, a cross-chain State Committees node must independently check the state of both Ethereum and the attested chain and perform the three basic checks:
 
-1. The block_header is correct and corresponds to a finalized block of the chain that is being attested to.
+1. The batch_header verifies the content of the batch that was signed 
 
-2. The current_committee Merkle root was correctly derived from the public keys of the attestation set on Ethereum for a given block of the arbitrary chain.
+2. The current_committee Merkle root was correctly derived from the public keys of the attestation set on Ethereum for a given batch of the arbitrary chain.
 
 3. The next_committee Merkle root was correctly derived by altering the current_commitee at the end of the attestation period with any nodes who opted to enter or leave the attestation set.
 

@@ -24,11 +24,15 @@ The **Consensus** is responsible for protocol communication with attestation nod
 
 It ensures that all transactions processed by the sequencer are agreed upon by all nodes before being finalized on the Ethereum mainnet.
 
+### The Role of Signature Batches in Consensus
+
+In consensus mechanisms, signature batching plays a pivotal role in efficiently validating agreement among multiple nodes. The gRPC server sends batches to be signed, and validators generate individual signatures, which are then aggregated into a single signature using schemes like BLS. This aggregated signature is sent along with the finalized batch to the consensus layer, significantly reducing computational and network overhead. By verifying the aggregated signature, the consensus layer confirms that a quorum of validators has approved the batch, ensuring fast, secure, and scalable block finalization.
+
 ## gRPC Server
 
 The **gRPC Server** is a critical physical component of the architecture, tasked with facilitating communication between attestation nodes. When a batch becomes available, it initiates a round. During this round, the entire batch is proposed to the network, a process referred to as the round state.
 
-This round enables the State Committee to verify the proposed batch through a consensus process. Once 2/3 of the voting power is amassed for a given round state, this mechanism aggregates all the signatures provided by the operators. These signatures are then attached to the batch, finalizing the verification process.
+This round enables the State Committee to verify the proposed batch through a consensus process. Once 67% of the voting power is amassed for a given round state, this mechanism aggregates all the signatures provided by the operators. These signatures are then attached to the batch, finalizing the verification process.
 
 ## Attestation Nodes
 
@@ -42,4 +46,10 @@ Each operator may manage multiple attestation nodes, with the staked amount dete
 
 After the verification process, the attestation node uploads the BLS signature of the batch to the server. A key feature of BLS signatures is their ability to be aggregated, allowing for more efficient processing.
 
-### How Eigen Layer come into play:
+The Role of EigenLayer AVS in LSC
+
+### Role of EigenLayer AVS in LSC 
+
+Independent operators can deploy the Lagrange State Committees in combination with restaking through EigenLayer, to address several challenges with current approaches to cross-chain interoperability. 
+
+Lagrange’s dynamic BLS key aggregation improves the verification process by updating proofs incrementally rather than recalculating from scratch. This enables EigenLayer operators to scale without compromising soundness, allowing higher participation rates without increasing the computational overhead. By leveraging these innovations, AVS deployments gain access to more flexible, expressive, and secure workflows, making cross-chain communication and interoperability more resilient.
