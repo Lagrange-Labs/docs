@@ -2,7 +2,6 @@
 id: register-operator
 title: "Register Operator"
 description: The steps to register operator to State Committees AVS
-author: kashish
 ---
 
 Assuming you have successfully set up the keystore, you can run the following commands to register your operator to Lagrange State Committees AVS and subscribe to the [rollup chains](/state-committees/operator-guide/supported-chains).

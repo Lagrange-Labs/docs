@@ -2,7 +2,6 @@
 id: setup-keystore
 title: "Set up Keystore"
 description: The steps to set up encrypted keystore for ECDSA and BLS keys
-author: kashish
 ---
 
 :::info

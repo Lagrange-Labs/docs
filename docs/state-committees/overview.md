@@ -2,7 +2,6 @@
 id: overview
 title: "Overview"
 description: Introduction to Lagrange State Committees
-author: kashish
 ---
 
 Lagrange Labs' State Committees provides a more secure alternative to isolated k of n bridges for applications that require trustless cross-chain state proofs. The State Committees are not designed to replace proofs of consensus but instead are an alternative mechanism for chains whose finality or consensus is not provable within a zero-knowledge context. State Committees enables cross-chain bridging, messaging, or indexing protocols to plug into consuming trust-minimized zero-knowledge proofs of cross-chain state, derived from a generalizable light client committee based on rehypothecated collateral.

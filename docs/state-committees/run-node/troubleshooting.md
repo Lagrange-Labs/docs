@@ -2,7 +2,6 @@
 id: troubleshooting
 title: "Troubleshooting"
 description: The steps to troubleshoot issues for operators
-author: kashish
 ---
 
 **How can i check if my operator is registered to State Committees AVS and subscribed to the chain/s?**

@@ -9,8 +9,20 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "doc",
+      label: "Quickstart",
+      id: "quickstart",
+    },
+    {
+      type: "category",
       label: "Architecture",
-      id: "architecture",
+      link: {type: "doc", id: "architecture/architecture-overview"},
+      items: [
+        {
+          type: "doc",
+          label: "Key Components",
+          id: "architecture/key-components",
+        },
+      ],
     },
     {
       type: "doc",

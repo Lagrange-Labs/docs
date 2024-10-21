@@ -2,7 +2,6 @@
 id: contract-addresses
 title: "Contract Addresses"
 description: The contract addresses of State Committees contracts on mainnet and holesky
-author: kashish
 ---
 
 Lagrange State Committees [contracts](https://github.com/Lagrange-Labs/lsc-contracts) are deployed on Ethereum mainnet and holesky network.

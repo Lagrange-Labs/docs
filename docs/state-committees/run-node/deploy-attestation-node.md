@@ -2,7 +2,6 @@
 id: deploy
 title: "Deploy Attestation Node"
 description: The steps to deploy State Committees attestation node
-author: kashish
 ---
 
 Once an operator has successfully registered to Lagrange State Committees AVS and subscribed to rollup chain/s, they can proceed to deploy attestation node/s.

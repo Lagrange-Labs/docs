@@ -2,7 +2,6 @@
 id: scripts
 title: "Scripts"
 description: Scripts to interact with State Committees AVS contracts
-author: kashish
 ---
 
 The operators can choose to use the scripts instead of running the CLI commands to interact with the contracts for registering the operator and subscribing to the rollup chains.

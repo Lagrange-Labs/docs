@@ -2,7 +2,6 @@
 id: configuration
 title: "Configuration"
 description: The description of fields in config file
-author: kashish
 ---
 
 :::info
