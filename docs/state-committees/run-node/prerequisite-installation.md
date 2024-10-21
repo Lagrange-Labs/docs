@@ -2,7 +2,6 @@
 id: prerequisite-installation
 title: "Prerequisite Installations"
 description: The prerequisite installation scripts to run a state committee attestation node
-author: kashish
 ---
 
 :::info

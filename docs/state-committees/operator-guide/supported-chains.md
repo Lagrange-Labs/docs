@@ -2,7 +2,6 @@
 id: supported-chains
 title: "Supported Chains"
 description: The list of rollups chains supported by Lagrange State Committees
-author: kashish
 ---
 
 | Chain    | ID    |

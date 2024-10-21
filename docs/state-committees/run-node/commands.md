@@ -2,7 +2,6 @@
 id: commands
 title: "Commands"
 description: CLI commands for State Committees attestation nodes
-author: kashish
 ---
 
 :::info

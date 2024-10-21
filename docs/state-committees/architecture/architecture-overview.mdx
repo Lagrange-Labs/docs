@@ -2,12 +2,11 @@
 id: architecture-overview
 title: "Architecture"
 description: A brief description about State Committees architecture
-author: kashish
 ---
 
 import ThemedImage from "@site/src/components/ThemedImage";
 
-The Lagrange State Committee (LSC) network are conceptually similar to Ethereum's Sync Committee and will serve as a foundation for crypto-economic secure and trustless light client-based cross-chain bridging and messaging.
+The Lagrange State Committee (LSC) network is conceptually similar to Ethereum's Sync Committee and will serve as a foundation for crypto-economic secure and trustless light client-based cross-chain bridging and messaging.
 
 ## Ethereum Light Client vs Lagrange State Committee Light Client
 
@@ -28,16 +27,16 @@ Our technical approach is inspired by the current implementation of the Ethereum
 
 In particular, given two Ethereum blocks headers d and d’, and assuming you trust d, an Ethereum light client can verify that block header d’ is valid by verifying an aggregate signature by a certain number of public keys that are contained in either the current committee or the next committee field of d. The individual signatures are computed by Ethereum nodes that actually check the validity of d’ by replaying all transactions.
 
-LSC was designed by combining Lagrange’s ZK Prover Network and EigenLayer restaking. State Committees borrow security from Ethereum by dual staking with both EigenLayer and the rollup’s native token.
+LSC was designed by combining Lagrange’s ZK Prover Network and EigenLayer restaking. 
 
 ## Key Components
 The key components of the Lagrange State Committee protocol are the ***sequencer**, **Database**, **gRPC Server**, **Consensus**, and **attestation nodes***.
 
 - The **Sequencer** is responsible for fetching L2 batch data from L1 (Ethereum), and L2 blocks from EVM rollup chains and updating the database. 
 - The **Database** stores new finalized batch with aggregate signatures and send non finalized batches to consensus for verification. 
-- The **gRPC Server** a physical somponent of the architecture is responsible for communicating with attestation nodes.  
+- The **gRPC Server** a physical component of the architecture is responsible for communicating with attestation nodes.  
 - The **Consensus** is responsible for computing aggregate signature and ensuring 67% of total voting power is used to sign the batch in order to consider it as finalized.
-- The **Attestation Nodes** are operators in the LSC protocol that participates in aggregate signature generation. 
+- The **Attestation Nodes** are validator nodes operated by EigenLayer operators that participates in the State Committee protocol for aggregate signature generation. 
 
 <ThemedImage
   lightSrc="/img/state-committee-light.png"
@@ -45,13 +44,11 @@ The key components of the Lagrange State Committee protocol are the ***sequencer
   alt="State Committees Architecture Diagram"
 />
 
-**State Committee Contracts** - The Lagrange service and Lagrange committee smart contract is deployed on the Ethereum mainnet. The smart contract manages epoch updates, voting power updates and calculates the Merkle tree.  A Merkle tree is computed by hashing individual data blocks to form leaf nodes, then iteratively hashing pairs of nodes to form parent nodes until a single hash, the Merkle root, is obtained. This root summarizes the data, allowing efficient and secure verification of the data’s integrity with minimal information.
-
-The attestation nodes can easily verify the given committee root is correct or not based on on-chain data through the smart contract.
+**State Committee Contracts** - The Lagrange service and Lagrange committee smart contract is deployed on the Ethereum mainnet. The smart contract manages epoch updates, voting power updates and calculates the Merkle tree.  A Merkle tree is computed by hashing individual data blocks to form leaf nodes, then iteratively hashing pairs of leaf nodes to form parent nodes until a single hash, the Merkle root, is obtained. This root summarizes the data, allowing efficient and secure verification of the data’s integrity with minimal information.
 
 ## LSC Node Requirements
 
-Lagrange Nodes are the attesters within the Lagrange State Committees infrastructure that are responsible for signing the state roots of different chains. Lagrange cross-chain State Committees are not designed to replace proofs of consensus but instead are an alternative mechanism for chains whose finality or consensus is not proveable within a zero-knowledge context.
+State Committee Nodes are the attesters within the Lagrange State Committees infrastructure that are responsible for signing the state roots of different chains. Lagrange cross-chain State Committees are not designed to replace proofs of consensus but instead are an alternative mechanism for chains whose finality or consensus is not provable within a zero-knowledge context.
 
 Nodes wishing to join the cross-chain State Committees must restake via EigenLayer. A node must provide at least 10 ETH worth of rehypothecated collateral to join the network and must indicate which chain or roll-up they wish to provide attestations for.
 
@@ -61,7 +58,7 @@ Every node in the network must run a containerized validator or watcher of a rel
 
 Each cross-chain state attester is responsible for executing a signature with its BLS (BN254) key on every finalized batch during the attestation periods that it is active for. Each signature is executed on a tuple containing a `batchHeader`, `committeeHeader`. Merkle root of public keys, operators, and aggregated signatures of the `batch`. 
 
-```
+```go
 //BatchHeader holds information about a batch of Layer 2 blocks and their corresponding Layer 1 anchor
 
 struct BatchHeader {

@@ -2,7 +2,6 @@
 id: quickstart
 title: "Quickstart"
 description: This quickstart guide provides a basic understanding of the Lagrange State Committee.
-author: daniel
 ---
 
 ## Overview
@@ -24,12 +23,11 @@ Learn more about the LSC Architecture [here](./architecture/architecture-overvie
 
 ## Inductive State Proofs
 
-This inductive process allows contracts to prove the validity of any block through zero-knowledge proofs and aggregated BLS signatures of the committee.  For a block’s state proof to be valid, at least two-thirds of the committee must sign the block header. Explore Inductive state proofs in detail [here](./inductive-state-proofs.md). 
+This inductive process allows contracts to prove the validity of any batch through zero-knowledge proofs and aggregated BLS signatures of the committee.  For a batch’s state proof to be valid, at least two-thirds of the committee must sign the batch header. Explore Inductive state proofs in detail [here](./inductive-state-proofs.md). 
 
 
 ## Use-cases
 
-- Aggregate Signatures
 - Cross-chain Bridging
 - Cross-chain Messaging
 - Indexing Protocols

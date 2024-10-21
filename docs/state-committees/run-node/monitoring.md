@@ -2,7 +2,6 @@
 id: monitoring
 title: "Monitoring"
 description: The steps to monitor Attestation Node
-author: kashish
 ---
 
 After successfully completing all the previous steps to deploy the attestation node/s, the operator can monitor its performance through Docker logs and/or Prometheus metrics.
