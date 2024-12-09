@@ -64,6 +64,19 @@ const config: Config = {
         showLastUpdateTime: true,
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        path: "docs/prover-network",
+        routeBasePath: "prover-network",
+        sidebarPath: require.resolve("./sidebars-prover-network.ts"),
+        editUrl: ({ docPath }) => {
+          return `https://github.com/Lagrange-Labs/docs/tree/main/docs/prover-network/${docPath}`;
+        },
+        id: "prover-network",
+        showLastUpdateTime: true,
+      },
+    ],
   ],
   themeConfig: {
     ...(isDevelopment ? {} : {
@@ -93,6 +106,11 @@ const config: Config = {
         {
           to: "/state-committees/overview",
           label: "State Committees",
+          position: "left",
+        },
+        {
+          to: "/prover-network/overview",
+          label: "Prover Network",
           position: "left",
         },
         {
