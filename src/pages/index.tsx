@@ -12,11 +12,11 @@ export default function Home() {
           Welcome to the Lagrange documentation!
         </p>
         <p className={styles.overview}>
-          Lagrange Labs has launched a decentralized prover network to support a
-          variety of protocols using different proof types. The first two
-          protocols offered are the ZK Coprocessor and State Committees. This
-          documentation shares the concepts, architecture, and deployment guides
-          for each of Lagrange’s protocols.
+          Welcome to the technical documentation and knowledge resources for Lagrange Labs' protocols.
+          Lagrange Labs is building the foundational layer for proving, powered by a decentralized prover network
+          on EigenLayer, which supports Lagrange's hyper-parallel ZK Coprocessor, State Committees, as well as the
+          proving needs of various other teams.
+          The first two protocols offered by Lagrange are the ZK Coprocessor and State Committees. This documentation shares the concepts, architecture, and deployment guides for each of Lagrange’s protocols.
         </p>
         <div className={styles.cards}>
           <Link to="/zk-coprocessor/overview" className={styles.card}>
@@ -34,6 +34,14 @@ export default function Home() {
               <p>
                 State Committees are fast-finality ZK state proofs that enable
                 bridging and interoperability between optimistic rollups.
+              </p>
+            </div>
+          </Link>
+          <Link to="/prover-network/overview" className={styles.card}>
+            <div className={styles.cardContent}>
+              <h3 className={styles.cardTitle}>Prover Network</h3>
+              <p>
+                The foundational proving layer for the internet. 
               </p>
             </div>
           </Link>
