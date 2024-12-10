@@ -19,6 +19,14 @@ export default function Home() {
           The first two protocols offered by Lagrange are the ZK Coprocessor and State Committees. This documentation shares the concepts, architecture, and deployment guides for each of Lagrange’s protocols.
         </p>
         <div className={styles.cards}>
+        <Link to="/prover-network/overview" className={styles.card}>
+            <div className={styles.cardContent}>
+              <h3 className={styles.cardTitle}>Prover Network</h3>
+              <p>
+                The foundational proving layer for the internet. 
+              </p>
+            </div>
+          </Link>
           <Link to="/zk-coprocessor/overview" className={styles.card}>
             <div className={styles.cardContent}>
               <h3 className={styles.cardTitle}>ZK Coprocessor</h3>
@@ -37,14 +45,7 @@ export default function Home() {
               </p>
             </div>
           </Link>
-          <Link to="/prover-network/overview" className={styles.card}>
-            <div className={styles.cardContent}>
-              <h3 className={styles.cardTitle}>Prover Network</h3>
-              <p>
-                The foundational proving layer for the internet. 
-              </p>
-            </div>
-          </Link>
+      
         </div>
       </div>
     </Layout>
