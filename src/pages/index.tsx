@@ -12,19 +12,22 @@ export default function Home() {
           Welcome to the Lagrange documentation!
         </p>
         <p className={styles.overview}>
-          Lagrange Labs has launched a decentralized prover network to support a
-          variety of protocols using different proof types. The first two
-          protocols offered are the ZK Coprocessor and State Committees. This
-          documentation shares the concepts, architecture, and deployment guides
-          for each of Lagrange’s protocols.
+        Welcome to the technical documentation and knowledge resources for Lagrange, the infinite proving layer. Lagrange consists of 3 protocols - a decentralized ZK Prover Network, a hyper-parallel ZK Coprocessor and State Committees for interoperability. This documentation shares the concepts, architecture, and deployment guides for each of Lagrange’s protocols.
         </p>
         <div className={styles.cards}>
+        <Link to="/prover-network/overview" className={styles.card}>
+            <div className={styles.cardContent}>
+              <h3 className={styles.cardTitle}>ZK Prover Network</h3>
+              <p>
+              Lagrange’s ZK Prover Network supports universal proving - for rollups, apps, coprocessors and interoperability.  
+              </p>
+            </div>
+          </Link>
           <Link to="/zk-coprocessor/overview" className={styles.card}>
             <div className={styles.cardContent}>
               <h3 className={styles.cardTitle}>ZK Coprocessor</h3>
               <p>
-                The ZK Coprocessor lifts intensive computations offchain and
-                generates ZK proofs of the results to bring back onchain.
+              The ZK Coprocessor enables developers to prove custom SQL queries over onchain data, directly from smart contracts.
               </p>
             </div>
           </Link>
@@ -37,6 +40,7 @@ export default function Home() {
               </p>
             </div>
           </Link>
+      
         </div>
       </div>
     </Layout>

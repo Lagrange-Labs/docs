@@ -64,6 +64,19 @@ const config: Config = {
         showLastUpdateTime: true,
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        path: "docs/prover-network",
+        routeBasePath: "prover-network",
+        sidebarPath: require.resolve("./sidebars-prover-network.ts"),
+        editUrl: ({ docPath }) => {
+          return `https://github.com/Lagrange-Labs/docs/tree/main/docs/prover-network/${docPath}`;
+        },
+        id: "prover-network",
+        showLastUpdateTime: true,
+      },
+    ],
   ],
   themeConfig: {
     ...(isDevelopment ? {} : {
@@ -85,6 +98,11 @@ const config: Config = {
         srcDark: "img/logo-dark.svg",
       },
       items: [
+        {
+          to: "/prover-network/overview",
+          label: "ZK Prover Network",
+          position: "left",
+        },
         {
           to: "zk-coprocessor/overview",
           label: "ZK Coprocessor",
