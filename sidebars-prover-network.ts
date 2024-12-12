@@ -12,11 +12,6 @@ const sidebars: SidebarsConfig = {
       label: "Architecture",
       id: "architecture",
     },
-    {
-      type: "doc",
-      label: "DARA - Double Auction Resource Allocation",
-      id: "dara",
-    },
   ],
 };
 
