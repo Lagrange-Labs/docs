@@ -1,6 +1,6 @@
 ---
 id: architecture
-title: "Prover Network Architecture"
+title: "ZK Prover Network Architecture"
 description: Introduction to Lagrange Prover Network Architecture
 ---
 

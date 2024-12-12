@@ -1,6 +1,6 @@
 ---
 id: overview
-title: "Overview of Prover Network"
+title: "Overview of ZK Prover Network"
 description: Introduction to Lagrange Prover Network
 ---
 

@@ -99,6 +99,11 @@ const config: Config = {
       },
       items: [
         {
+          to: "/prover-network/overview",
+          label: "ZK Prover Network",
+          position: "left",
+        },
+        {
           to: "zk-coprocessor/overview",
           label: "ZK Coprocessor",
           position: "left",
@@ -106,11 +111,6 @@ const config: Config = {
         {
           to: "/state-committees/overview",
           label: "State Committees",
-          position: "left",
-        },
-        {
-          to: "/prover-network/overview",
-          label: "Prover Network",
           position: "left",
         },
         {
