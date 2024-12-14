@@ -26,8 +26,8 @@ block_. The root of the storage is stored in the contract information for that b
 ## Historical Values as Table
 
 The zkCoprocessor exposes the data of the contract in a very well known form: an SQL table.
-More specifically, the zkCoprocessor keeps historical valuess for each block. **In a nutshell, it is a
-time serie database that keeps appending the values of all variables tracked for each block.**
+More specifically, the zkCoprocessor keeps historical values for each block. **In a nutshell, it is a
+time series database that keeps appending the values of all variables tracked for each block.**
 
 Let's take the previous example with the two variables `price` and `balances`. The zkCoprocessor
 exposes these two variables as two separated tables:
@@ -71,7 +71,7 @@ variables inside a single  table, it would look like the following:
 | b2    | k2    | 20      | p2 (same) |
 
 There would be useless and sometimes large repetition of elements. This is because contracts have
-variables have have only one dimension (uint256) or two dimensions (arrays) or more !
+variables have only one dimension (uint256) or two dimensions (arrays) or more!
 :::
 
 The next subsections are going deeper in the technicals of the storage, state and blocks transformation.
