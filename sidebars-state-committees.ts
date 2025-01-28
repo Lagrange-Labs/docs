@@ -15,7 +15,7 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "Architecture",
-      link: {type: "doc", id: "architecture/architecture-overview"},
+      link: { type: "doc", id: "architecture/architecture-overview" },
       items: [
         {
           type: "doc",
@@ -108,6 +108,11 @@ const sidebars: SidebarsConfig = {
               type: "doc",
               label: "Troubleshooting",
               id: "run-node/troubleshooting",
+            },
+            {
+              type: "doc",
+              label: "Deregister Operator",
+              id: "run-node/deregister-operator",
             },
           ],
         },
