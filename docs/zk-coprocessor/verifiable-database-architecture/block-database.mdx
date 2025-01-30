@@ -6,7 +6,7 @@ description: A detailed overview of Block database
 
 import ThemedImage from "@site/src/components/ThemedImage";
 
-Remember the ZK Coprocessor is dealing with historical queries, so it needs to keep around each individual state and storage trees for each blocks ! In essence, the ZK Coprocessor is doing a snapshot of the database at each block. But to prove the correct transformation, it needs to prove that the latest state inserted really belongs to the corresponding block in the target blockchain, and the new block is consecutive to the previous one.
+Remember the ZK Coprocessor is dealing with historical queries, so it needs to keep around each individual state and storage trees for each blocks! In essence, the ZK Coprocessor is doing a snapshot of the database at each block. But to prove the correct transformation, it needs to prove that the latest state inserted really belongs to the corresponding block in the target blockchain, and the new block is consecutive to the previous one.
 
 The solution is to re-create a structure of consecutive blocks in another proof-friendly data structure, that is updated constantly for each new block produced!
 
