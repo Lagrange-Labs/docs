@@ -4,21 +4,19 @@ title: "Writing a smart contract that queries historical storage from the Lagran
 description: Quickstart guide to get you started with ZK Coprocessor
 ---
 
-Welcome to the Quickstart!
-
 ## Overview
 
-In this quick start, we will walk you through registering a calling a query onchain. We’ll leverage the Lagrange Coprocessor, which allows us to efficiently query data using SQL. The Lagrange Coprocessor also ensures the accuracy of these queries by generating cryptographic proofs that are verified onchain.
+In this section, we will walk you through registering a query onchain. We’ll leverage the Lagrange Coprocessor, which allows us to efficiently query data using SQL. The Lagrange Coprocessor also ensures the accuracy of these queries by generating cryptographic proofs that are verified onchain.
 
 ### Why Lagrange ZK Coprocessor?
 
 The Lagrange Coprocessor is a powerful tool for working with blockchain data, especially when you need to ensure the correctness of your data queries. It allows you to:
 
-•	**Query Data with SQL**: Easily write and run SQL queries to retrieve specific price data from the Azuki collection.
+• **Query Data with SQL**: Easily write and run SQL queries to retrieve specific price data from the Azuki collection.
 
-•	**Proof Generation**: Automatically generate a cryptographic proof with each query, ensuring that the data you receive is accurate and tamper-proof.
+• **Proof Generation**: Automatically generate a cryptographic proof with each query, ensuring that the data you receive is accurate and tamper-proof.
 
-This approach reduces complexity significantly by obviating the need for Merkle Proofs or trusted Oracles. This example is a zero-to-hero example of how the ZK Coprocessor works under the hood, showing a summary of what is possible on the Lagrange ZK Coprocessor. 
+This approach reduces complexity significantly by obviating the need for Merkle Proofs or trusted Oracles. This example is a zero-to-hero example of how the ZK Coprocessor works under the hood, showing a summary of what is possible on the Lagrange ZK Coprocessor.
 
 ## Prerequisites
 
@@ -43,18 +41,20 @@ Next let’s install dependencies for the project.
 ```bash
 forge install lagrange-labs/lagrange-lpn-contracts
 ```
+
 Then let’s make sure everything compiles.
 
 ```bash
 forge build
 ```
+
 And that’s it! We have a smart contract repo with the Lagrange ZK Coprocessor SDK installed.
 
 Now, we need to choose a pre-existing or register a new table to query.
 
 ## Step 2: Registering a Table
 
-Permission to begin table registration is going to come up soon via our UI prompt. To complete this step, you have to fill a [form](https://docs.google.com/forms/d/e/1FAIpQLScg11zjGKiHrxlzT8fTUDtQmzpI2OFIHtlrSKVFnvvQV_XnJA/viewform). 
+Permission to begin table registration is going to come up soon via our UI prompt. To complete this step, you have to fill a [form](https://docs.google.com/forms/d/e/1FAIpQLScg11zjGKiHrxlzT8fTUDtQmzpI2OFIHtlrSKVFnvvQV_XnJA/viewform).
 
 This step allows you to register the relevant contract that you'd like Lagrange to index. After a contract is indexed, one can register and execute SQL queries on the historical data of this contract.
 
@@ -64,7 +64,7 @@ In this step, we will go through the process of registering and executing querie
 
 Visit the [dashboard](https://app.lagrange.dev/zk-coprocessor/register-query) to register a query.
 
-![register](/img/register-query.png) 
+![register](/img/register-query.png)
 
 <ThemedImage
   lightSrc="/img/register-query.png"
@@ -72,7 +72,7 @@ Visit the [dashboard](https://app.lagrange.dev/zk-coprocessor/register-query) to
   alt="Register Query"
 />
 
-The result is a 'query hash' that we will be using to execute our query in our smart contract. 
+The result is a 'query hash' that we will be using to execute our query in our smart contract.
 
 ## Step 4: Writing your contract
 
@@ -165,6 +165,7 @@ contract YourContract is LPNClientV1 {
 <!-- Congratulations, you have now successfully deployed a smart contract that queries historical onchain data using Lagrange's ZK Coprocessor. -->
 
 :::info
+
 ## Takeaways
 
 - **Provable Queries**: With ZK Coprocessor the queries generated can be efficiently verified onchain
@@ -175,4 +176,4 @@ contract YourContract is LPNClientV1 {
 - Continue learning by [querying the Pudgy Penguins contract from L2](./themis-testnet/example-pudgy-penguins.md)
 - Join the Lagrange **Developer Community in [Discord](https://discord.com/invite/lagrange)** where you can ask any questions about this tutorial in the channel
 - Tag us on [X](https://x.com/lagrangedev) to help other devs building on Lagrange ZK Coprocessor or share your project.
-:::
+  :::

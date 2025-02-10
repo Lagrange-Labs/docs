@@ -79,14 +79,16 @@ const config: Config = {
     ],
   ],
   themeConfig: {
-    ...(isDevelopment ? {} : {
-      algolia: {
-        apiKey: process.env.ALGOLIA_API_KEY,
-        appId: process.env.ALGOLIA_APP_ID,
-        indexName: process.env.ALGOLIA_INDEX_NAME,
-        contextualSearch: true,
-      },
-    }),
+    ...(isDevelopment
+      ? {}
+      : {
+          algolia: {
+            apiKey: process.env.ALGOLIA_API_KEY,
+            appId: process.env.ALGOLIA_APP_ID,
+            indexName: process.env.ALGOLIA_INDEX_NAME,
+            contextualSearch: true,
+          },
+        }),
     colorMode: {
       defaultMode: "light",
       disableSwitch: true,
@@ -106,11 +108,6 @@ const config: Config = {
         {
           to: "zk-coprocessor/overview",
           label: "ZK Coprocessor",
-          position: "left",
-        },
-        {
-          to: "/state-committees/overview",
-          label: "State Committees",
           position: "left",
         },
         {
