@@ -9,6 +9,11 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: "doc",
+      label: "DARA",
+      id: "dara",
+    },
+    {
+      type: "doc",
       label: "Architecture",
       id: "architecture",
     },

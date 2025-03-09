@@ -1,0 +1,77 @@
+---
+id: dara
+title: "DARA - Double Auction Resource Allocation"
+description: Robust, incentive-aligned double auction mechanism for Prover Network
+---
+
+import ThemedImage from "@site/src/components/ThemedImage";
+
+# Overview
+
+Traditional decentralized proof marketplaces struggle with allocating resources (both demand and supply) in a way that maximizes efficiency,
+affordability for proof requesters, and profitability for provers. They face potential bottlenecks when finding the optimal match between
+proof requesters and provers, determining which proof requesters get their bids accepted and which provers provide the proofs, while also
+setting fair prices for both sides. This leads to:
+
+- **Inefficient Resource Allocation**: Balancing supply and demand while maximizing welfare for proof requesters and provers.
+- **Incentive Misalignment**: Proof requesters aim to minimize costs, while provers seek to maximize revenue, creating a conflict.
+- **High Computational Costs**: ZK proofs are expensive, requiring an all-or-nothing allocation to fulfill computational demands.
+
+# Introduction
+
+**DARA (Double Auction Resource Allocation)** is a smart market mechanism for prover networks introduced by the Lagrange Research team to address
+the unique challenges of decentralized proving marketplaces.
+
+DARA is the first mechanism of its kind that aligns incentives across all participants. It optimizes costs for proof requesters, ensures provers
+maximize revenue, and guarantees that the marketplace operates sustainably and profitably. By leveraging advanced algorithms, DARA enables
+efficient resource allocation, incentivizes truthful bidding, and scales effectively to meet the growing demands of decentralized ZK proof markets.
+
+- **Buyers (Bidders)** want a certain amount of computational power to generate proofs for their applications. They have a private value for how
+  much they're willing to pay for this computation.
+- **Sellers (Distributors)** have computational resources available, with each having a private cost for providing this computation based on the
+  amount requested.
+
+<ThemedImage
+  lightSrc="/img/dara.png"
+  darkSrc="/img/dara.png"
+  alt="DARA - Double Auction Resource Allocation"
+  centered="true"
+/>
+
+# How DARA Works
+
+DARA, with its knapsack double auction mechanism, achieves the five requirements for a fair and efficient auction system:
+
+- **Welfare Maximization: Matching Proof Requesters and Provers Efficiently**
+
+DARA maximizes welfare for both proof requesters and provers by efficiently balancing the market. Proof requesters specify their required
+computational cycles and private valuation for completing the proof, while provers indicate their available compute capacity and cost per cycle,
+enabling DARA to match as many buyers and sellers as possible while ensuring optimal pairings.
+
+A knapsack constraint ensures that proof requesters are only matched if their entire computational request can be fulfilled, as partial allocations
+hold no value—making it an all-or-nothing scenario.
+
+- **Truthfulness: Incentivizing Proof Requesters and Provers to Share Their Private Values**
+
+DARA ensures that truthful bidding is the optimal strategy for both proof requesters and provers, avoiding inflated costs caused by unpredictable
+demand. Through a threshold payment system, proof requesters pay only what is necessary to secure their computation, while provers are fairly compensated based on market costs, encouraging competitive pricing. This approach fosters a fair and efficient marketplace, enabling both small and large participants to compete equitably while optimizing resource allocation and maintaining cost-effectiveness.
+
+- **Anti-Collusion (Weak Group-Strategy Proofness)**
+
+In DARA, individual participants (proof requesters or provers) have no incentive to misrepresent their private valuations. Underbidding results in the
+risk of losing the auction entirely, while overbidding could result in paying more than necessary or receiving insufficient computational resources.
+This makes DARA weak group-strategy-proof, as even if a group attempts to collude and manipulate the auction, at least one member will find it more
+advantageous to bid truthfully.
+
+- **Computational Efficiency**
+
+The double auction mechanism implemented by DARA ensures computational efficiency even in complex or large decentralized ecosystems. DARA maintains
+consistent uptime and operates in polynomial time with near-linear complexity. This means that even as the number of buyers and sellers increases, DARA scales seamlessly, accommodating growing demand without encountering bottlenecks or significant delays.
+
+- **Weak Budget Balance & Sustainability for the Protocol**
+
+DARA guarantees that the protocol, which serves as the auctioneer, does not incur losses while managing the auction. Unlike conventional resource
+allocation systems where the protocol might need to subsidize transactions—potentially leading to financially unsustainable operations—DARA operates
+differently. It only processes proof computation bids that exceed proving costs, ensuring the protocol never has to cover transactions at a deficit.
+
+For more detail on DARA and its technical implementation in decentralized proof marketplaces, see the [whitepaper](https://eprint.iacr.org/2024/1750.pdf).
