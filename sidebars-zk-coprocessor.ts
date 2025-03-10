@@ -68,6 +68,11 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      type: "doc",
+      id: "upcoming-features",
+      label: "Upcoming Features",
+    },
+    {
       type: "category",
       label: "Themis Testnet Developer Docs",
       link: { type: "doc", id: "themis-testnet/overview" },
