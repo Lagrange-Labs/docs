@@ -72,34 +72,34 @@ const sidebars: SidebarsConfig = {
       id: "upcoming-features",
       label: "Upcoming Features",
     },
-    {
-      type: "category",
-      label: "Themis Testnet Developer Docs",
-      link: { type: "doc", id: "themis-testnet/overview" },
-      items: [
-        {
-          type: "doc",
-          id: "themis-testnet/solidity",
-          label: "Solidity Documentation",
-        },
-        {
-          type: "category",
-          label: "Examples",
-          items: [
-            {
-              type: "doc",
-              id: "themis-testnet/example-pudgy-penguins",
-              label: "Example: NFT Mint Whitelist on L2 with Pudgy Penguins",
-            },
-          ],
-        },
-        {
-          type: "doc",
-          id: "themis-testnet/contract-addresses",
-          label: "Contract Addresses",
-        },
-      ],
-    },
+    // {
+    //   type: "category",
+    //   label: "Themis Testnet Developer Docs",
+    //   link: { type: "doc", id: "themis-testnet/overview" },
+    //   items: [
+    //     {
+    //       type: "doc",
+    //       id: "themis-testnet/solidity",
+    //       label: "Solidity Documentation",
+    //     },
+    //     {
+    //       type: "category",
+    //       label: "Examples",
+    //       items: [
+    //         {
+    //           type: "doc",
+    //           id: "themis-testnet/example-pudgy-penguins",
+    //           label: "Example: NFT Mint Whitelist on L2 with Pudgy Penguins",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       type: "doc",
+    //       id: "themis-testnet/contract-addresses",
+    //       label: "Contract Addresses",
+    //     },
+    //   ],
+    // },
     {
       type: "category",
       label: "AVS Operators",
