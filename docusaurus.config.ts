@@ -43,6 +43,7 @@ const config: Config = {
           editUrl: ({ docPath }) =>
             `https://github.com/Lagrange-Labs/docs/tree/main/docs/zk-coprocessor/${docPath}`,
           showLastUpdateTime: true,
+          sidebarCollapsed: false,
         },
         theme: {
           customCss: "./src/css/custom.css",
@@ -62,6 +63,7 @@ const config: Config = {
         },
         id: "state-committees",
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
       },
     ],
     [
@@ -75,6 +77,7 @@ const config: Config = {
         },
         id: "prover-network",
         showLastUpdateTime: true,
+        sidebarCollapsed: false,
       },
     ],
   ],
