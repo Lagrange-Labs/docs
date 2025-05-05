@@ -21,7 +21,7 @@ This step allows you to register the relevant contract that you would like Lagra
 
 ## Register Queries as SQL SELECT Statements
 
-You can [register queries using our Web UI](https://app.lagrange.dev/zk-coprocessor/register-query)
+You can [register queries using our Web UI](https://app.lagrange.dev/zk-coprocessor/create/register-query)
 
 ## Querying the database
 
