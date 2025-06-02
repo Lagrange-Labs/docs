@@ -52,11 +52,10 @@ This is the only time where Lagrange binary needs to read the main ECDSA operato
 You can remove the key from the config/ folder!
 :::
 
-3. Add the Lagrange password to the .env file so that the service can be restarted without any manual intervention.
+3. Export the password used for the keystore as an environment variable. This ensures the registration/deregistration process can access the encrypted keys.
 
 ```bash
-# set the AVS__LAGR_PWD key with the password you have set
-vim .env
+export AVS__LAGR_PWD='your_password'
 ```
 
 ## Contracts Registration
