@@ -117,13 +117,18 @@ const sidebars: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "avs-operators/registration",
-          label: "Registration",
+          id: "avs-operators/register",
+          label: "Register",
         },
         {
           type: "doc",
           id: "avs-operators/run-worker",
           label: "Running a Worker",
+        },
+        {
+          type: "doc",
+          id: "avs-operators/deregister",
+          label: "Deregister",
         },
         {
           type: "doc",
