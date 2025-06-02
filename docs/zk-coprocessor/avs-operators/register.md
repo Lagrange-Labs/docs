@@ -1,6 +1,6 @@
 ---
-id: registration
-title: "Registration"
+id: register
+title: "Register"
 description: The operator registration steps for ZK Coprocessor AVS
 ---
 
@@ -26,7 +26,7 @@ new Lagrange keystore stored under config/lagr_keystore.json
 	public_key = "66779122cb188d1e70889278ffb3ee8ee024d4a23742a59afbdaaa096fc5135c3a14d897de87d1c56adbe029619c231416e7dfb3f1de0a542dd8ac7f4748ce07"
 ```
 
-## Registration on Lagrange AVS Contract
+## Register to the Lagrange AVS Contract
 
 Now that there is an operator key, the operator needs to register it to the Lagrange Network contracts.
 
@@ -51,6 +51,13 @@ This is the only time where Lagrange binary needs to read the main ECDSA operato
 
 You can remove the key from the config/ folder!
 :::
+
+3. Add the Lagrange password to the .env file so that the service can be restarted without any manual intervention.
+
+```bash
+# set the AVS__LAGR_PWD key with the password you have set
+vim .env
+```
 
 ## Contracts Registration
 
