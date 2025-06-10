@@ -55,20 +55,6 @@ const config: Config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        path: "docs/state-committees",
-        routeBasePath: "state-committees",
-        sidebarPath: require.resolve("./sidebars-state-committees.ts"),
-        editUrl: ({ docPath }) => {
-          return `https://github.com/Lagrange-Labs/docs/tree/main/docs/state-committees/${docPath}`;
-        },
-        id: "state-committees",
-        showLastUpdateTime: true,
-        sidebarCollapsed: false,
-      },
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
         path: "docs/prover-network",
         routeBasePath: "prover-network",
         sidebarPath: require.resolve("./sidebars-prover-network.ts"),

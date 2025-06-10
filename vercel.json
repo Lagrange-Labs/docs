@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/state-committees",
-      "destination": "/state-committees/overview",
+      "source": "/prover-network",
+      "destination": "/prover-network/overview",
       "permanent": true
     },
     {
