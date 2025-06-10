@@ -62,7 +62,7 @@ This step allows you to register the relevant contract that you'd like Lagrange 
 
 In this step, we will go through the process of registering and executing queries.
 
-Visit the [dashboard](https://app.lagrange.dev/zk-coprocessor/register-query) to register a query.
+Visit the [dashboard](https://app.lagrange.dev/zk-coprocessor/create/register-query) to register a query.
 
 ![register](/img/register-query.png)
 

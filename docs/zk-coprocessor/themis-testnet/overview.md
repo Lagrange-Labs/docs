@@ -17,7 +17,7 @@ The goals of Testnet Themis are twofold:
 Lagrange's ZK Coprocessor and Verifiable Database is the first solution enabling developers to express complex queries on-chain and we're building this from scratch. We decided to release Testnet Themis with a reduced feature set to start getting feedback from developers using our tech. In particular, Testnet Themis is:
 
 - Focused on proving mapping and primitive storage variables
-- Self service [query registration](https://app.lagrange.dev/zk-coprocessor/register-query)
+- Self service [query registration](https://app.lagrange.dev/zk-coprocessor/create/register-query)
 - Self service table registration
 
 The next section goes into more detail about the API to interact with Testnet Themis.
