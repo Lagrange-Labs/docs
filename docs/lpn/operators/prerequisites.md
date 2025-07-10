@@ -16,7 +16,7 @@ There is a main ecdsa key associated with that operator which we will call `avs_
 
 ## Hardware
 
-**We recommend setting up the worker on a dedicated instance because of the ratio price / performance.**
+**We recommend setting up the prover on a dedicated instance because of the ratio price / performance.**
 
 The baseline hardware is 8c / 16 threads with 40+GB RAM. We recommend setting these up for example:
 
@@ -26,7 +26,7 @@ The baseline hardware is 8c / 16 threads with 40+GB RAM. We recommend setting th
 
 ### Cloud based instances
 
-We are also running different workers on the cloud. The following table represents the type of machine that we run on the three categories:
+We are also running different provers on the cloud. The following table represents the type of machine that we run on the three categories:
 
 | Category    | vCPU | RAM |
 | ----------- | ---- | --- |
@@ -35,14 +35,14 @@ We are also running different workers on the cloud. The following table represen
 | large       | 90   | 180 |
 
 :::note
-Given the parallelism of the current proof system is not optimal yet (plonky2), it is possible to run 2 worker binaries in the same instance for the moment.
+Given the parallelism of the current proof system is not optimal yet (plonky2), it is possible to run 2 prover binaries in the same instance for the moment.
 :::
 
 ## Installation
 
 ### Prerequisites
 
-For ease of use, the worker binary is delivered via Docker and we provide docker-compose scripts to automate some common operations.
+For ease of use, the prover binary is delivered via Docker and we provide docker-compose scripts to automate some common operations.
 
 - Docker ([installation link](https://docs.docker.com/get-docker/))
 
@@ -56,9 +56,9 @@ For [the registration](https://lagrange-labs.gitbook.io/lagrange-v2-1/zk-coproce
 
 - For testnet, this should point to Holesky testnet node (testnet network ran by Eigen)
 
-## Worker Repository
+### Worker Repository
 
-Now you're ready to download the worker repository that contains predefined configuration files to run the worker:
+Now you're ready to download the worker repository that contains predefined configuration files to run the prover:
 
 ```bash
 git clone https://github.com/Lagrange-Labs/worker.git

@@ -153,27 +153,10 @@ contract YourContract is LPNClientV1 {
 }
 ```
 
-<!-- ## Step 5: Deploy your contract -->
-<!---->
-<!-- In this step, you will learn how to compile and deploy your smart contract that makes a query request to the ZK Coprocessor. -->
-<!---->
-<!-- :::info -->
-<!-- 1. Before you start, make sure that you’ve configured the Holesky Testnet in your wallet. -->
-<!-- 2. Have some [Holesky Testnet ETH](https://cloud.google.com/application/web3/faucet/ethereum/holesky). If you need more, use one of the faucets. -->
-<!-- ::: -->
-<!---->
-<!-- Congratulations, you have now successfully deployed a smart contract that queries historical onchain data using Lagrange's ZK Coprocessor. -->
-
 :::info
 
 ## Takeaways
 
 - **Provable Queries**: With ZK Coprocessor the queries generated can be efficiently verified onchain
 - **Cross-chains**: The ZK Coprocessor can process smart contract's storage on any EVM based chains and answer queries for these contract on another chain, without the need to use bridges.
-
-## Next steps
-
-- Continue learning by [querying the Pudgy Penguins contract from L2](./themis-testnet/example-pudgy-penguins.md)
-- Join the Lagrange **Developer Community in [Discord](https://discord.com/invite/lagrange)** where you can ask any questions about this tutorial in the channel
-- Tag us on [X](https://x.com/lagrangedev) to help other devs building on Lagrange ZK Coprocessor or share your project.
   :::

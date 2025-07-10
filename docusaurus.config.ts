@@ -36,12 +36,12 @@ const config: Config = {
       "classic",
       {
         docs: {
-          id: "zk-coprocessor",
-          path: "docs/zk-coprocessor",
-          routeBasePath: "zk-coprocessor",
-          sidebarPath: require.resolve("./sidebars-zk-coprocessor.ts"),
+          id: "lagrange",
+          path: "docs/",
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.ts"),
           editUrl: ({ docPath }) =>
-            `https://github.com/Lagrange-Labs/docs/tree/main/docs/zk-coprocessor/${docPath}`,
+            `https://github.com/Lagrange-Labs/docs/tree/main/docs/${docPath}`,
           showLastUpdateTime: true,
           sidebarCollapsed: false,
         },
@@ -49,22 +49,6 @@ const config: Config = {
           customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
-    ],
-  ],
-  plugins: [
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        path: "docs/prover-network",
-        routeBasePath: "prover-network",
-        sidebarPath: require.resolve("./sidebars-prover-network.ts"),
-        editUrl: ({ docPath }) => {
-          return `https://github.com/Lagrange-Labs/docs/tree/main/docs/prover-network/${docPath}`;
-        },
-        id: "prover-network",
-        showLastUpdateTime: true,
-        sidebarCollapsed: false,
-      },
     ],
   ],
   themeConfig: {
@@ -90,12 +74,17 @@ const config: Config = {
       },
       items: [
         {
-          to: "/prover-network/overview",
+          to: "/deepprove/overview",
+          label: "DeepProve",
+          position: "left",
+        },
+        {
+          to: "/lpn/overview",
           label: "ZK Prover Network",
           position: "left",
         },
         {
-          to: "zk-coprocessor/overview",
+          to: "/lpn/zk-coprocessor/overview",
           label: "ZK Coprocessor",
           position: "left",
         },
@@ -140,7 +129,11 @@ const config: Config = {
             },
             {
               label: "Discord",
-              to: "https://discord.lagrange.dev",
+              to: "https://discord.com/invite/lagrangefoundation",
+            },
+            {
+              label: "LinkedIn",
+              to: "https://www.linkedin.com/company/lagrange-labs/",
             },
             {
               label: "Blog",
