@@ -8,7 +8,7 @@ description: The operator registration steps for ZK Coprocessor AVS
 
 First, an operator needs to create a key specific for its operation on the Lagrange Network.
 
-Currently, the same key is used for many workers for a single operator. That simplifies the key management overhead. If a key is compromised, it is enough to de-register and re-register on Lagrange Network with a new key.
+Currently, the same key is used for many provers for a single operator. That simplifies the key management overhead. If a key is compromised, it is enough to de-register and re-register on Lagrange Network with a new key.
 
 To do so, run the following command
 
@@ -16,7 +16,7 @@ To do so, run the following command
 docker compose run --rm worker avs new-key
 ```
 
-This prompts you for a password to create the encrypted keystore containing the new ECDSA key specific to Lagrange Network. This key has to be distributed to all the workers running under the same operator.
+This prompts you for a password to create the encrypted keystore containing the new ECDSA key specific to Lagrange Network. This key has to be distributed to all the provers running under the same operator.
 
 You should see the following:
 
