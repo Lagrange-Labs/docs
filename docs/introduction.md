@@ -4,8 +4,6 @@ title: "Welcome to Lagrange"
 description: "The future of AI is ZK — Building verifiable AI and scalable zero-knowledge infrastructure"
 ---
 
-# Welcome to Lagrange
-
 **The future of AI is ZK. The future of humanity is Lagrange.**
 
 Lagrange is pioneering the next generation of verifiable technology through **DeepProve** for verifiable AI, the **ZK Prover Network** for universal proof generation, and the **ZK Coprocessor** for verifiable blockchain computations. Together, these technologies form a comprehensive ecosystem that enables anyone to prove anything at internet scale.

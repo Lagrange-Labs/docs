@@ -6,8 +6,6 @@ description: "Introduction to Lagrange's modular, infinitely scalable ZK Prover 
 
 import ThemedImage from "@site/src/components/ThemedImage";
 
-# ZK Prover Network Overview
-
 ## The Challenge with Traditional Prover Networks
 
 Traditional, monolithic ZK prover networks rely on single gateway models, which inherently limit scalability with the gateway as the bottleneck. They also act as a single point of failure for the system:
@@ -23,45 +21,52 @@ Traditional, monolithic ZK prover networks rely on single gateway models, which 
 
 The **Lagrange ZK Prover Network (LPN)** is a modular, infinitely scalable foundational proving layer designed to unlock universal proof generation for a variety of use cases, such as rollups, ZK Coprocessor, DApps, and interoperability at internet scale.
 
+<ThemedImage
+  lightSrc="/img/lagrange-network.png"
+  darkSrc="/img/lagrange-network.png"
+  alt="Lagrange Prover Network Diagram"
+  centered="true"
+/>
+
 ### Key Features
 
-- **EigenLayer Integration**: Deployed on EigenLayer and supported by over 85 top institution-grade operators including Coinbase, OKX, P2P, Nethermind, and others
-- **Modular Architecture**: Each operator runs multiple provers to deliver ZK proofs requested by users
-- **Subnetwork Support**: Multiple independent subnetworks with dedicated bandwidth that collectively form a "prover network of prover networks"
-- **Customizable Standards**: Any blockchain, rollup, or application can connect through customizable standards and scale without bottlenecks or I/O constraints
+- EigenLayer Integration: Deployed on EigenLayer and supported by over 85 top institution-grade operators including Coinbase, OKX, P2P, Nethermind, and others
+- Modular Architecture: Each operator runs multiple provers to deliver ZK proofs requested by users
+- Subnetwork Support: Multiple independent subnetworks with dedicated bandwidth that collectively form a "prover network of prover networks"
+- Customizable Standards: Any blockchain, rollup, or application can connect through customizable standards and scale without bottlenecks or I/O constraints
 
 ## Architecture Benefits
 
 The ZK Prover Network supports multiple independent subnetworks with dedicated bandwidth that collectively form a "prover network of prover networks". This approach allows any blockchain, rollup, or application to connect through customizable standards and scale without bottlenecks or I/O constraints.
 
-**This model guarantees:**
+This model guarantees:
 
-- **High liveness** and availability
-- **Simple interface** for integration
-- **Support for complex proof generation** required for large ecosystems
+- High liveness and availability
+- Simple interface for integration
+- Support for complex proof generation required for large ecosystems
 
 ## Problems Solved
 
 Lagrange ZK Prover Network addresses key challenges experienced by rollups and applications:
 
-### **Scalability Issues**
+### Scalability Issues
 
 - Eliminates single-threaded bottlenecks
 - Enables seamless handling of thousands of proof requests simultaneously
 - Maintains performance even during peak demand
 
-### **Availability Concerns**
+### Availability Concerns
 
 - Removes single points of failure through decentralized architecture
 - Distributes proof generation across a network of operators
 - Ensures consistent service availability
 
-### **High Proving Costs**
+### High Proving Costs
 
 - Reduces operational expenses through competitive marketplace dynamics
 - Optimizes resource allocation across the network
 
-### **Proof Computation Latencies**
+### Proof Computation Latencies
 
 - Minimizes delays through efficient job distribution
 - Leverages parallel processing capabilities
@@ -75,27 +80,27 @@ Together, these capabilities empower builders to scale with confidence, knowing 
 
 ## What Makes Lagrange's ZK Prover Network Unique?
 
-While many initiatives promise democratized access to ZK proofs, **Lagrange sets itself apart through a relentless focus on specialized performance and enterprise-grade reliability.** The following pillars illustrate why our network stands in a league of its own:
+While many initiatives promise democratized access to ZK proofs, Lagrange sets itself apart through a relentless focus on specialized performance and enterprise-grade reliability. The following pillars illustrate why our network stands in a league of its own:
 
-### **Specialized Hardware Optimization**
+### Specialized Hardware Optimization
 
 - Custom-built proving infrastructure optimized for specific ZK circuits
 - Hardware-aware job scheduling and resource allocation
 - Performance benchmarks that exceed industry standards
 
-### **Enterprise-Grade Reliability**
+### Enterprise-Grade Reliability
 
 - 99.9% uptime guarantees backed by institutional operators
 - Automatic failover and redundancy systems
 - Comprehensive monitoring and alerting infrastructure
 
-### **Seamless Integration Experience**
+### Seamless Integration Experience
 
 - Simple APIs that abstract away cryptographic complexity
 - Comprehensive SDK support for major development frameworks
 - Extensive documentation and developer resources
 
-### **Economic Sustainability**
+### Economic Sustainability
 
 - Transparent pricing models with competitive market dynamics
 - Predictable cost structures for enterprise planning
@@ -105,7 +110,7 @@ These advantages translate into predictable latency, reduced operating costs, an
 
 ## Next Steps
 
-- **[Architecture Deep Dive](architecture/overview.mdx)**: Explore the technical architecture and components
-- **[Become an Operator](operators/overview.md)**: Learn how to join the network as a prover operator
-- **[ZK Coprocessor](zk-coprocessor/overview.md)**: Discover verifiable database capabilities
-- **[Integration Guide](zk-coprocessor/quickstart.md)**: Get started with your first implementation
+- [Architecture Deep Dive](architecture/overview.mdx): Explore the technical architecture and components
+- [Become an Operator](operators/overview.md): Learn how to join the network as a prover operator
+- [ZK Coprocessor](zk-coprocessor/overview.md): Discover verifiable database capabilities
+- [Integration Guide](zk-coprocessor/quickstart.md): Get started with your first implementation

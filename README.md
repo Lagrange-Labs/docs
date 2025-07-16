@@ -3,15 +3,15 @@
 ## Installation
 
 ```
-$ yarn
+$ pnpm i
 ```
 
 ## Local Development
 
-Create `.env` file and set `ENVIRONMENT=development` to locally start the development server without Algolia search. 
+Create `.env` file and set `ENVIRONMENT=development` to locally start the development server without Algolia search.
 
 ```
-$ yarn start
+$ pnpm start
 ```
 
 This command starts a local development server and opens up a browser window. Majority of the changes are reflected live without having to restart the server.

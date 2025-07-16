@@ -6,11 +6,9 @@ description: "Deep dive into Lagrange's modular, scalable ZK Prover Network arch
 
 import ThemedImage from "@site/src/components/ThemedImage";
 
-# ZK Prover Network Architecture
-
 Lagrange's ZK Prover Network has a unique architecture that enables it to scale proof generation dynamically and horizontally according to demand. Networks can access dedicated proving bandwidth tailored to their specific needs, eliminating the bottlenecks typically associated with traditional monolithic prover networks.
 
-This approach unlocks a wide range of new use cases that protocols can leverage to build more **data-rich**, **performance-optimized**, and **privacy-enabled** experiences.
+This approach unlocks a wide range of new use cases that protocols can leverage to build more data-rich, performance-optimized, and privacy-enabled experiences.
 
 ## How It Works
 
@@ -33,100 +31,99 @@ The diagram above illustrates this life-cycle, showcasing how decoupled architec
 
 Let us dive into the core components of the ZK Prover Network:
 
-### **1. Gateway**
+### 1. Gateway
 
 The Gateway serves as the primary entry point for all proof requests, handling:
 
-- **Client Authentication**: Verifies and authorizes incoming requests
-- **Request Normalization**: Standardizes inputs across different proof systems
-- **Task Persistence**: Maintains reliable queuing for fault tolerance
-- **Result Aggregation**: Combines partial proofs into final outputs
+- Client Authentication: Verifies and authorizes incoming requests
+- Request Normalization: Standardizes inputs across different proof systems
+- Task Persistence: Maintains reliable queuing for fault tolerance
+- Result Aggregation: Combines partial proofs into final outputs
 
-**[Learn More →](gateway.mdx)**
+[Learn More →](gateway.mdx)
 
-### **2. Dispatcher**
+### 2. Dispatcher
 
 The Dispatcher optimizes job allocation across the prover network:
 
-- **Job Classification**: Categorizes tasks by hardware requirements (small/medium/large)
-- **Resource Matching**: Leverages DARA to select optimal provers
-- **Load Balancing**: Distributes workload efficiently across available resources
-- **Failure Management**: Handles automatic retries and reassignments
+- Job Classification: Categorizes tasks by hardware requirements (small/medium/large)
+- Resource Matching: Leverages DARA to select optimal provers
+- Load Balancing: Distributes workload efficiently across available resources
+- Failure Management: Handles automatic retries and reassignments
 
-### **3. DARA (Double Auction Resource Allocation)**
+### 3. DARA (Double Auction Resource Allocation)
 
 DARA is Lagrange's innovative market mechanism that:
 
-- **Optimizes Matching**: Pairs proof requests with the most suitable provers
-- **Ensures Fair Pricing**: Balances cost efficiency for users and profitability for provers
-- **Maintains Incentive Alignment**: Creates sustainable economic dynamics
-- **Scales Efficiently**: Handles growing market demands without bottlenecks
+- Optimizes Matching: Pairs proof requests with the most suitable provers
+- Ensures Fair Pricing: Balances cost efficiency for users and profitability for provers
+- Maintains Incentive Alignment: Creates sustainable economic dynamics
+- Scales Efficiently: Handles growing market demands without bottlenecks
 
-**[Learn More →](dara.mdx)**
+[Learn More →](dara.mdx)
 
-### **4. Provers**
+### 4. Provers
 
 The decentralized network of specialized provers:
 
-- **Hardware Diversity**: Supports various computational requirements
-- **Geographic Distribution**: Ensures global availability and redundancy
-- **Staking Mechanism**: Provides economic security through EigenLayer integration
-- **Performance Monitoring**: Tracks and optimizes prover efficiency
+- Hardware Diversity: Supports various computational requirements
+- Geographic Distribution: Ensures global availability and redundancy
+- Staking Mechanism: Provides economic security through EigenLayer integration
+- Performance Monitoring: Tracks and optimizes prover efficiency
 
-**[Learn More →](provers.mdx)**
+[Learn More →](provers.mdx)
 
-### **5. Storage Layer**
+### 5. Storage Layer
 
 Persistent storage infrastructure that handles:
 
-- **Proof Caching**: Stores intermediate and final proofs
-- **Data Integrity**: Ensures reliable proof retrieval
-- **Scalable Architecture**: Supports high-throughput operations
-- **Fault Tolerance**: Provides redundancy and backup mechanisms
+- Proof Caching: Stores intermediate and final proofs
+- Data Integrity: Ensures reliable proof retrieval
+- Scalable Architecture: Supports high-throughput operations
+- Fault Tolerance: Provides redundancy and backup mechanisms
 
 ## Architecture Benefits
 
-### **Horizontal Scalability**
+### Horizontal Scalability
 
-- **Elastic Resource Allocation**: Automatically scales with demand
-- **No Single Points of Failure**: Distributed architecture ensures reliability
-- **Independent Component Scaling**: Each layer can scale independently
+- Elastic Resource Allocation: Automatically scales with demand
+- No Single Points of Failure: Distributed architecture ensures reliability
+- Independent Component Scaling: Each layer can scale independently
 
-### **Performance Optimization**
+### Performance Optimization
 
-- **Specialized Hardware Matching**: Jobs are matched to optimal hardware configurations
-- **Parallel Processing**: Multiple proofs can be generated simultaneously
-- **Efficient Resource Utilization**: Minimizes idle time and maximizes throughput
+- Specialized Hardware Matching: Jobs are matched to optimal hardware configurations
+- Parallel Processing: Multiple proofs can be generated simultaneously
+- Efficient Resource Utilization: Minimizes idle time and maximizes throughput
 
-### **Economic Efficiency**
+### Economic Efficiency
 
-- **Market-Driven Pricing**: Competitive dynamics reduce costs
-- **Resource Optimization**: Efficient allocation minimizes waste
-- **Transparent Economics**: Clear pricing models for predictable costs
+- Market-Driven Pricing: Competitive dynamics reduce costs
+- Resource Optimization: Efficient allocation minimizes waste
+- Transparent Economics: Clear pricing models for predictable costs
 
 ## Security Model
 
-### **Cryptographic Security**
+### Cryptographic Security
 
-- **Proof Integrity**: All proofs are cryptographically verifiable
-- **Input Validation**: Rigorous validation of all inputs
-- **Secure Communication**: End-to-end encryption for all data transmission
+- Proof Integrity: All proofs are cryptographically verifiable
+- Input Validation: Rigorous validation of all inputs
+- Secure Communication: End-to-end encryption for all data transmission
 
-### **Economic Security**
+### Economic Security
 
-- **Staking Requirements**: Provers must stake tokens to participate
-- **Slashing Conditions**: Penalties for malicious or faulty behavior
-- **Reputation System**: Track record influences prover selection
+- Staking Requirements: Provers must stake tokens to participate
+- Reputation System: Track record influences prover selection
 
-### **Operational Security**
+### Operational Security
 
-- **Access Controls**: Multi-layered authentication and authorization
-- **Monitoring Systems**: Comprehensive logging and alerting
-- **Incident Response**: Automated responses to security events
+- Access Controls: Multi-layered authentication and authorization
+- Monitoring Systems: Comprehensive logging and alerting
+- Incident Response: Automated responses to security events
 
 ## Next Steps
 
-- **[Gateway Deep Dive](gateway.mdx)**: Explore the Gateway architecture and functionality
-- **[DARA Mechanism](dara.mdx)**: Understand the resource allocation algorithm
-- **[Prover Network](provers.mdx)**: Learn about the decentralized proving infrastructure
-- **[Integration Guide](../zk-coprocessor/quickstart.md)**: Start building with the ZK Prover Network
+- [Gateway Deep Dive](gateway.mdx): Explore the Gateway architecture and functionality
+- [DARA Mechanism](dara.mdx): Understand the resource allocation algorithm
+- [Prover Network](provers.mdx): Learn about the decentralized proving infrastructure
+- [Integration Guide](../zk-coprocessor/quickstart.md): Start building with the ZK Prover Network
