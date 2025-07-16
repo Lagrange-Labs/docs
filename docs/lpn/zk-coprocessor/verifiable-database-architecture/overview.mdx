@@ -6,15 +6,13 @@ description: "Detailed technical overview of Lagrange's Verifiable Database arch
 
 import ThemedImage from "@site/src/components/ThemedImage";
 
-# Verifiable Database Architecture Overview
-
-The **Verifiable Database** is the foundational component of Lagrange's ZK Coprocessor that transforms blockchain data into a format optimized for efficient, provable queries. This architecture enables cryptographic verification of computational results while maintaining the performance characteristics required for real-world applications.
+The Verifiable Database is the foundational component of Lagrange's ZK Coprocessor that transforms blockchain data into a format optimized for efficient, provable queries. This architecture enables cryptographic verification of computational results while maintaining the performance characteristics required for real-world applications.
 
 ## Core Concept
 
 Lagrange's network functions as an advanced indexer that processes a contract's storage and transforms it into a verifiable database. The system essentially recreates the target blockchain's database (storage, state, and blocks) in a format that supports efficient and distributed queries.
 
-### **Database Transformation Process**
+### Database Transformation Process
 
 The ZK Coprocessor generates, for each block, a new equivalent version (shown in blue) of the original storage trie (shown in red), optimized for efficient queries. The system generates cryptographic proofs that this new database contains identical data to the original blockchain data structure.
 
@@ -29,35 +27,35 @@ The ZK Coprocessor generates, for each block, a new equivalent version (shown in
 
 The Verifiable Database consists of three interconnected database layers, each optimized for specific types of queries and verification requirements:
 
-### **1. Block Database**
+### 1. Block Database
 
-- **Purpose**: Stores and indexes block-level information
-- **Data Types**: Block headers, transaction data, receipts, and metadata
-- **Optimization**: Optimized for temporal queries and block range operations
-- **Verification**: Provides cryptographic proofs of block inclusion and ordering
+- Purpose: Stores and indexes block-level information
+- Data Types: Block headers, transaction data, receipts, and metadata
+- Optimization: Optimized for temporal queries and block range operations
+- Verification: Provides cryptographic proofs of block inclusion and ordering
 
-### **2. State Database**
+### 2. State Database
 
-- **Purpose**: Manages account state and contract information
-- **Data Types**: Account balances, nonces, contract code, and state roots
-- **Optimization**: Optimized for account-level queries and state transitions
-- **Verification**: Enables verification of state changes and account history
+- Purpose: Manages account state and contract information
+- Data Types: Account balances, nonces, contract code, and state roots
+- Optimization: Optimized for account-level queries and state transitions
+- Verification: Enables verification of state changes and account history
 
-### **3. Storage Database**
+### 3. Storage Database
 
-- **Purpose**: Handles contract storage data and slot-level information
-- **Data Types**: Contract storage slots, mappings, and complex data structures
-- **Optimization**: Optimized for storage-level queries and cross-contract analysis
-- **Verification**: Provides proofs of storage inclusion and value correctness
-  > **Note**: The following sections provide detailed technical information about each database component. This explanation requires knowledge of advanced data structures such as Merkle Patricia Tries and zero-knowledge proof systems.
+- Purpose: Handles contract storage data and slot-level information
+- Data Types: Contract storage slots, mappings, and complex data structures
+- Optimization: Optimized for storage-level queries and cross-contract analysis
+- Verification: Provides proofs of storage inclusion and value correctness
+  > Note: The following sections provide detailed technical information about each database component. This explanation requires knowledge of advanced data structures such as Merkle Patricia Tries and zero-knowledge proof systems.
 
 ## Next Steps
 
 Explore the detailed architecture of each database component:
 
-- **[Block Database](block-database.mdx)**: Block-level data processing and storage
-- **[State Database](state-database.mdx)**: Account state management and verification
-- **[Storage Database](storage-database.mdx)**: Contract storage optimization and querying
-- **[On-Chain Storage](onchain-storage.mdx)**: On-chain data integration and verification
+- [Block Database](block-database.mdx): Block-level data processing and storage
+- [State Database](state-database.mdx): Account state management and verification
+- [Storage Database](storage-database.mdx): Contract storage optimization and querying
+- [On-Chain Storage](onchain-storage.mdx): On-chain data integration and verification
 
 For implementation guidance, see the [ZK Coprocessor Quickstart](../quickstart.md) guide.
