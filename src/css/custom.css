@@ -20,6 +20,7 @@
   --ifm-link-color:#33925d;
   --ifm-footer-link-hover-color: #33925d;
   --ifm-navbar-link-hover-color: #33925d;
+  --ifm-toc-border-color: #fff;
 }
 
 [data-theme="dark"] body {
@@ -95,6 +96,13 @@ footer.footer a:hover {
 
 .main-wrapper {
   background-color: var(--ifm-background-color);
+  max-width: 1410px;
+  margin: 0 auto;
+}
+.container {
+  @media (min-width: 996px) {
+    margin-left:48px;
+  }
 }
 
 table {
