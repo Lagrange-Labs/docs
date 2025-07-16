@@ -126,6 +126,12 @@ td {
   background-color: var(--navbar-background-color) !important;
   border-bottom: var(--border-bottom);
 }
+.navbar__inner {
+  @media (min-width: 996px) {
+    margin: 0 auto;
+    max-width: 1410px;
+  }
+}
 
 @media (max-width: 768px) {
   .header-github-link {
