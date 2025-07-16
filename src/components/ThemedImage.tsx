@@ -21,12 +21,6 @@ const ThemedImage: React.FC<ThemedImageProps> = ({
         style={centered ? { display: "block", margin: "0 auto" } : undefined}
         className="themed-image-light"
       />
-      <img
-        src={darkSrc}
-        alt={alt}
-        style={centered ? { display: "block", margin: "0 auto" } : undefined}
-        className="themed-image-dark"
-      />
     </>
   );
 };
