@@ -115,17 +115,22 @@ const config: Config = {
               to: "https://www.iubenda.com/terms-and-conditions/32733074",
             },
           ],
+          className: "footer-item-center footer-mb",
         },
         {
           title: "Social",
           items: [
             {
-              label: "GitHub",
-              to: "https://github.com/Lagrange-Labs",
-            },
-            {
               label: "X",
               to: "https://x.com/lagrangedev",
+            },
+            {
+              label: "Blog",
+              to: "https://lagrange.dev/blog",
+            },
+            {
+              label: "GitHub",
+              to: "https://github.com/Lagrange-Labs",
             },
             {
               label: "Discord",
@@ -135,11 +140,8 @@ const config: Config = {
               label: "LinkedIn",
               to: "https://www.linkedin.com/company/lagrange-labs/",
             },
-            {
-              label: "Blog",
-              to: "https://lagrange.dev/blog",
-            },
           ],
+          className: "footer-item-center footer-mb",
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Lagrange Labs Inc.`,
@@ -148,6 +150,10 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ["solidity", "bash", "go"],
+    },
+    tableOfContents: {
+      minHeadingLevel: 2,
+      maxHeadingLevel: 6,
     },
   } satisfies Preset.ThemeConfig,
 };

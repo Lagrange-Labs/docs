@@ -1,5 +1,4 @@
 import React from "react";
-import { useColorMode } from "@docusaurus/theme-common";
 
 interface ThemedImageProps {
   lightSrc: string;
@@ -14,15 +13,21 @@ const ThemedImage: React.FC<ThemedImageProps> = ({
   alt,
   centered = true,
 }) => {
-  const { colorMode } = useColorMode();
-  const src = colorMode === "dark" ? darkSrc : lightSrc;
-
   return (
-    <img
-      src={src}
-      alt={alt}
-      style={centered ? { display: "block", margin: "0 auto" } : undefined}
-    />
+    <>
+      <img
+        src={lightSrc}
+        alt={alt}
+        style={centered ? { display: "block", margin: "0 auto" } : undefined}
+        className="themed-image-light"
+      />
+      <img
+        src={darkSrc}
+        alt={alt}
+        style={centered ? { display: "block", margin: "0 auto" } : undefined}
+        className="themed-image-dark"
+      />
+    </>
   );
 };
 

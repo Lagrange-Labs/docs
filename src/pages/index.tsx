@@ -1,6 +1,12 @@
-import React from "react";
-import { Redirect } from "@docusaurus/router";
+import React, { useEffect } from "react";
+import { useHistory } from "@docusaurus/router";
 
 export default function Home() {
-  return <Redirect to="/introduction" />;
+  const history = useHistory();
+
+  useEffect(() => {
+    history.replace("/introduction");
+  }, [history]);
+
+  return null;
 }

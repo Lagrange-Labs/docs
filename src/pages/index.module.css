@@ -45,7 +45,9 @@
   line-height: 1.5;
   text-align: left;
 }
-
+.menu {
+  border-right: 1px solid transparent
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
