@@ -18,7 +18,7 @@ As artificial intelligence becomes increasingly powerful and integrated into cri
 
 ### **Revolutionary Performance**
 
-- **~1000x faster** proof generation than leading zkML solutions
+- **~158x faster** proof generation than leading zkML solutions
 - **~671x faster** verification, completing in under 0.5 seconds
 - Practical for real-world applications at enterprise scale
 
