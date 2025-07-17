@@ -4,7 +4,7 @@ title: "Running a Prover"
 description: The step to run a prover
 ---
 
-## Simple
+## Command
 
 ```bash
 docker compose up -d

@@ -4,7 +4,7 @@ title: "ZK Coprocessor Overview"
 description: "Introduction to Lagrange's ZK Coprocessor and Verifiable Database technology"
 ---
 
-The **Lagrange ZK Coprocessor** and **Verifiable Database** enable smart contracts to perform intensive computations off-chain while maintaining cryptographic proof of correctness. This technology bridges the gap between blockchain's security guarantees and the computational requirements of modern applications.
+The **Lagrange ZK Coprocessor** and **Verifiable Database** enable smart contracts to perform intensive computations offchain while maintaining cryptographic proof of correctness. This technology bridges the gap between blockchain's security guarantees and the computational requirements of modern applications.
 
 ## Core Concept
 
@@ -12,7 +12,7 @@ The Lagrange ZK Coprocessor goal can be stated in simple terms:
 
 > **Create a provable database containing a subset of the original blockchain data, which can be efficiently queried with cryptographic proof of correctness.**
 
-This is very similar to the notion of a "coprocessor," allowing smart contracts to run intensive computations off-chain that can be efficiently verified on-chain.
+This is very similar to the notion of a "coprocessor," allowing smart contracts to run intensive computations offchain that can be efficiently verified onchain.
 
 ## How It Works
 
@@ -86,9 +86,9 @@ The system consists of two main components:
 
 ### Scalability
 
-- Off-Chain Computation: Move intensive calculations off the main blockchain
+- OffChain Computation: Move intensive calculations off the main blockchain
 - Parallel Processing: Leverage distributed computing for complex queries
-- Efficient Verification: On-chain verification is fast and cost-effective
+- Efficient Verification: Onchain verification is fast and cost-effective
 
 ### Security
 
@@ -104,8 +104,8 @@ The system consists of two main components:
 
 ### Cost Efficiency
 
-- Reduced Gas Costs: Expensive computations performed off-chain
-- Optimized Verification: Minimal on-chain verification overhead
+- Reduced Gas Costs: Expensive computations performed offchain
+- Optimized Verification: Minimal onchain verification overhead
 - Scalable Pricing: Costs scale with computation complexity, not blockchain fees
 
 ## Use Cases
