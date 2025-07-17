@@ -7,9 +7,9 @@ description: The operator registration steps for ZK Coprocessor AVS
 ## Lagrange Network AVS Key
 
 First, an operator needs to create a key specific for its operation on the Lagrange Network.
-
+:::tip
 Currently, the same key is used for many provers for a single operator. That simplifies the key management overhead. If a key is compromised, it is enough to de-register and re-register on Lagrange Network with a new key.
-
+:::
 To do so, run the following command
 
 ```bash

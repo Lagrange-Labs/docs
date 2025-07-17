@@ -10,7 +10,7 @@ The **Lagrange ZK Coprocessor** and **Verifiable Database** enable smart contrac
 
 The Lagrange ZK Coprocessor goal can be stated in simple terms:
 
-> **Create a provable database containing a subset of the original blockchain data, which can be efficiently queried with cryptographic proof of correctness.**
+> Create a provable database containing a subset of the original blockchain data, which can be efficiently queried with cryptographic proof of correctness.
 
 This is very similar to the notion of a "coprocessor," allowing smart contracts to run intensive computations offchain that can be efficiently verified onchain.
 

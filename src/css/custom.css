@@ -255,3 +255,11 @@ blockquote p {
   margin-top: 0;
   padding: 0;
 }
+.navbar__link {
+  font-weight: normal;
+}
+.navbar__link--active {
+  background-color: var(--ifm-color-primary-light);
+  color:white;
+  border-radius: 10px;
+}
