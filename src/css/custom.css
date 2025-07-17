@@ -238,3 +238,8 @@ font-size: 0.8rem
   font-size: 10px;
 }
 
+.footer > .container {
+  @media (min-width: 996px) {
+    margin: 0 auto;
+  }
+}
