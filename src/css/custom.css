@@ -243,3 +243,15 @@ font-size: 0.8rem
     margin: 0 auto;
   }
 }
+blockquote {
+  margin: 40px 10px;
+  font-size: 1.2rem;
+  font-style: italic;
+  border-left: 4px solid #ccc;
+  padding-left: 15px;
+  line-height: 1.6;
+}
+blockquote p {
+  margin-top: 0;
+  padding: 0;
+}
