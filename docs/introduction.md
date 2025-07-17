@@ -63,7 +63,7 @@ Unlike traditional monolithic prover networks, Lagrange employs a "prover networ
 
 ## ZK Coprocessor: Verifiable Blockchain Computations
 
-The **Lagrange ZK Coprocessor** enables smart contracts to perform intensive computations off-chain with cryptographic proofs of correctness, unlocking complex applications that were previously impossible on-chain.
+The **Lagrange ZK Coprocessor** enables smart contracts to perform intensive computations offchain with cryptographic proofs of correctness, unlocking complex applications that were previously impossible onchain.
 
 ### Core Innovation
 
@@ -79,13 +79,6 @@ Transform any blockchain data into a verifiable database that supports efficient
 - DeFi Analytics: Compute complex financial metrics across multiple protocols
 - Cross-chain Applications: Aggregate and verify data across multiple blockchains
 - Governance Systems: Create verifiable voting and proposal mechanisms
-
-### Developer Experience
-
-- SQL-based queries: Use familiar database query language
-- Automatic proof generation: No cryptographic expertise required
-- Multiple blockchain support: Works with Ethereum, Arbitrum, Base, and other EVM chains
-- Flexible data sources: Support for both on-chain and off-chain data integration
 
 [Get started with ZK Coprocessor →](lpn/zk-coprocessor/overview.md)
 
@@ -107,7 +100,7 @@ By combining these technologies, Lagrange creates an infinite proving layer that
 
 - Verifiable AI and machine learning
 - Scalable ZK rollup infrastructure
-- Complex off-chain computations
+- Complex offchain computations
 - Cross-chain interoperability
 - Enterprise-grade applications
 

@@ -72,6 +72,8 @@ As we advance toward superintelligence, verifiability becomes humanity's safegua
 
 DeepProve is designed for developers, researchers, and organizations who need verifiable AI capabilities. Whether you're building Web3 applications, developing critical infrastructure, or researching AI safety, DeepProve provides the tools to make AI verifiable and trustworthy.
 
+[Explore DeepProve library →](https://github.com/Lagrange-Labs/deep-prove)
+
 > **The future of AI is verifiable. The future of humanity depends on it.**
 
 ---

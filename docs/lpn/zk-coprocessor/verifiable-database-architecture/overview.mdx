@@ -47,15 +47,16 @@ The Verifiable Database consists of three interconnected database layers, each o
 - Data Types: Contract storage slots, mappings, and complex data structures
 - Optimization: Optimized for storage-level queries and cross-contract analysis
 - Verification: Provides proofs of storage inclusion and value correctness
-  > Note: The following sections provide detailed technical information about each database component. This explanation requires knowledge of advanced data structures such as Merkle Patricia Tries and zero-knowledge proof systems.
+
+> Note: The following sections provide detailed technical information about each database component. This explanation requires knowledge of advanced data structures such as Merkle Patricia Tries and zero-knowledge proof systems.
 
 ## Next Steps
 
 Explore the detailed architecture of each database component:
 
+- [Onchain Storage](onchain-storage.mdx): Onchain contract data storage
+- [Storage Database](storage-database.mdx): Provable contract storage trie for optimization and querying
+- [State Database](state-database.mdx): Unified storage database of different contracts
 - [Block Database](block-database.mdx): Block-level data processing and storage
-- [State Database](state-database.mdx): Account state management and verification
-- [Storage Database](storage-database.mdx): Contract storage optimization and querying
-- [On-Chain Storage](onchain-storage.mdx): On-chain data integration and verification
 
 For implementation guidance, see the [ZK Coprocessor Quickstart](../quickstart.md) guide.
