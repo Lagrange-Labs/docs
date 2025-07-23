@@ -1,0 +1,129 @@
+---
+id: overview
+title: "ZK Prover Network Architecture"
+description: "Deep dive into Lagrange's modular, scalable ZK Prover Network architecture"
+---
+
+import ThemedImage from "@site/src/components/ThemedImage";
+
+Lagrange's ZK Prover Network has a unique architecture that enables it to scale proof generation dynamically and horizontally according to demand. Networks can access dedicated proving bandwidth tailored to their specific needs, eliminating the bottlenecks typically associated with traditional monolithic prover networks.
+
+This approach unlocks a wide range of new use cases that protocols can leverage to build more data-rich, performance-optimized, and privacy-enabled experiences.
+
+## How It Works
+
+When a proof request is submitted, the **Gateway** authenticates the client and places the task in a persistent queue. Its embedded **Dispatcher** component then breaks the task into job slices classified as _small_, _medium_, or _large_ based on the hardware requirements and advertises them to the prover pool.
+
+Leveraging **DARA** (Double Auction Resource Allocation), the Dispatcher selects the optimal prover for each job, balancing cost, availability, and performance. As individual proofs are produced, they are written to the **Storage Layer**; once every job in the batch is complete, the Gateway aggregates the partial proofs into a single output and streams it back to the client.
+
+All retries and reassignment logic happen transparently within the Gateway, so integrators never need to orchestrate failsafes on their side.
+
+<ThemedImage
+  lightSrc="/img/lagrange-network-flow.png"
+  darkSrc="/img/lagrange-network-flow.png"
+  alt="Lagrange Prover Network Workflow Diagram"
+  centered="true"
+/>
+
+The diagram above illustrates this life-cycle, showcasing how decoupled architecture eliminates bottlenecks and enables horizontal scaling at every layer of the network.
+
+## Key Components
+
+Let us dive into the core components of the ZK Prover Network:
+
+### 1. Gateway
+
+The Gateway serves as the primary entry point for all proof requests, handling:
+
+- Client Authentication: Verifies and authorizes incoming requests
+- Request Normalization: Standardizes inputs across different proof systems
+- Task Persistence: Maintains reliable queuing for fault tolerance
+- Result Aggregation: Combines partial proofs into final outputs
+
+[Learn More →](gateway.mdx)
+
+### 2. Dispatcher
+
+The Dispatcher optimizes job allocation across the prover network:
+
+- Job Classification: Categorizes tasks by hardware requirements (small/medium/large)
+- Resource Matching: Leverages DARA to select optimal provers
+- Load Balancing: Distributes workload efficiently across available resources
+- Failure Management: Handles automatic retries and reassignments
+
+### 3. DARA (Double Auction Resource Allocation)
+
+DARA is Lagrange's innovative market mechanism that:
+
+- Optimizes Matching: Pairs proof requests with the most suitable provers
+- Ensures Fair Pricing: Balances cost efficiency for users and profitability for provers
+- Maintains Incentive Alignment: Creates sustainable economic dynamics
+- Scales Efficiently: Handles growing market demands without bottlenecks
+
+[Learn More →](dara.mdx)
+
+### 4. Provers
+
+The decentralized network of specialized provers:
+
+- Hardware Diversity: Supports various computational requirements
+- Geographic Distribution: Ensures global availability and redundancy
+- Staking Mechanism: Provides economic security through EigenLayer integration
+- Performance Monitoring: Tracks and optimizes prover efficiency
+
+[Learn More →](provers.mdx)
+
+### 5. Storage Layer
+
+Persistent storage infrastructure that handles:
+
+- Proof Caching: Stores intermediate and final proofs
+- Data Integrity: Ensures reliable proof retrieval
+- Scalable Architecture: Supports high-throughput operations
+- Fault Tolerance: Provides redundancy and backup mechanisms
+
+## Architecture Benefits
+
+### Horizontal Scalability
+
+- Elastic Resource Allocation: Automatically scales with demand
+- No Single Points of Failure: Distributed architecture ensures reliability
+- Independent Component Scaling: Each layer can scale independently
+
+### Performance Optimization
+
+- Specialized Hardware Matching: Jobs are matched to optimal hardware configurations
+- Parallel Processing: Multiple proofs can be generated simultaneously
+- Efficient Resource Utilization: Minimizes idle time and maximizes throughput
+
+### Economic Efficiency
+
+- Market-Driven Pricing: Competitive dynamics reduce costs
+- Resource Optimization: Efficient allocation minimizes waste
+- Transparent Economics: Clear pricing models for predictable costs
+
+## Security Model
+
+### Cryptographic Security
+
+- Proof Integrity: All proofs are cryptographically verifiable
+- Input Validation: Rigorous validation of all inputs
+- Secure Communication: End-to-end encryption for all data transmission
+
+### Economic Security
+
+- Staking Requirements: Provers must stake tokens to participate
+- Reputation System: Track record influences prover selection
+
+### Operational Security
+
+- Access Controls: Multi-layered authentication and authorization
+- Monitoring Systems: Comprehensive logging and alerting
+- Incident Response: Automated responses to security events
+
+## Next Steps
+
+- [Gateway Deep Dive](gateway.mdx): Explore the Gateway architecture and functionality
+- [DARA Mechanism](dara.mdx): Understand the resource allocation algorithm
+- [Prover Network](provers.mdx): Learn about the decentralized proving infrastructure
+- [Integration Guide](../zk-coprocessor/quickstart.md): Start building with the ZK Prover Network

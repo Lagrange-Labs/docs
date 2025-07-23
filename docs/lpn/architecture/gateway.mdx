@@ -1,0 +1,139 @@
+---
+id: gateway
+title: "Gateway Architecture"
+description: "Deep dive into the Gateway component of Lagrange's ZK Prover Network"
+---
+
+The **Gateway** serves as the primary entry point and orchestration layer for Lagrange's ZK Prover Network. It provides a unified interface for clients while managing the complex distributed proving infrastructure behind the scenes.
+
+## Core Responsibilities
+
+### Client Interface Management
+
+The Gateway provides a standardized API layer that:
+
+- Authenticates and authorizes incoming proof requests
+- Normalizes inputs across different proof systems and client implementations
+- Validates request parameters to ensure correctness before processing
+- Provides real-time status updates to clients about proof generation progress
+
+### Task Orchestration
+
+Once a request is received, the Gateway:
+
+- Queues tasks persistently to ensure no requests are lost
+- Breaks down complex proofs into manageable job slices
+- Coordinates job distribution across available provers
+- Manages dependencies between related proof generation tasks
+
+### Proof Aggregation
+
+The Gateway handles the final assembly of proofs by:
+
+- Collecting partial proofs from individual provers
+- Verifying proof correctness before aggregation
+- Combining proofs into the final output format
+- Streaming results back to the requesting client
+
+### Request Processing Pipeline
+
+1. Input Validation: Verify request format and parameters
+2. Authentication: Validate client credentials and permissions
+3. Rate Limiting: Enforce usage quotas and prevent abuse
+4. Request Queuing: Persist tasks for reliable processing
+
+### Dispatcher Integration
+
+The Gateway contains an embedded Dispatcher component that:
+
+- Analyzes job requirements (computational complexity, hardware needs)
+- Classifies jobs into small, medium, or large categories
+- Interfaces with DARA for optimal prover selection
+- Monitors job progress and handles failures
+
+### Storage Integration
+
+- Task Persistence: Reliable queuing with durability guarantees
+- Result Caching: Efficient storage and retrieval of proof outputs
+- Metadata Tracking: Comprehensive logging of all operations
+- Backup Systems: Redundant storage for critical data
+
+## Fault Tolerance & Reliability
+
+### Automatic Retry Logic
+
+The Gateway implements sophisticated retry mechanisms:
+
+- Exponential Backoff: Intelligent retry timing to avoid overwhelming provers
+- Prover Reassignment: Automatic failover to alternative provers
+- Partial Result Recovery: Resume from intermediate states when possible
+- Timeout Management: Configurable timeouts with graceful degradation
+
+### High Availability Design
+
+- Multi-Region Deployment: Geographic distribution for global access
+- Load Balancing: Distribute requests across multiple Gateway instances
+- Health Monitoring: Continuous monitoring of system components
+- Graceful Degradation: Maintain service during partial outages
+
+## Performance Optimization
+
+### Efficient Resource Utilization
+
+- Connection Pooling: Reuse connections to reduce overhead
+- Batch Processing: Group similar requests for efficiency
+- Caching Strategies: Cache frequently accessed data and results
+- Asynchronous Processing: Non-blocking operations for better throughput
+
+### Scalability Features
+
+- Horizontal Scaling: Add more Gateway instances as demand grows
+- Dynamic Load Balancing: Adjust traffic distribution based on capacity
+- Resource Monitoring: Track and optimize resource usage
+- Predictive Scaling: Anticipate demand and pre-scale resources
+
+## Security Model
+
+### Data Protection
+
+- End-to-End Encryption: Secure data transmission and storage
+- Input Sanitization: Prevent injection attacks and malformed data
+- Secure Communication: TLS/SSL for all network communications
+- Data Isolation: Separate client data and processing contexts
+
+### Network Security
+
+- DDoS Protection: Mitigation of distributed denial-of-service attacks
+- Rate Limiting: Prevent abuse and ensure fair resource allocation
+- Firewall Integration: Network-level security controls
+- Intrusion Detection: Monitor for suspicious activities
+
+## Integration Patterns
+
+### Application-Specific Subnetworks
+
+- Dedicated Resources: Reserved proving capacity for high-volume applications
+- Custom SLAs: Tailored service level agreements
+- Specialized Hardware: Optimized prover configurations
+- Priority Queuing: Guaranteed processing order for critical applications
+
+## Monitoring & Observability
+
+### Real-Time Metrics
+
+- Request Throughput: Track requests per second and processing times
+- Success Rates: Monitor proof generation success and failure rates
+- Resource Utilization: CPU, memory, and network usage statistics
+
+### Alerting System
+
+- Threshold-Based Alerts: Automated notifications for anomalies
+- Escalation Procedures: Structured response to critical issues
+- Integration Support: Connect with monitoring tools
+- Custom Dashboards: Tailored views for different stakeholders
+
+### Performance Analytics
+
+- Historical Trends: Long-term performance and usage patterns
+- Cost Optimization: Identify opportunities for efficiency improvements
+- User Behavior Analysis: Understand client usage patterns

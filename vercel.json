@@ -1,13 +1,13 @@
 {
   "redirects": [
     {
-      "source": "/prover-network",
-      "destination": "/prover-network/overview",
+      "source": "/lpn",
+      "destination": "/lpn/overview",
       "permanent": true
     },
     {
-      "source": "/zk-coprocessor",
-      "destination": "/zk-coprocessor/overview",
+      "source": "/lpn/zk-coprocessor",
+      "destination": "/lpn/zk-coprocessor/overview",
       "permanent": true
     }
   ]
