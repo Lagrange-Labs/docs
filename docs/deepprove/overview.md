@@ -4,7 +4,7 @@ title: "DeepProve: Verifiable AI at Scale"
 description: Lagrange's groundbreaking zkML library for fast and scalable verifiable AI inferences
 ---
 
-> _"You cannot trust what you cannot verify."_
+> _You cannot trust what you cannot verify._
 
 **DeepProve** is Lagrange's groundbreaking zero-knowledge machine learning (zkML) library that enables verifiable AI inferences with unprecedented speed and scalability. Built to address the critical challenge of AI transparency and safety, DeepProve delivers up to **1000x faster proof generation** and **671x faster verification** compared to existing zkML solutions.
 
