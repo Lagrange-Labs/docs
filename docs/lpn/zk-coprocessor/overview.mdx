@@ -4,6 +4,8 @@ title: "ZK Coprocessor Overview"
 description: "Introduction to Lagrange's ZK Coprocessor and Verifiable Database technology"
 ---
 
+import ThemedImage from "@site/src/components/ThemedImage";
+
 The **Lagrange ZK Coprocessor** and **Verifiable Database** enable smart contracts to perform intensive computations offchain while maintaining cryptographic proof of correctness. This technology bridges the gap between blockchain's security guarantees and the computational requirements of modern applications.
 
 ## Core Concept
@@ -39,6 +41,13 @@ Key activities:
 - Parallel Computation: Distribute query execution across multiple provers
 - Proof Generation: Generate zero-knowledge proofs of query correctness
 - Result Aggregation: Combine partial results into final outputs with aggregated proofs
+
+<ThemedImage
+  lightSrc="/img/zkcop-lifecycle.png"
+  darkSrc="/img/zkcop-lifecycle.png"
+  alt="Lagrange ZK Coprocessor Lifecycle Diagram"
+  centered="true"
+/>
 
 ## Capabilities
 
